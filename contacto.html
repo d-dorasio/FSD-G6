@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {font-family: 'Times New Roman', Times, serif; font-size: 16px;}
+        .campo-form {padding: 10px; margin: 8px; border: none; border-bottom: 2px solid #fcfbfa; outline: none; transition: border-bottom 0.3s ease; text-align: center; }
+        .campo-form:hover {border-bottom: 2px solid #c97c63;}
+        .form-container {background-color: #ffffff; width: 60%; margin-left: 20%; display: flex; flex-direction: column; }
+        .boton-form {background-color: #81007f; width: auto; padding:10px; margin: 0px auto; color: #ffffff; border: none; transition: border-bottom 0.3s ease;}
+        .boton-form:hover {color: #c97c63}
+        .h1-contacto { font-size: 3em; text-align: center; color: #81007f; margin-bottom: 50px;}
+        .section-form {background-color: #ffffff; padding: 30px; }
+    </style>
+</head>
+<body>
+    <div class="section-form">
+        <h1 class="h1-contacto">Información de contacto</h1>
+        <form class="form-container" action="" method="post">
+            <input class="campo-form"name="nombre y apellido" type="text" placeholder="NOMBRE Y APELLIDO"><br>
+            <input class="campo-form"name="email" type="email" placeholder="EMAIL"><br>
+            <input class="campo-form"name="telefono" type="text" placeholder="TELEFONO"><br>
+            <input class="campo-form"name="comentario" rows="4" type="text" placeholder="COMENTARIO"><br>
+            <button class="boton-form" type="submit" value="enviar">ENVIAR</button>
+        </form>
+    </div>
+</body>
+</html>
