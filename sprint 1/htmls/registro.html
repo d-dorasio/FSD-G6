@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        * {font-family: 'Times New Roman', Times, serif; font-size: 16px;}
+        .campo-form {padding: 10px; margin: 8px; border: none; border-bottom: 2px solid #fcfbfa; outline: none; transition: border-bottom 0.3s ease; text-align: center; }
+        .campo-form:hover {border-bottom: 2px solid #c97c63;}
+        .form-container {background-color: #ffffff; width: 60%; margin-left: 20%; display: flex; flex-direction: column; }
+        .boton-form {background-color: #81007f; width: auto; padding:10px; margin: 0px auto; color: #ffffff; border: none; transition: border-bottom 0.3s ease;}
+        .boton-form:hover {color: #c97c63}
+        .h1-contacto { font-size: 3em; text-align: left; color: #81007f; margin-bottom: 50px;}
+        .section-form {background-color: #ffffff; padding: 30px; }
+    </style> 
+</head>
+<body>
+    <div class="section-form">
+        <h1 class="h1-contacto">Datos</h1>
+        <form class="form-container" action="" method="post">
+        
+            <input class="campo-form"name="nombre" type="text" placeholder="Nombres" required maxlength="50"><br>
+            <input class="campo-form"name="apellido" type="text" placeholder="Apellidos" required maxlength="50"><br>
+
+            <label class="campo-form">Tipo de documento</label>
+            <select name="Docuemento">
+            <option value="DNI">DNI</option>
+            <option value="LC">LC</option>
+            <option value="LE">LE</option>
+            <option value="CI">CI</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="RENAPER">RENAPER</option>
+            </select>
+            <br>
+            
+            <input class="campo-form"name="numero de documento" type="text" placeholder="Número de documento" required><br>
+            
+            <label class="campo-form">sexo:</label>
+            <input type="radio" id="masculino" name="sexo" value="masculino" required>
+            <label>Masculino</label>
+            <input type="radio" id="femenino" name="sexo" value="femenino" required>
+            <label>Femenino</label>
+            <br>
+            
+            <input class="campo-form"name="email" type="text" placeholder="Email" maxlength="100" required><br>
+            
+            <input class="campo-form"name="usuario" type="text" placeholder="Usuario" required maxlength="45"><br>
+            <input class="campo-form"name="clave" type="password" placeholder="Clave digital" required minlength="45"><br>
+            
+            <input type="checkbox" name="condiciones" /> Acepto los terminos y condiciones </br>
+
+            <button class="boton-form" href="/sprint 1/htmls/index.html" type="submit" value="registro">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
