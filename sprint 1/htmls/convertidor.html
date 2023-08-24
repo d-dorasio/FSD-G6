@@ -10,6 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
+    <script src="/sprint 1/javascript/script.js"></script>
+    <style>
+        .section-convertidor {font-size: 16px;}
+        .h1-convertidor { font-size: 3em; text-align: center; color: #81007f; margin-bottom: 50px;}
+        .form-cotizacion p {text-align: center;}
+        .form-cotizacion {display: flex; align-items: center; flex-direction: column;}
+        .container-cot {display: flex; flex-direction: column; align-items: center;}
+        .campo-monto {padding: 10px;}
+        .boton-cotizar { margin: 20px; padding: 10px; font-size: 16px; background-color: #81007f; width: auto; padding:10px; color: #ffffff; border: none; transition: border-bottom 0.3s ease;}
+        .boton-cotizar:hover {color: #c97c63}
+    </style>
 </head>
 
 <body>
@@ -40,7 +51,18 @@
             <main>
                 <section>
                     <h2>Convertidor de moneda</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sit harum, quo reprehenderit impedit animi tempore ullam, voluptatum eius beatae officia facere porro tempora dolore omnis ab, dignissimos labore fugit.</p>
+                    <div class="section-convertidor">
+                        <form class="form-cotizacion" action="">
+                            <p>Ingrese el monto en pesos:</p>
+                            <span><input class="campo-monto" type="number" id="valor" min="1" max="100000000"></span>
+                            <p>Seleccionar moneda a cotizar:</p>
+                            <div class="container-cot">
+                                <span><input type="radio" id="uno" name="cambio" value="dolar">Dolar </span>
+                                <span><input type="radio" id="dos" name="cambio" value="euro">Euro</span>
+                                <input class="boton-cotizar" type="button" id="cotizador" value="Cotizar" onclick="convertir()">
+                            </div>
+                        </form>
+                    </div>
                 </section>
             </main>
             <footer>
