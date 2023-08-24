@@ -9,7 +9,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        
+        #transfer-form {
+            background-color: white;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            margin-top: 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        input[type="text"], select, input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #35103D;
+            color: white;
+            margin: 10px 0px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #721a86;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,45 +80,83 @@
         </nav>
         <div class="hola">
             <header>
-                
-                <a href="/sprint 1/htmls/mi-cuenta.html">Mi cuenta</a>
+                <h1>ITBANK</h1>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
             </header>
             <main>
-                <section>
-                    <h2>Transferencias</h2>
-                    <p>Realiza transferencias de fondos a otras cuentas.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, id ullam! Nulla placeat
-                        accusamus nam harum sunt provident! Accusantium deleniti facilis labore esse odio explicabo, est
-                        eligendi ea unde numquam!
-                        Eos amet molestias laborum perspiciatis veritatis explicabo excepturi est temporibus, deleniti
-                        quibusdam, nam ullam cum non vero fuga! Tempore quas accusamus doloribus exercitationem placeat
-                        iste aliquid ipsam iure neque sint.
-                        Eligendi debitis ab impedit quo, numquam harum placeat itaque dicta ratione, minus cum veniam
-                        non eius unde. Esse sit corporis soluta quas, vero illum modi perferendis, aperiam asperiores
-                        sequi dolore.
-                        At dolorum fuga obcaecati molestiae. Quaerat, suscipit accusamus? Distinctio quidem voluptatum
-                        officiis veniam dolores labore corrupti enim, sit quos corporis maxime molestias. Quasi repellat
-                        veritatis magnam reprehenderit accusantium quo harum!
-                        Quibusdam amet esse modi numquam magni quia tempore facilis ipsum. Nostrum, perferendis, nobis
-                        reiciendis consectetur quasi dolores dolorum unde est dolor deserunt corrupti voluptatibus ipsum
-                        repudiandae ducimus doloremque fuga omnis.
-                        Facilis, voluptates dolorem. Excepturi, quis sit voluptates inventore assumenda similique dolor
-                        incidunt delectus officia adipisci unde voluptatem? Qui, error alias? Dolore quibusdam veniam
-                        quis voluptatibus atque optio provident ipsum fugit.
-                        Voluptates quasi quas hic illo, minus ratione doloremque quam accusamus modi blanditiis
-                        aspernatur quidem animi et nisi maiores iure! Officia similique temporibus doloribus.
-                        Necessitatibus animi, officiis ratione perspiciatis reprehenderit nostrum.
-                        Quaerat ducimus saepe, possimus reprehenderit nihil obcaecati ullam harum tenetur, voluptatem
-                        nulla aperiam doloremque? Vitae dicta accusantium facilis sapiente, tempora quaerat autem
-                        aperiam quas architecto unde nobis, quia expedita labore?
-                        Assumenda omnis quam ipsum aliquam ipsam ullam alias placeat, ex voluptatum eum nemo neque dicta
-                        perferendis! Blanditiis, dolor voluptates illo quidem modi possimus aperiam voluptas veniam
-                        earum, deserunt provident eligendi?
-                        Quibusdam, eos dicta nesciunt ut vitae in quas maiores unde voluptas explicabo, pariatur officia
-                        error quam similique? Eaque soluta, facere harum recusandae, iure quas itaque hic necessitatibus
-                        sequi numquam laudantium.</p>
-                </section>
-            </main>
+                    <div id="transfer-form">
+                        <h2>Formulario de Transferencia</h2>
+                        <form>
+                            <label for="accountFrom">Cuenta de Origen:</label>
+                            <select id="accountFrom" name="accountFrom">
+                                <option value="cuenta1">Cuenta 1</option>
+                                <option value="cuenta2">Cuenta 2</option>
+                                <!-- Agregar más opciones de cuentas aquí -->
+                            </select>
+                            
+                            <label for="accountTo">Cuenta de Destino:</label>
+                            <select id="accountTo" name="accountTo">
+                                <option value="cuenta3">Cuenta 3</option>
+                                <option value="cuenta4">Cuenta 4</option>
+                                <!-- Agregar más opciones de cuentas aquí -->
+                            </select>
+                            
+                            <label for="amount">Monto:</label>
+                            <input type="text" id="amount" name="amount" placeholder="Ingrese el monto">
+                            
+                            <label for="description">Descripción o Motivo:</label>
+                            <input type="text" id="description" name="description" placeholder="Ingrese una descripción">
+                            
+                            <label for="executionDate">Fecha de Ejecución:</label>
+                            <input type="date" id="executionDate" name="executionDate">
+                            
+                            <button type="button" onclick="transferFunds()">Transferir</button>
+                        </form>
+                    </div>
+                    <h2>Transferencias realizadas</h2>
+                    <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" width="100%" id="transactionTable">
+                        <tr>
+                            <th style="background-color: #ff7344;">Fecha</th>
+                            <th style="background-color: #ff7344;">Descripción</th>
+                            <th style="background-color: #ff7344;" colspan="2">Movimiento</th>
+                        </tr>
+                        <tr>
+                            <td>2023-08-28</td>
+                            <td>Compra en línea</td>
+                            <td>-$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-22</td>
+                            <td>Devolución de compra</td>
+                            <td>$30.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-18</td>
+                            <td>Retiro de cajero</td>
+                            <td>-$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-15</td>
+                            <td>Pago de factura</td>
+                            <td>-$75.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-10</td>
+                            <td>Transferencia recibida</td>
+                            <td>$500.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-05</td>
+                            <td>Compra en tienda</td>
+                            <td>-$150.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-01</td>
+                            <td>Depósito de nómina</td>
+                            <td>$2000.00</td>
+                        </tr>
+                    </table>
+                </main>
             <footer>
                 <div id="container-footer">
                     <div id="container-politica-empresa">

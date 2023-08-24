@@ -9,7 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
+    <style>
+        .credit-card {
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .credit-card img {
+            max-width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +41,7 @@
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
-                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos</a> </li>
+                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos realizados</a> </li>
                     <li><a href="/sprint 1/htmls/prestamos.html">Préstamos</a></li>
                     <li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
                     <li><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
@@ -34,45 +51,35 @@
         </nav>
         <div class="hola">
             <header>
-                
-                <a href="/sprint 1/htmls/mi-cuenta.html">Mi cuenta</a>
+                <h1>ITBANK</h1>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
             </header>
             <main>
                 <section>
                     <h2>Mis Tarjetas</h2>
                     <p>Administra tus tarjetas bancarias aquí.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas delectus rerum quos, tenetur
-                        consequatur debitis distinctio neque maxime recusandae deserunt, quibusdam ab, ex eligendi error
-                        molestiae sapiente. Dolor, tenetur itaque!
-                        Ipsam deserunt natus aliquam repellendus temporibus delectus nostrum expedita, libero
-                        repudiandae saepe aut nobis voluptatibus earum amet veniam sunt asperiores suscipit porro, totam
-                        ex repellat, dolores eum praesentium magnam! Corporis?
-                        Unde deserunt repudiandae quis! Reprehenderit laborum velit vitae expedita? A laborum deserunt
-                        labore nobis, at vel corrupti doloribus provident ipsa maxime veniam nihil vero temporibus
-                        maiores voluptatibus facilis ducimus possimus.
-                        Laboriosam esse quibusdam, numquam voluptas corporis architecto nesciunt iste natus voluptatem,
-                        mollitia commodi ab alias quia vitae eum deserunt fugiat sapiente sit doloremque nobis veniam,
-                        itaque quo consectetur. Recusandae, quod.
-                        Iure ut a consequatur libero labore nam rem eum, adipisci perferendis animi fugit optio debitis
-                        reprehenderit quia ab. Praesentium ipsa ducimus, numquam eaque fugit quos id. Animi deserunt
-                        culpa maiores.
-                        Iste dolor nobis porro exercitationem recusandae aliquam doloribus dolorem facere, libero, quam
-                        facilis velit accusantium eos praesentium maiores perferendis. Aperiam distinctio, perspiciatis
-                        excepturi eligendi veniam officia eveniet sequi magnam quia.
-                        Ex ullam velit fugit porro, quas delectus. Sint fugiat voluptatum quae, perspiciatis vel veniam
-                        aut saepe amet maiores suscipit assumenda itaque consequuntur ratione, necessitatibus eaque enim
-                        sit vero illo ea.
-                        Accusantium nostrum non in rerum ducimus cum fugiat obcaecati sunt ea distinctio, reiciendis
-                        quisquam voluptas ad quae odio est ipsa debitis optio similique id dolores repudiandae quos
-                        maxime maiores? Ducimus.
-                        Enim, quae natus provident vitae quasi mollitia adipisci voluptas expedita eos optio
-                        necessitatibus ratione ipsum aspernatur ipsa obcaecati dolor repellendus, nostrum alias laborum
-                        eveniet. Placeat non voluptatibus vel veniam eius.
-                        Omnis, quisquam. Dolorem fuga ipsa officia autem perferendis omnis odio dolore vero a voluptatum
-                        quo laborum voluptatem perspiciatis id soluta cupiditate, eum sit aliquam error atque esse
-                        tempore libero! Dolorem.</p>
-                </section>
-
+                    <div>
+                        <div class="credit-card">
+                            <img src="/sprint 1/imagenes/pexels-anni-roenkae-3109807.jpg" alt="Tarjeta de Crédito 1">
+                            <h3>Tarjeta de Crédito 1</h3>
+                            <p>Número: **** **** **** 1234</p>
+                            <p>Fecha de Vencimiento: 12/23</p>
+                        </div>
+                        
+                        <div class="credit-card">
+                            <img src="/sprint 1/imagenes/pexels-anni-roenkae-3109807.jpg" alt="Tarjeta de Crédito 2">
+                            <h3>Tarjeta de Crédito 2</h3>
+                            <p>Número: **** **** **** 5678</p>
+                            <p>Fecha de Vencimiento: 06/24</p>
+                        </div>
+                        
+                        <div class="credit-card">
+                            <img src="/sprint 1/imagenes/pexels-anni-roenkae-3109807.jpg" alt="Tarjeta de Crédito 3">
+                            <h3>Tarjeta de Crédito 3</h3>
+                            <p>Número: **** **** **** 9012</p>
+                            <p>Fecha de Vencimiento: 09/25</p>
+                        </div>
+                    </div>
             </main>
             <footer>
                 <div id="container-footer">

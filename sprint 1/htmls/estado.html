@@ -9,7 +9,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
+    <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .chart {
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+    <script>
+        // Generar datos aleatorios para el gráfico
+        function generateRandomData() {
+            var data = [];
+            for (var i = 0; i < 5; i++) {
+                data.push(Math.floor(Math.random() * 1000));
+            }
+            return data;
+        }
+
+        // Dibujar el gráfico de barras
+        function drawChart() {
+            var data = generateRandomData();
+            var chart = new Chart(document.getElementById('barChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mes 1', 'Mes 2', 'Mes 3', 'Mes 4', 'Mes 5'],
+                    datasets: [{
+                        label: 'Balances',
+                        data: data,
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -24,7 +89,7 @@
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
-                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos</a> </li>
+                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos realizados</a> </li>
                     <li><a href="/sprint 1/htmls/prestamos.html">Préstamos</a></li>
                     <li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
                     <li><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
@@ -34,46 +99,27 @@
         </nav>
         <div class="hola">
             <header>
-                
-                <a href="/sprint 1/htmls/mi-cuenta.html">Mi cuenta</a>
+
+                <h1>ITBANK</h1>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
             </header>
             <main>
-                <section>
-                    <h2>Estado de cuenta</h2>
-                    <p>Desde el panel de control, podés administrar tus finanzas de manera sencilla y segura.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quaerat amet dolores
-                        veritatis. Sint quae dolores ullam ratione soluta harum, perferendis blanditiis maiores facilis
-                        repellat quisquam, aspernatur ipsam reiciendis. Qui?
-                        Tempora blanditiis repudiandae cum? Molestias ut possimus nisi autem veritatis dignissimos
-                        ipsum, nihil voluptatibus cumque quasi dolore libero non architecto accusantium? Nobis
-                        cupiditate atque eos dignissimos placeat neque nemo cumque!
-                        Qui sunt animi magni reprehenderit nobis asperiores possimus numquam earum saepe dolore optio
-                        culpa ab voluptatibus accusamus ratione fuga esse, deserunt dignissimos maxime. Quas impedit
-                        atque necessitatibus veniam, harum error.
-                        Beatae maiores tempore voluptas doloremque velit possimus quas facere autem cumque praesentium
-                        porro unde necessitatibus, itaque quisquam quidem magni exercitationem amet culpa harum error
-                        aut ratione nobis, enim quos? Repellendus.
-                        Quam delectus sequi itaque, nemo officiis aliquid maxime reprehenderit nobis non facilis porro
-                        quo veritatis eveniet sint? In harum iusto adipisci voluptate atque sunt, saepe eveniet fuga
-                        tempora architecto? Fugit.
-                        Ipsum ea illo voluptatum! Laudantium omnis totam rerum commodi cupiditate fugit esse, deserunt
-                        accusantium maxime neque fugiat itaque dolores perferendis, ullam repellendus consequuntur natus
-                        possimus rem. Sit fuga delectus laborum!
-                        Voluptatibus quos non odio illo recusandae aspernatur maiores, ipsa eius sunt similique laborum
-                        sequi atque aut vitae voluptatum magnam dolor, dolores commodi fuga sint voluptas velit
-                        perspiciatis quod. Aut, dolores?
-                        Voluptatibus fugit cumque, illum vero, expedita repellendus molestias laudantium dolore alias
-                        maxime nostrum, illo repudiandae dolor voluptate maiores quasi officiis assumenda. Culpa, at
-                        fugiat hic fugit eligendi minima sed quasi.
-                        Ipsam eos autem obcaecati facilis sequi, reiciendis ducimus repellat! Natus fuga doloribus
-                        excepturi eveniet voluptate corrupti, dolor vel totam ad qui in quis dolorem repellendus unde,
-                        quidem voluptatum. Ex, sit? A itaque ullam fugit debitis iusto autem ipsam amet soluta explicabo
-                        quos voluptas accusantium, ut,
-                        eaque modi! Accusantium distinctio adipisci labore repellat magnam ipsum, magni a maiores velit
-                        tempora
-                        itaque.</p>
-                </section>
-
+                <h2>Estado de cuenta</h2>
+                <p>Desde el panel de control, podés administrar tus finanzas de manera sencilla y segura.</p>
+                <div class="card">
+                    <h2>Saldo Actual</h2>
+                    <p>Saldo: $1,234.56</p>
+                    <p>Nuevo Cobro: 03/09/23</p>
+                </div>
+            
+                <div class="card">
+                    <h2>Comparación de Balances</h2>
+                    <canvas id="barChart" class="chart"></canvas>
+                </div>
+            
+                <script>
+                    drawChart();
+                </script>
             </main>
             <footer>
                 <div id="container-footer">
