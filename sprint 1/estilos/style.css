@@ -4,7 +4,7 @@ body {
     background-color: whitesmoke;
 }
 
-h1, h2 {
+h2 {
     font-family: 'Lato', sans-serif;
     color: #FF7344;
 }
@@ -34,7 +34,7 @@ nav {
     padding: 0% 25%;
 }
 
-#nav{
+#nav {
     margin: 5%;
     padding-left: 0;
     max-width: 100%;
@@ -46,14 +46,14 @@ nav {
     border: 1px solid#FF7344;
 }
 
-#nav li:hover{
+#nav li:hover {
     background-color: rgba(144, 148, 148, 0.46);
 }
 
 li a {
     text-decoration: none;
-    color:  white;
-    
+    color: white;
+
 }
 
 /* HEADER */
@@ -67,14 +67,19 @@ li a {
 
 header {
     background-color: #35103D;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    text-align: end;
     position: fixed;
     width: 80%;
     height: 15%;
 }
-
+header a{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 2%;
+}
+header a:hover{
+    color: #FF7344;
+}
 /* MAIN */
 main {
     margin-top: 80px;
@@ -89,8 +94,38 @@ section {
 footer {
     background-color: #C2B2B4;
     text-align: center;
-    position: relative; 
-    bottom: 0;
+}
+footer a{
+    text-decoration: none;
+}
+
+#container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container-politica-empresa {
+    float: left;
+    width: 50%;
+    margin: 1%;
+}
+
+#redes {
+    float: right;
+    width: 50%;
+    margin: 1%;
+}
+
+#redes i{
+    font-size: x-large;
+    color: #35103D;
+}
+#redes i:hover{
+    color: #FF7344;
+}
+#redes p{
+    padding:0;
 }
 
 /* MEDIAS QUERIES */

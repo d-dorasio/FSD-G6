@@ -4,17 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITBANK - Inicio</title>
+    <title>ITBANK - Convertir</title>
     <link rel="stylesheet" href="/sprint 1/estilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
     <script src="/sprint 1/javascript/script.js"></script>
     <style>
-        .section-convertidor {font-size: 16px;}
-        .h1-convertidor { font-size: 3em; text-align: center; color: #81007f; margin-bottom: 50px;}
-        .form-cotizacion p {text-align: center;}
+        .section-convertidor {font-family: 'Arial', sans-serif; font-size: 16px;text-align: center;}
         .form-cotizacion {display: flex; align-items: center; flex-direction: column;}
         .container-cot {display: flex; flex-direction: column; align-items: center;}
         .campo-monto {padding: 10px;}
@@ -40,18 +38,18 @@
                     <li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
                     <li><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
                     <li><a href="/sprint 1/htmls/movimientos.html">Mis Movimientos</a></li>
-
+                </ul>
             </div>
         </nav>
         <div class="hola">
             <header>
-                <h1>ITBANK</h1>
+                
                 <a href="/sprint 1/htmls/mi-cuenta.html">Mi cuenta</a>
             </header>
             <main>
                 <section>
-                    <h2>Convertidor de moneda</h2>
                     <div class="section-convertidor">
+                        <h1>Convertidor de moneda</h1>
                         <form class="form-cotizacion" action="">
                             <p>Ingrese el monto en pesos:</p>
                             <span><input class="campo-monto" type="number" id="valor" min="1" max="100000000"></span>
@@ -66,22 +64,50 @@
                 </section>
             </main>
             <footer>
-                <div id="container-politica-empresa">
-                    <a href="">Políticas de privacidad.</a>
-                    <br><a href="">Términos y Condiciones</a>
-                    <br><a href="/sprint 1/htmls/contacto.html">Contacto</a>
+                <div id="container-footer">
+                    <div id="container-politica-empresa">
+                        <a href="/sprint 1/htmls/p-privacidad.html">Políticas de privacidad.</a>
+                        <br><a href="/sprint 1/htmls/terminos-condiciones.html">Términos y Condiciones</a>
+                        <br><a href="/sprint 1/htmls/contacto.html">Contacto</a>
+                    </div>
+                    <div id="redes">
+                        <p>Encontranos en:</p>
+                        <a href="https://www.instagram.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.twitter.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-twitter"></i></a>
+                        <a href="https://www.facebook.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-facebook"></i></a>
+                    </div>
                 </div>
-                <div id="container-redes">
-                    <span>Encontranos en:</span>
-                    <a href="https://instagram.com" ><img src="/sprint 1/imagenes/instagram.png" alt="Instagram" width="20" target="_blank"></a>
-                    <a href="https://twitter.com/"><img src="/sprint 1/imagenes/twitter.png" alt="Twitter" width="20" target="_blank"></a>
-                    <a href="https://www.facebook.com/"><img src="/sprint 1/imagenes/facebook.png" alt="Facebook" width="20" target="_blank"></a>
-                </div>
+
                 <p id="copy">&copy; 2023 ITBANK. Todos los derechos reservados.</p>
             </footer>
         </div>
     </div>
-
+    <!--  SCRIP DE FONT AWESOME (ICONOS) -->
+    <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function  convertir() {
+            var valor = parseInt(document.getElementById("valor").value);
+            var resultado = 0;
+            var dolar = 750;
+            var euro = 380;
+            if (document.getElementById("uno").checked){
+                resultado = valor / dolar;
+                resultado = parseFloat(resultado);
+                alert("El cambio a Dolares es: $" + resultado.toFixed(2));
+            }
+            else if (document.getElementById("dos").checked) {
+                resultado = valor / euro;
+                resultado = parseFloat(resultado);
+                alert("El cambio a Euros es: €" + resultado.toFixed(2));
+            }
+            else {
+                alert("Tienes que completar todos los campos");
+            }
+        }
+    </script>
 </body>
 
 </html>
