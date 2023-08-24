@@ -72,16 +72,21 @@ header {
     text-align: end;
     position: fixed;
     width: 80%;
-    height: 15%;
 }
-header a{
+
+header a {
     color: white;
     font-family: 'Lato', sans-serif;
-    padding: 2%;
 }
-header a:hover{
+
+header a:hover {
     color: #FF7344;
 }
+
+#perfilusuario {
+    margin: 2%;
+}
+
 /* MAIN */
 main {
     margin-top: 80px;
@@ -92,34 +97,18 @@ section {
     padding: 3%;
 }
 
-#perfilusuario{
-    margin: 20px;
-}
-
-
-/* MOVIMIENTOS */
-.tab-movimientos {
-    text-align: left;
-    background-color: white;
-    max-width: 80%;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
 
 
 /* FOOTER */
 footer {
     background-color: #C2B2B4;
     text-align: center;
-    position: relative; 
+    position: relative;
     bottom: 0;
     width: 100%;
+}
 
-footer a{
+footer a {
     text-decoration: none;
 }
 
@@ -141,16 +130,31 @@ footer a{
     margin: 1%;
 }
 
-#redes i{
+#redes i {
     font-size: x-large;
     color: #35103D;
 }
-#redes i:hover{
+
+#redes i:hover {
     color: #FF7344;
 }
-#redes p{
-    padding:0;
 
+#redes p{
+    margin: 0;
+}
+
+
+/* ESTILOS PARA HTMLS */
+
+/* MOVIMIENTOS */
+.tab-movimientos {
+    text-align: left;
+    background-color: white;
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* MEDIAS QUERIES */
