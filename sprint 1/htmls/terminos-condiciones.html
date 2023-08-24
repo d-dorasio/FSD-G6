@@ -1,24 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITBANK - Convertir</title>
+    <title>ITBANK - Politicas de privacidad</title>
     <link rel="stylesheet" href="/sprint 1/estilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
-    <script src="/sprint 1/javascript/script.js"></script>
-    <style>
-        .section-convertidor {font-family: 'Arial', sans-serif; font-size: 16px;text-align: center;}
-        .form-cotizacion {display: flex; align-items: center; flex-direction: column;}
-        .container-cot {display: flex; flex-direction: column; align-items: center;}
-        .campo-monto {padding: 10px;}
-        .boton-cotizar { margin: 20px; padding: 10px; font-size: 16px; background-color: #81007f; width: auto; padding:10px; color: #ffffff; border: none; transition: border-bottom 0.3s ease;}
-        .boton-cotizar:hover {color: #c97c63}
-    </style>
 </head>
 
 <body>
@@ -33,7 +24,7 @@
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
-                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos realizados</a> </li>
+                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos</a> </li>
                     <li><a href="/sprint 1/htmls/prestamos.html">Préstamos</a></li>
                     <li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
                     <li><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
@@ -43,24 +34,58 @@
         </nav>
         <div class="hola">
             <header>
-                <h1>ITBANK</h1>
-                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
+                
+                <a href="/sprint 1/htmls/mi-cuenta.html">Mi cuenta</a>
             </header>
             <main>
                 <section>
-                    <div class="section-convertidor">
-                        <h1>Convertidor de moneda</h1>
-                        <form class="form-cotizacion" action="">
-                            <p>Ingrese el monto en pesos:</p>
-                            <span><input class="campo-monto" type="number" id="valor" min="1" max="100000000"></span>
-                            <p>Seleccionar moneda a cotizar:</p>
-                            <div class="container-cot">
-                                <span><input type="radio" id="uno" name="cambio" value="dolar">Dolar </span>
-                                <span><input type="radio" id="dos" name="cambio" value="euro">Euro</span>
-                                <input class="boton-cotizar" type="button" id="cotizador" value="Cotizar" onclick="convertir()">
-                            </div>
-                        </form>
-                    </div>
+
+                    <h1>Términos y Condiciones de ITBANK - Home Banking</h1>
+
+                    <p><em>Fecha de entrada en vigencia: 24/8/2023</em></p>
+
+                    <p>Bienvenido a ITBANK Home Banking. Al acceder y utilizar nuestros servicios,
+                        aceptas los siguientes términos y condiciones. Por favor, lee atentamente antes de utilizar
+                        nuestros servicios.</p>
+
+                    <h2>Uso de los Servicios</h2>
+
+                    <p>Los servicios de home banking de ITBANK están diseñados para brindarte acceso a
+                        tus cuentas y transacciones financieras. Al utilizar nuestros servicios, aceptas cumplir con
+                        todas las leyes y regulaciones aplicables.</p>
+
+                    <h2>Acceso y Seguridad</h2>
+
+                    <p>Es tu responsabilidad mantener la seguridad de tus credenciales de acceso. No compartas tus datos
+                        de inicio de sesión con terceros y notifícanos inmediatamente si sospechas de un acceso no
+                        autorizado a tu cuenta.</p>
+
+                    <h2>Responsabilidad</h2>
+
+                    <p>ITBANK se esfuerza por brindar información precisa y segura, pero no garantizamos
+                        la exactitud, integridad o actualidad de la información proporcionada a través de nuestros
+                        servicios. No nos hacemos responsables por cualquier pérdida, daño o inconveniente causado por
+                        el uso de la información proporcionada.</p>
+
+                    <h2>Privacidad</h2>
+
+                    <p>Tu privacidad es importante para nosotros. Consulta nuestra <a
+                            href="/sprint 1/htmls/p-privacidad.html">Política de Privacidad</a> para obtener
+                        información detallada sobre cómo recopilamos, utilizamos y protegemos tus datos personales.</p>
+
+                    <h2>Modificaciones</h2>
+
+                    <p>Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Las
+                        modificaciones serán efectivas cuando se publiquen en nuestra plataforma. Es tu responsabilidad
+                        revisar periódicamente estos términos.</p>
+
+                    <h2>Contacto</h2>
+
+                    <p>Si tienes alguna pregunta o inquietud sobre estos Términos y Condiciones, por favor contáctanos por <a href="/sprint 1/htmls/contacto.html">aquí.</a></p>
+
+                    <p>Al utilizar nuestros servicios, aceptas cumplir con estos Términos y Condiciones. Si no estás de
+                        acuerdo con estos términos, te recomendamos no utilizar nuestros servicios.</p>
+
                 </section>
             </main>
             <footer>
@@ -85,29 +110,8 @@
             </footer>
         </div>
     </div>
-    <!--  SCRIP DE FONT AWESOME (ICONOS) -->
+    <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        function  convertir() {
-            var valor = parseInt(document.getElementById("valor").value);
-            var resultado = 0;
-            var dolar = 750;
-            var euro = 380;
-            if (document.getElementById("uno").checked){
-                resultado = valor / dolar;
-                resultado = parseFloat(resultado);
-                alert("El cambio a Dolares es: $" + resultado.toFixed(2));
-            }
-            else if (document.getElementById("dos").checked) {
-                resultado = valor / euro;
-                resultado = parseFloat(resultado);
-                alert("El cambio a Euros es: €" + resultado.toFixed(2));
-            }
-            else {
-                alert("Tienes que completar todos los campos");
-            }
-        }
-    </script>
 </body>
 
 </html>
