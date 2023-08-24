@@ -31,6 +31,7 @@
             <option value="CI">CI</option>
             <option value="Pasaporte">Pasaporte</option>
             <option value="RENAPER">RENAPER</option>
+            <option value="Otro">Otro</option>
             </select>
             <br>
             
@@ -41,12 +42,14 @@
             <label>Masculino</label>
             <input type="radio" id="femenino" name="sexo" value="femenino" required>
             <label>Femenino</label>
+            <input type="radio" id="otro" name="sexo" value="otro" required>
+            <label>Otro</label>
             <br>
             
             <input class="campo-form"name="email" type="text" placeholder="Email" maxlength="100" required><br>
             
             <input class="campo-form"name="usuario" type="text" placeholder="Usuario" required maxlength="45"><br>
-            <input class="campo-form"name="clave" type="password" placeholder="Clave digital" required minlength="45"><br>
+            <input class="campo-form"name="clave" type="password" placeholder="Clave digital" required minlength="8"><br>
             
             <input type="checkbox" name="condiciones" /> Acepto los terminos y condiciones </br>
 
