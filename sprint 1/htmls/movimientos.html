@@ -24,7 +24,7 @@
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
-                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos</a> </li>
+                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos realizados</a> </li>
                     <li><a href="/sprint 1/htmls/prestamos.html">Préstamos</a></li>
                     <li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
                     <li><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
@@ -35,14 +35,56 @@
         <div class="hola">
             <header>
                 <h1>ITBANK</h1>
-                <a href="/sprint 1/htmls/mi-cuenta.html">Mi cuenta</a>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
             </header>
             <main>
                     <h2>Movimientos:</h2>
                     <ul>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, molestias doloribus! Unde, accusamus ipsa quos nemo quisquam illum harum architecto consequatur? Harum quisquam assumenda officia illo pariatur nesciunt officiis modi.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, architecto. Odit unde quia sit aperiam. In molestiae ab error odio. Quia est reiciendis eveniet ratione qui quidem iste labore possimus?</li>
+                        <li>En la siguiente tabla se muestran los movimientos de <strong>este mes</strong>.</li>
+                        <li>Para visualizar movimientos de fechas anteriores, por favor, <strong>solicite un resumen de cuenta</strong>.</li>
                     </ul>
+                    <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="transactionTable">
+                        <tr>
+                            <th style="background-color: #ff7344;">                        <button onclick="sortTable()">↕</button>Fecha</th>
+                            <th style="background-color: #ff7344;">Descripción</th>
+                            <th style="background-color: #ff7344;" colspan="2">Movimiento</th>
+                        </tr>
+                        <tr>
+                            <td>2023-08-28</td>
+                            <td>Compra en línea</td>
+                            <td>-$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-22</td>
+                            <td>Devolución de compra</td>
+                            <td>$30.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-18</td>
+                            <td>Retiro de cajero</td>
+                            <td>-$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-15</td>
+                            <td>Pago de factura</td>
+                            <td>-$75.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-10</td>
+                            <td>Transferencia recibida</td>
+                            <td>$500.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-05</td>
+                            <td>Compra en tienda</td>
+                            <td>-$150.00</td>
+                        </tr>
+                        <tr>
+                            <td>2023-08-01</td>
+                            <td>Depósito de nómina</td>
+                            <td>$2000.00</td>
+                        </tr>
+                    </table>
             </main>
             <footer>
                 <div id="container-politica-empresa">

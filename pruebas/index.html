@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banca en Línea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .card {
+            background-color: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .chart {
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+    <script>
+        // Generar datos aleatorios para el gráfico
+        function generateRandomData() {
+            var data = [];
+            for (var i = 0; i < 5; i++) {
+                data.push(Math.floor(Math.random() * 1000));
+            }
+            return data;
+        }
+
+        // Dibujar el gráfico de barras
+        function drawChart() {
+            var data = generateRandomData();
+            var chart = new Chart(document.getElementById('barChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mes 1', 'Mes 2', 'Mes 3', 'Mes 4', 'Mes 5'],
+                    datasets: [{
+                        label: 'Balances',
+                        data: data,
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="card">
+        <h2>Saldo Actual</h2>
+        <p>Saldo: $1,234.56</p>
+        <p>Nuevo Cobro: 03/09/23</p>
+    </div>
+
+    <div class="card">
+        <h2>Comparación de Balances</h2>
+        <canvas id="barChart" class="chart"></canvas>
+    </div>
+
+    <script>
+        drawChart();
+    </script>
+</body>
+</html>

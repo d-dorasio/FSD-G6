@@ -2,11 +2,12 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: whitesmoke;
+    height: 100%;
 }
 
 h1, h2 {
     font-family: 'Lato', sans-serif;
-    color: #FF7344;
+    color: #ff7344;
 }
 
 .container {
@@ -27,6 +28,7 @@ nav {
     position: fixed;
     width: 20%;
     float: left;
+    height: 100%;
 }
 
 #logo {
@@ -85,12 +87,32 @@ section {
     padding: 3%;
 }
 
+#perfilusuario{
+    margin: 20px;
+}
+
+
+/* MOVIMIENTOS */
+.tab-movimientos {
+    text-align: left;
+    background-color: white;
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
 /* FOOTER */
 footer {
     background-color: #C2B2B4;
     text-align: center;
     position: relative; 
     bottom: 0;
+    width: 100%;
 }
 
 /* MEDIAS QUERIES */
