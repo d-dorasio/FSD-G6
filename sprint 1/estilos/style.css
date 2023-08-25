@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: whitesmoke;
     height: 100%;
 }
@@ -14,6 +14,13 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 120px;
+}
+
+.contenedor-area-principal{
+    padding-bottom: 120px;
 }
 
 /* NAV */
@@ -85,7 +92,7 @@ header a:hover {
 
 #perfilusuario {
     margin: 2%;
-    height: 60%;
+    height: 35px;
 }
 
 /* MAIN */
@@ -98,14 +105,14 @@ section {
     padding: 3%;
 }
 
-
-
 /* FOOTER */
 footer {
     background-color: #C2B2B4;
     text-align: center;
-    position: relative;
+    position: absolute;
     bottom: 0;
+    left: 0;
+    height: 120px;
     width: 100%;
 }
 
@@ -162,7 +169,8 @@ footer a {
 .header-ingreso{
     width: 100%;
     height: 10%;
-    position: fixed;
+    position: absolute;
+    top: 0px;
 }
 
 #logo-iniciosesion{
@@ -178,11 +186,11 @@ footer a {
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Lato', sans-serif;
-    position: fixed;
+    position: absolute;
     top: 10%;
     width: 100%;
     padding: 0%;
-    height: 100%;
+    height: 90%;
 }
 
 .campo-form {

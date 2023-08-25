@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>ITBANK - Inicio de sesión</title>
+    <link rel="stylesheet" href="/sprint 1/estilos/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
-    <style>
-        * {font-family: 'Times New Roman', Times, serif; font-size: 16px;}
-        .campo-form {padding: 10px; margin: 8px; border: none; border-bottom: 2px solid #fcfbfa; outline: none; transition: border-bottom 0.3s ease; text-align: center; }
-        .campo-form:hover {border-bottom: 2px solid #c97c63;}
-        .form-container {background-color: #ffffff; width: 60%; margin-left: 20%; display: flex; flex-direction: column; }
-        .boton-form {background-color: #81007f; width: auto; padding:10px; margin: 0px auto; color: #ffffff; border: none; transition: border-bottom 0.3s ease;}
-        .boton-form:hover {color: #c97c63}
-        .h1-contacto { font-size: 3em; text-align: center; color: #81007f; margin-bottom: 50px;}
-        .section-form {background-color: #ffffff; padding: 30px; }
-    </style>
 </head>
+
 <body>
-    <div class="section-form">
-        <h1 class="h1-contacto">Datos</h1>
-        <form class="form-container" action="" method="post">
-            
-        <label>Tipo de documento</label>
-        <select name="Docuemento">
-            <option value="DNI">DNI</option>
-            <option value="LC">LC</option>
-            <option value="LE">LE</option>
-            <option value="CI">CI</option>
-            <option value="Pasaporte">Pasaporte</option>
-            <option value="RENAPER">RENAPER</option>
-            <option value="Otro">Otro</option>
-        </select>
-        <br>
-            <input class="campo-form"name="numero de documento" type="text" placeholder="Número de documento" required><br>
-            <input class="campo-form"name="usuario" type="text" placeholder="Usuario" required maxlength="45"><br>
-            <input class="campo-form"name="clave" type="password" placeholder="Clave digital" required minlength="8"><br>
-            <button class="boton-form" href="/sprint 1/htmls/index.html" type="submit" value="ingresar">Iniciar sesión</button>
-            <button class="boton-form" href="/sprint 1/htmls/registro.html" type="submit" value="registrarse" >Registrarse</button>
-        </form>
+    <div class="contenedor-pagina">
+        <div class="contenedor-area-principal">
+            <header class="header-ingreso">
+                <a href="index.html">
+                    <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo-iniciosesion" />
+                </a>
+                <a href="/sprint 1/htmls/mi-cuenta.html">
+                    <img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" id="perfilusuario">
+                </a>
+            </header>
+            <section class="ingreso">
+                <div class="section-form">
+                    <h1 class="h1-contacto">Inicio de sesión</h1>
+                    <form class="form-container" action="" method="post">
+                        
+                    <label>Tipo de documento</label>
+                    <select class="tipo" name="Docuemento">
+                        <option value="DNI">DNI</option>
+                        <option value="LC">LC</option>
+                        <option value="LE">LE</option>
+                        <option value="CI">CI</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="RENAPER">RENAPER</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                        <input class="campo-form"name="numero de documento" type="text" placeholder="Número de documento" required>
+                        <input class="campo-form"name="usuario" type="text" placeholder="Usuario" required maxlength="45">
+                        <input class="campo-form"name="clave" type="password" placeholder="Clave digital" required minlength="8">
+                        <button class="boton-form1" href="/sprint 1/htmls/index.html" type="submit" value="ingresar">Iniciar sesión</button>
+                        <button class="boton-form2" id="registro" href="/sprint 1/htmls/registro.html" type="submit" value="registrarse" >Registrarse</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div id="container-footer">
+                <div id="container-politica-empresa">
+                    <a href="/sprint 1/htmls/p-privacidad.html">Políticas de privacidad.</a>
+                    <br><a href="/sprint 1/htmls/terminos-condiciones.html">Términos y Condiciones</a>
+                    <br><a href="/sprint 1/htmls/contacto.html">Contacto</a>
+                </div>
+                <div id="redes">
+                    <p>Encontranos en:</p>
+                    <a href="https://www.instagram.com/" width="20" target="_blank"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.twitter.com/" width="20" target="_blank"><i
+                            class="fa-brands fa-square-twitter"></i></a>
+                    <a href="https://www.facebook.com/" width="20" target="_blank"><i
+                            class="fa-brands fa-square-facebook"></i></a>
+                </div>
+            </div>
+            <p id="copy">&copy; 2023 ITBANK. Todos los derechos reservados.</p>
+        </footer>
     </div>
 </body>
 </html>
