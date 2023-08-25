@@ -85,6 +85,7 @@ header a:hover {
 
 #perfilusuario {
     margin: 2%;
+    height: 60%;
 }
 
 /* MAIN */
@@ -155,6 +156,113 @@ footer a {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------- INGRESO ------------------------ */
+.header-ingreso{
+    width: 100%;
+    height: 10%;
+    position: fixed;
+}
+
+#logo-iniciosesion{
+    margin-left: 20px;
+    width: 10%;
+    position: absolute;
+    left:0px;
+}
+
+.ingreso {
+    background-image: url(/sprint\ 1/imagenes/fondo-inicio.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif;
+    position: fixed;
+    top: 10%;
+    width: 100%;
+    padding: 0%;
+    height: 100%;
+}
+
+.campo-form {
+    padding: 10px; 
+    margin: 20px; 
+    margin-bottom: 10px;
+    border: none; 
+    border-bottom: 2px solid #fcfbfa; 
+    outline: none; 
+    border-bottom: 2px solid #c97c63;
+    transition: border-bottom 0.3s ease; 
+    text-align: center; 
+}
+
+.campo-form:hover {
+    border-bottom: 2px solid #81007f;
+}
+
+.form-container {
+    background-color: #ffffff; 
+    width: 60%; 
+    margin: auto;
+    display: flex; 
+    flex-direction: column; 
+    text-align: center;
+    padding: 10px;
+}
+
+.boton-form1 {
+    background-color: #35103D;
+    width: auto; 
+    padding:10px; 
+    margin: 5px auto; 
+    color: #ffffff; 
+    border: solid;
+    border-width: 2px; 
+    transition: border-bottom 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.boton-form1:hover {
+    color: #c97c63;
+    border:solid;
+    border-width: 2px;
+    border-color: #FF7344;
+}
+
+.boton-form2 {
+    background-color:#e4d4d6;
+    width: auto; 
+    padding:10px; 
+    margin: 5px auto; 
+    color:#35103D; 
+    border: solid;
+    transition: border-bottom 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-color: #35103D;
+}
+
+.boton-form2:hover {
+    color:#35103D;
+    background-color: #FF7344;
+}
+
+.h1-contacto { 
+    font-size: 3em; 
+    text-align: center; 
+    color: #ffffff; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tipo {
+    text-align: center;
+    border-width: 2px;
+    border-color: #35103D;
+    background-color: #e4d4d6;
+    margin: 5px;
 }
 
 /* MEDIAS QUERIES */
