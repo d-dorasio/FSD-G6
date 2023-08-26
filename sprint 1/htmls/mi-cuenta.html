@@ -33,14 +33,20 @@
         </nav>
         <div class="hola">
             <header>
-                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta"
+                        height="40" id="perfilusuario"></a>
             </header>
             <main>
                 <section>
                     <h2>Perfil:</h2>
-                    <img src="" alt="Usuario">
-                    <span>[Nombre de Usuario]</span>
-                    <button>Cambiar foto </button>
+                    <form id="profileForm">
+                        <label for="">Subir foto</label>
+                        <input type="file" id="profileImage" accept="image/*" onchange="previewImage(event)">
+                        <img id="preview" src="#" alt="Vista previa de la imagen"
+                            style="max-width: 300px; display: none;">
+                            <span>[Nombre de Usuario]</span>
+                    </form>
+                    
                     <h3>Datos:</h3>
                     <ul>
                         <li>Nombre Completo: <span>Nombre Apellido</span></li>
@@ -52,7 +58,7 @@
                         <li> Estado civil: <span><button>Agregar Estado</button></span></li>
                         <li> Profesión: <span><button>Agregar profesión</button></span></li>
                         <br>
-                        <button> CERRAR SESIÓN </button>
+                        <button> <a href="/sprint 1/htmls/index.html">CERRAR SESIÓN</a> </button>
                     </ul>
                 </section>
             </main>
@@ -80,6 +86,28 @@
     </div>
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <script>
+        function previewImage(event) {
+            const preview = document.getElementById('preview');
+            const fileInput = document.getElementById('profileImage');
+            
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    preview.src = event.target.result;
+                    preview.style.display = 'block';
+                }
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        });
+    </script>
 </body>
 
 </html>

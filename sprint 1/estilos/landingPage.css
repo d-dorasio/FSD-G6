@@ -1,0 +1,236 @@
+body,
+h1,
+h2,
+p,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: black;
+}
+
+h1,
+h2 {
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    position: fixed;
+    background-color: #35103D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#logo-banco {
+    width: 20%;
+    padding: 1%;
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+nav li {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: #ff7344;
+
+}
+
+nav li:hover {
+    border-bottom: #ff7344 solid 1px;
+}
+
+#banner {
+    background-image: url("/sprint 1/imagenes/banco.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 150px 0;
+    color: white;
+}
+
+#banner h1 {
+    font-size: 200%;
+    margin-bottom: 2%;
+}
+
+#banner p {
+    font-size: 100%;
+    margin: 2%;
+    font-weight: bold;
+    color: rgb(251, 251, 251);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #ff7344;
+}
+
+#features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 20px;
+}
+
+.feature h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: rgb(23, 23, 23);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container-politica-empresa {
+    float: left;
+    width: 50%;
+    margin: 1%;
+}
+
+#redes {
+    float: right;
+    width: 50%;
+    margin: 1%;
+}
+
+#redes i {
+    font-size: x-large;
+    color: #FF7344;
+}
+
+#redes i:hover {
+    color: #35103D;
+}
+
+#redes p {
+    margin: 0;
+}
+
+#ingreso {
+    padding: 10% 8% 8% 8%;
+}
+
+.campo-form {
+    padding: 2%;
+    margin: 1%;
+    border: none;
+    border-bottom: 2px solid #fcfbfa;
+    outline: none;
+    transition: border-bottom 0.3s ease;
+    text-align: center;
+}
+
+.campo-form:hover {
+    border-bottom: 2px solid #c97c63;
+}
+
+.form-container {
+    background-color: #ffffff;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 125px 5%;
+    text-align: center;
+}
+
+.boton-form {
+    background-color: #81007f;
+    width: auto;
+    padding: 10px;
+    margin: 0px auto;
+    color: #ffffff;
+    border: none;
+    transition: border-bottom 0.3s ease;
+}
+
+.boton-form:hover {
+    color: #c97c63
+}
+
+.h1-contacto {
+    text-align: center;
+    color: #81007f;
+    font-family: 'Lato', sans-serif;
+}
+
+.tipo {
+    text-align: center;
+    border-width: 2px;
+    border-color: #35103D;
+    padding: 1%;
+    background-color: #e4d4d6;
+    width: 30%;
+    margin: auto;
+}
+
+.label {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #ff7344;
+    font-size: large;
+    padding: 1%;
+}
+section{
+    padding: 15%;
+}
