@@ -167,6 +167,10 @@ footer a {
     margin: 0;
 }
 
+#container-politica-empresa a:visited {
+    color:  #35103D;
+}
+
 /* MEDIAS QUERIES */
 /* @media(max-width:650px){
     

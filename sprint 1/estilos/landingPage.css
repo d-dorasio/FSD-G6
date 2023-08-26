@@ -234,3 +234,13 @@ footer a {
 section{
     padding: 15%;
 }
+
+.h1-servicios {
+    color: #ff7344;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.img-servicios {
+    padding: 15px 0;
+}
