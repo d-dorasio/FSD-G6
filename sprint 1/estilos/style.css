@@ -10,6 +10,15 @@ h2 {
     color: #ff7344;
 }
 
+.menu-h1 {
+    color: #ff7344;
+    font-size: 30px;
+}
+
+.h2-presentacion {
+    font-size: 1.4em;
+}
+
 .container {
     display: flex;
     flex-direction: row;

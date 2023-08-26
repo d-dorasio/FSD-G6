@@ -43,3 +43,8 @@ body{
     padding: 30px;
     text-align: center;
 }
+
+.section-form h1 {
+    font-family: 'Lato', sans-serif;
+    color: #ff7344;
+}
