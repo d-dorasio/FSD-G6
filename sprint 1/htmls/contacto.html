@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITBANK - Contacto</title>
-    <link rel="stylesheet" href="/sprint 1/estilos/style.css">
-    <link rel="stylesheet" href="/sprint 1/estilos/contacto.css">
     <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/sprint 1/estilos/style.css">
+    <link rel="stylesheet" href="/sprint 1/estilos/formularios.css">
+    
 </head>
 
 <body>
@@ -36,13 +38,15 @@
             </header>
             <main>
                 <div class="section-form">
-                    <h1>Información de contacto</h1>
+                    <h1 class="h1-center">Información de contacto</h1>
                     <form class="form-container" action="" method="post">
                         <input class="campo-form" name="nombre y apellido" type="text"
                             placeholder="NOMBRE Y APELLIDO"><br>
                         <input class="campo-form" name="email" type="email" placeholder="EMAIL"><br>
                         <input class="campo-form" name="telefono" type="text" placeholder="TELEFONO"><br>
-                        <input class="campo-form" name="comentario" rows="4" type="text" placeholder="COMENTARIO"><br>
+                        <label>
+                            <textarea name="" class="campo-form" cols="50" rows="1" placeholder="COMENTARIO"></textarea>
+                        </label>
                         <button class="boton-form" type="submit" value="enviar">ENVIAR</button>
                     </form>
                 </div>

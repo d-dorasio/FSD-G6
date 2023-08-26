@@ -5,28 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITBANK - Tarjetas</title>
+    <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="/sprint 1/estilos/style.css">
+    <link rel="stylesheet" href="/sprint 1/estilos/formularios.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
-    <style>
-        .credit-card {
-            background-color: white;
-            width: 300px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            margin: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        .credit-card img {
-            max-width: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -50,12 +36,13 @@
         </nav>
         <div class="hola">
             <header>
-                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta"
+                        height="40" id="perfilusuario"></a>
             </header>
             <main>
                 <section>
-                    <h2>Mis Tarjetas</h2>
-                    <p>Administra tus tarjetas bancarias aquí.</p>
+
+                    <!-- <p>Administra tus tarjetas bancarias aquí.</p>
                     <div>
                         <div class="credit-card">
                             <img src="/sprint 1/imagenes/pexels-anni-roenkae-3109807.jpg" alt="Tarjeta de Crédito 1">
@@ -77,7 +64,25 @@
                             <p>Número: **** **** **** 9012</p>
                             <p>Fecha de Vencimiento: 09/25</p>
                         </div>
-                    </div>
+                    </div> -->
+                    <form id="tarjeta-form" class="form-container">
+                        <h1>Agregar tarjeta</h1>
+                        <label for="nombre">Nombre del Titular:</label>
+                        <input class="campo-form" type="text" id="nombre" required>
+
+                        <label for="numero">Número de la Tarjeta:</label>
+                        <input class="campo-form" type="text" id="numero" maxlength="16" required>
+
+                        <label for="vencimiento">Fecha de Vencimiento:</label>
+                        <input class="campo-form" type="text" id="vencimiento" required>
+
+                        <label for="codigo">Código de Seguridad:</label>
+                        <input class="campo-form" type="password" id="codigo" maxlength="3" required>
+
+                        <button class="boton-form" type="submit">Agregar</button>
+                    </form>
+                    <h1 class="h1-center">Mis Tarjetas</h1>
+                    <div id="card"></div>
             </main>
             <footer>
                 <div id="container-footer">
@@ -103,6 +108,36 @@
     </div>
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("tarjeta-form");
+            const tarjetasContainer = document.getElementById("tarjetas-container");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const nombre = document.getElementById("nombre").value;
+                const numero = document.getElementById("numero").value;
+                const vencimiento = document.getElementById("vencimiento").value;
+                const codigo = document.getElementById("codigo").value;
+
+                const nuevaTarjeta = document.createElement("div");
+                nuevaTarjeta.className = "card"; // Agregar la clase "credit-card"
+                nuevaTarjeta.innerHTML = `
+                    <h3>${nombre}</h3>
+                    <p>Número de Tarjeta: ${numero}</p>
+                    <p>Vencimiento: ${vencimiento}</p>
+                    <p>Código de Seguridad: ***</p>
+                `;
+
+                tarjetasContainer.appendChild(nuevaTarjeta);
+
+                form.reset(); // Limpia los campos del formulario
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>

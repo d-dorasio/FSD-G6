@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITBANK - Movimientos</title>
-    <link rel="stylesheet" href="/sprint 1/estilos/movimientos.css">
+    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="/sprint 1/estilos/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+    
 </head>
 
 <body>
@@ -37,11 +39,10 @@
                 <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
             </header>
             <main>
-                    <h2>Movimientos:</h2>
-                    <ul>
-                        <li>En la siguiente tabla se muestran los movimientos de <strong>este mes</strong>.</li>
-                        <li>Para visualizar movimientos de fechas anteriores, por favor, <strong>solicite un resumen de cuenta</strong>.</li>
-                    </ul>
+                    <h1>Movimientos:</h1>
+                    <p>En la siguiente tabla se muestran los movimientos de <strong>este mes</strong>.
+                        <br>Para visualizar movimientos de fechas anteriores, por favor, <strong>solicite un resumen de cuenta</strong>
+                    </p>
                     <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="transactionTable">
                         <tr>
                             <th style="background-color: #ff7344;">                        <button onclick="sortTable()">↕</button>Fecha</th>

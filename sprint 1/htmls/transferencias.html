@@ -5,57 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITBANK - Transferencias</title>
+    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="/sprint 1/estilos/style.css">
+    <link rel="stylesheet" href="/sprint 1/estilos/formularios.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="imagenes/logo.ico" type="image/x-icon">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-        
-        #transfer-form {
-            background-color: white;
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        h2 {
-            margin-top: 0;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-        
-        input[type="text"], select, input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        button {
-            background-color: #35103D;
-            color: white;
-            margin: 10px 0px;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #721a86;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -79,83 +37,85 @@
         </nav>
         <div class="hola">
             <header>
-                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta"
+                        height="40" id="perfilusuario"></a>
             </header>
             <main>
-                <h2>Transferencias</h2>
-                    <div id="transfer-form">
-                        <h3>Formulario de Transferencia</h3>
-                        <form>
-                            <label for="accountFrom">Cuenta de Origen:</label>
-                            <select id="accountFrom" name="accountFrom">
-                                <option value="cuenta1">Cuenta 1</option>
-                                <option value="cuenta2">Cuenta 2</option>
-                                <!-- Agregar más opciones de cuentas aquí -->
-                            </select>
-                            
-                            <label for="accountTo">Cuenta de Destino:</label>
-                            <select id="accountTo" name="accountTo">
-                                <option value="cuenta3">Cuenta 3</option>
-                                <option value="cuenta4">Cuenta 4</option>
-                                <!-- Agregar más opciones de cuentas aquí -->
-                            </select>
-                            
-                            <label for="amount">Monto:</label>
-                            <input type="text" id="amount" name="amount" placeholder="Ingrese el monto">
-                            
-                            <label for="description">Descripción o Motivo:</label>
-                            <input type="text" id="description" name="description" placeholder="Ingrese una descripción">
-                            
-                            <label for="executionDate">Fecha de Ejecución:</label>
-                            <input type="date" id="executionDate" name="executionDate">
-                            
-                            <button type="button" onclick="transferFunds()">Transferir</button>
-                        </form>
-                    </div>
-                    <h3>Transferencias realizadas</h3>
-                    <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" width="100%" id="transactionTable">
-                        <tr>
-                            <th style="background-color: #ff7344;">Fecha</th>
-                            <th style="background-color: #ff7344;">Descripción</th>
-                            <th style="background-color: #ff7344;" colspan="2">Movimiento</th>
-                        </tr>
-                        <tr>
-                            <td>2023-08-28</td>
-                            <td>Compra en línea</td>
-                            <td>-$50.00</td>
-                        </tr>
-                        <tr>
-                            <td>2023-08-22</td>
-                            <td>Devolución de compra</td>
-                            <td>$30.00</td>
-                        </tr>
-                        <tr>
-                            <td>2023-08-18</td>
-                            <td>Retiro de cajero</td>
-                            <td>-$200.00</td>
-                        </tr>
-                        <tr>
-                            <td>2023-08-15</td>
-                            <td>Pago de factura</td>
-                            <td>-$75.00</td>
-                        </tr>
-                        <tr>
-                            <td>2023-08-10</td>
-                            <td>Transferencia recibida</td>
-                            <td>$500.00</td>
-                        </tr>
-                        <tr>
-                            <td>2023-08-05</td>
-                            <td>Compra en tienda</td>
-                            <td>-$150.00</td>
-                        </tr>
-                        <tr>
-                            <td>2023-08-01</td>
-                            <td>Depósito de nómina</td>
-                            <td>$2000.00</td>
-                        </tr>
-                    </table>
-                </main>
+                <h1 class="h1-center">Transferencias</h1>
+                <div id="container-form">
+                    <form class="form-container">
+                        <h2>Formulario de Transferencia</h2>
+                        <label>Cuenta de Origen:</label>
+                        <select class="tipo" name="accountFrom">
+                            <option value="cuenta1">Cuenta 1</option>
+                            <option value="cuenta2">Cuenta 2</option>
+                            <!-- Agregar más opciones de cuentas aquí -->
+                        </select>
+
+                        <label for="">Cuenta de Destino:</label>
+                        <select class="tipo" name="accountTo">
+                            <option value="cuenta3">Cuenta 3</option>
+                            <option value="cuenta4">Cuenta 4</option>
+                            <!-- Agregar más opciones de cuentas aquí -->
+                        </select>
+
+                        <label for="amount">Monto:</label>
+                        <input type="text" class="campo-form" name="amount" placeholder="Ingrese el monto">
+
+                        <label for="description">Descripción o Motivo:</label>
+                        <input type="text" class="campo-form" name="description" placeholder="Ingrese una descripción">
+
+                        <label for="executionDate">Fecha de Ejecución:</label>
+                        <input type="date" class="campo-form" name="executionDate">
+
+                        <button type="button" class="boton-form">Transferir</button>
+                    </form>
+                </div>
+                <h2>Transferencias realizadas</h2>
+                <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" width="100%"
+                    id="transactionTable">
+                    <tr>
+                        <th style="background-color: #ff7344;">Fecha</th>
+                        <th style="background-color: #ff7344;">Descripción</th>
+                        <th style="background-color: #ff7344;" colspan="2">Movimiento</th>
+                    </tr>
+                    <tr>
+                        <td>2023-08-28</td>
+                        <td>Compra en línea</td>
+                        <td>-$50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2023-08-22</td>
+                        <td>Devolución de compra</td>
+                        <td>$30.00</td>
+                    </tr>
+                    <tr>
+                        <td>2023-08-18</td>
+                        <td>Retiro de cajero</td>
+                        <td>-$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2023-08-15</td>
+                        <td>Pago de factura</td>
+                        <td>-$75.00</td>
+                    </tr>
+                    <tr>
+                        <td>2023-08-10</td>
+                        <td>Transferencia recibida</td>
+                        <td>$500.00</td>
+                    </tr>
+                    <tr>
+                        <td>2023-08-05</td>
+                        <td>Compra en tienda</td>
+                        <td>-$150.00</td>
+                    </tr>
+                    <tr>
+                        <td>2023-08-01</td>
+                        <td>Depósito de nómina</td>
+                        <td>$2000.00</td>
+                    </tr>
+                </table>
+            </main>
             <footer>
                 <div id="container-footer">
                     <div id="container-politica-empresa">
@@ -180,6 +140,26 @@
     </div>
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const botonForm = document.querySelector(".boton-form");
+            const containerForm = document.getElementById("container-form");
+
+            botonForm.addEventListener("click", function () {
+                containerForm.innerHTML = "";
+
+                const mensaje = document.createElement("p");
+                mensaje.textContent = "Transferencia enviada con exito  ";
+
+                const icono = document.createElement("i");
+                icono.classList.add("fas", "fa-check-circle", "icon");
+
+                mensaje.appendChild(icono);
+                containerForm.appendChild(mensaje);
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -5,18 +5,9 @@ body {
     height: 100%;
 }
 
-h2 {
+h1, h2 {
     font-family: 'Lato', sans-serif;
     color: #ff7344;
-}
-
-.menu-h1 {
-    color: #ff7344;
-    font-size: 30px;
-}
-
-.h2-presentacion {
-    font-size: 1.4em;
 }
 
 .container {
@@ -170,6 +161,54 @@ footer a {
 #container-politica-empresa a:visited {
     color:  #35103D;
 }
+
+/* ESTILOS PARA DIVS --> FONDOS BLANCOS */
+.card {
+    background-color: white;
+    width: 40%;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+
+.card {
+    max-width: 100%;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+/* ESTILOS CORTO DE LOS HTMLS */
+
+/* MOVIMIENTOS */
+.tab-movimientos {
+    text-align: left;
+    background-color: white;
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 /* MEDIAS QUERIES */
 /* @media(max-width:650px){

@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="/sprint 1/estilos/landingPage.css">
+    <link rel="stylesheet" href="/sprint 1/estilos/formularios.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -29,43 +32,47 @@
 
     </header>
 
-    <form class="form-container" action="" method="post">
+    <section>
+        <form class="form-container" action="" method="post">
 
-        <h1 class="h1-contacto">Registrate:</h1>
-        <input class="campo-form" name="nombre" type="text" placeholder="Nombre/" required maxlength="50"><br>
-        <input class="campo-form" name="apellido" type="text" placeholder="Apellido/s" required maxlength="50"><br>
-        <input class="campo-form" name="email" type="text" placeholder="Email" maxlength="100" required><br>
+            <h1 class="h1-contacto">Registrate:</h1>
+            <input class="campo-form" name="nombre" type="text" placeholder="Nombre/" required maxlength="50">
+            <input class="campo-form" name="apellido" type="text" placeholder="Apellido/s" required maxlength="50">
+            <input class="campo-form" name="email" type="text" placeholder="Email" maxlength="100" required>
 
-        <label class="label">Sexo:</label>
-        <select name="Sexo" class="tipo">
-            <option value="">Seleccionar:</option>
-            <option value="Masc">Masculino</option>
-            <option value="Fem">Femenino</option>
-            <option value="otro">Otro</option>
-        </select>
+            <label class="label">Sexo:</label>
+            <select name="Sexo" class="tipo">
+                <option value="">Seleccionar:</option>
+                <option value="Masc">Masculino</option>
+                <option value="Fem">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
 
-        <label class="label">Tipo de documento</label>
-        <select class="tipo" name="Documento">
-            <option value="">Seleccionar:</option>
-            <option value="DNI">DNI</option>
-            <option value="LC">LC</option>
-            <option value="LE">LE</option>
-            <option value="CI">CI</option>
-            <option value="Pasaporte">Pasaporte</option>
-            <option value="RENAPER">RENAPER</option>
-            <option value="Otro">Otro</option>
-        </select>
+            <label class="label">Tipo de documento</label>
+            <select class="tipo" name="Documento">
+                <option value="">Seleccionar:</option>
+                <option value="DNI">DNI</option>
+                <option value="LC">LC</option>
+                <option value="LE">LE</option>
+                <option value="CI">CI</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="RENAPER">RENAPER</option>
+                <option value="Otro">Otro</option>
+            </select>
 
-        <input class="campo-form" name="numero de documento" type="text" placeholder="Número de documento" required>
-        <input class="campo-form" name="usuario" type="text" placeholder="Usuario" required maxlength="45">
-        <input class="campo-form" name="clave" type="password" placeholder="Clave digital" required minlength="8">
-        
-        <input type="checkbox" name="condiciones" required/> Aceptar los <a href="/sprint 1/htmls/terminos-condiciones.html">terminos y condiciones.</a> </br>
-        
-        <button class="boton-form" href="/sprint 1/htmls/inicio-sesion.html" type="" value="ingresar">Registrarse</button>
+            <input class="campo-form" name="numero de documento" type="text" placeholder="Número de documento" required>
+            <input class="campo-form" name="usuario" type="text" placeholder="Usuario"  maxlength="45" required>
+            <input class="campo-form" name="clave" type="password" placeholder="Clave digital"  minlength="8" required>
 
-        </section>
-    </form>
+            <input type="checkbox" name="condiciones" required /> Aceptar los <a
+                href="/sprint 1/htmls/terminos-condiciones.html">terminos y condiciones.</a>
+
+            <button class="boton-form" type="" value="ingresar">
+                <a href="/sprint 1/htmls/inicio-sesion.html">Registrarse</a>
+            </button>
+        </form>
+    </section>
+
     <footer>
         <div id="container-footer">
             <div id="container-politica-empresa">

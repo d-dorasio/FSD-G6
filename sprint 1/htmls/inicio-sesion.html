@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITBANK - Inicio de sesión</title>
+    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="/sprint 1/estilos/landingPage.css">
+    <link rel="stylesheet" href="/sprint 1/estilos/formularios.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
 </head>
 
 <body>
-    <header >
+    <header>
 
         <a href="index.html">
             <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo-banco" />
@@ -30,27 +34,26 @@
     </header>
 
     <section id="ingreso">
-        
-            <form class="form-container" action="" method="post">
-                <h1 class="h1-contacto">Iniciar sesión:</h1>
-                <label>Tipo de documento</label>
-                <select class="tipo" name="Documento">
-                    <option value="DNI">DNI</option>
-                    <option value="LC">LC</option>
-                    <option value="LE">LE</option>
-                    <option value="CI">CI</option>
-                    <option value="Pasaporte">Pasaporte</option>
-                    <option value="RENAPER">RENAPER</option>
-                    <option value="Otro">Otro</option>
-                </select>
-                <input class="campo-form" name="numero de documento" type="text" placeholder="Número de documento"
-                    required>
-                <input class="campo-form" name="usuario" type="text" placeholder="Usuario" required maxlength="45">
-                <input class="campo-form" name="clave" type="password" placeholder="Clave digital" required
-                    minlength="8">
-                <button class="boton-form" href="/sprint 1/htmls/menu.html" type="" value="ingresar">Iniciar
-                    sesión</button>
-            </form>
+
+        <form class="form-container" action="" method="post">
+            <h1 class="h1-center">Iniciar sesión:</h1>
+            <label>Tipo de documento</label>
+            <select class="tipo" name="Documento" required>
+                <option value="DNI">DNI</option>
+                <option value="LC">LC</option>
+                <option value="LE">LE</option>
+                <option value="CI">CI</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="RENAPER">RENAPER</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <input class="campo-form" name="numero de documento" type="text" placeholder="Número de documento" required>
+            <input class="campo-form" name="usuario" type="text" placeholder="Usuario" maxlength="45" required>
+            <input class="campo-form" name="clave" type="password" placeholder="Clave digital" minlength="8" required>
+            <button class="boton-form" type="" value="ingresar">
+                <a href="/sprint 1/htmls/menu.html">Iniciar sesión</a>
+            </button>
+        </form>
 
     </section>
 
