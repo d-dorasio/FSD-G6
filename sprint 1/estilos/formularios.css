@@ -79,6 +79,7 @@ label {
 #container-form p {
     font-size: 150%;
     color: green;
+    padding: 30px;
 }
 #container-form .icon {
     font-size: 24px;

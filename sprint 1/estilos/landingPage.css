@@ -32,9 +32,10 @@ header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/*Modifique el width del logo*/
 #logo-banco {
-    width: 20%;
-    padding: 1%;
+    width: 10%;
+    padding: 10px;
     float: left;
 }
 
@@ -96,6 +97,16 @@ footer a {
     width: 50%;
     margin: 1%;
 }
+
+#container-politica-empresa a:hover {
+    color: #FF7344;
+}
+
+#container-politica-empresa a:hover {
+    transition: border-bottom 0.3s ease;
+}
+
+
 
 #redes {
     float: right;
@@ -171,6 +182,10 @@ footer a {
     margin-bottom: 10px;
 }
 
+#banner h1 {
+    margin-top: 50px;
+}
+
 /* SERVICIOS */
 .h1-servicios {
     color: #ff7344;
@@ -180,4 +195,44 @@ footer a {
 
 .img-servicios {
     padding: 15px 0;
+}
+
+
+/*NOSOTROS*/
+
+.nosotros-h1 {
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    color: #ff7344;
+}
+
+.div-list {
+    margin-left: 20px;
+}
+
+#nosotros h2 {
+    color: #ff7344;
+}
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 534px) {
+    #nosotros .nosotros-h1 {
+        margin-top: 50px;
+    }
+}
+
+/* Logo del menú */
+@media (min-width: 780px) and (max-width: 1200px) {
+    #logo-banco {
+        width: 20%;
+    }
+}
+
+@media (max-width: 779px) {
+    #logo-banco {
+        width: 30%;
+    }
 }

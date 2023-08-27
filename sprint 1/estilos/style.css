@@ -148,6 +148,7 @@ footer a {
 #redes i {
     font-size: x-large;
     color: #35103D;
+    transition: 0.5s;
 }
 
 #redes i:hover {
@@ -208,6 +209,15 @@ footer a {
 }
 
 
+/* Estilo H1 menu.html */
+.menu-h1 {
+    font-size: 30px;
+}
+
+/* LANDING PRESTAMOS */
+#prestamos h1 {
+    font-size: 30px;
+}
 
 
 /* MEDIAS QUERIES */
