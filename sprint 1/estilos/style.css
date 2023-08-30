@@ -10,6 +10,15 @@ h1, h2 {
     color: #ff7344;
 }
 
+h1 {
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+h2 {
+    text-align: center;
+}
+
 .container {
     display: flex;
     flex-direction: row;

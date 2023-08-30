@@ -27,7 +27,7 @@
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
-                    <li id="li-a-select"> <a href="/sprint 1/htmls/pagos.html">Pagos realizados</a> </li>
+                    <li id="li-a-select"> <a href="/sprint 1/htmls/pagos.html">Pagos</a> </li>
                     <li><a href="/sprint 1/htmls/prestamos.html">Préstamos</a></li>
                     <li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
                     <li><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
@@ -43,7 +43,6 @@
             <main>
                 <section>
                     <h1>Pagos</h1>
-                    <section class="formulariopagos">
                         <div class="anotherContainer">
                             <div id="container-form">
                                 <h2>Realizar Pago</h2>
@@ -54,7 +53,6 @@
                                         <option value="servicio2">Servicio 2</option>
                                         <option value="colegio">Cuota Colegio</option>
                                         <option value="expensas">Expensas</option>
-
                                     </select>
                                     <br>
                                     <label for="amount">Monto:</label>
@@ -71,6 +69,7 @@
                                 </form>
                             </div>
                             <div>
+                                <h2>Pagos realizados</h2>
                                 <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" width="100%" id="transactionTable">
                                     <tr>
                                         <th style="background-color: #C2B2B4;">Fecha:</th>
@@ -105,8 +104,6 @@
                                 </table>
                             </div>
                         </div>
-
-                    </section>
                 </section>
 
             </main>
