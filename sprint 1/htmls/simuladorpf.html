@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITBANK - Simulador</title>
+    <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/sprint 1/estilos/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    
+</head>
+
+
+<body>
+    <div class="container" style="height:100vh">
+        <nav>
+            <div class="container-nav">
+                <a href="menu.html">
+                    <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo" />
+                </a>
+                <ul id="nav">
+                    <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
+                    <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
+                    <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
+                    <li> <a href="/sprint 1/htmls/pagos.html">Pagos realizados</a> </li>
+                    <li><a href="/sprint 1/htmls/prestamos.html">Préstamos</a></li>
+                    <li></li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
+                    <li><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
+                    <li><a href="/sprint 1/htmls/movimientos.html">Mis Movimientos</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    <div class="hola">
+        <header>
+            <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
+        </header>
+
+            <main>
+                <section>
+                    <h1>Simulador</h1>
+                    <div class="form-container">
+                        <h2>Plazo fijo:</h2>
+                        <form action="" method="post">
+                            
+                            <label>Tipo de plazo fijo:</label>
+                            <input type="radio" id="pesos" name="pfpesos" value="pesos">
+                            <label>Plazo fijo en pesos</label>
+                            <input type="radio" id="dolar" name="pfdolar" value="dolar">
+                            <label>Plazo fijo en dólares</label><br>
+                            
+                          <label for="monto">Monto a invertir:</label>
+                            <input type="number" id="monto" placeholder="Ingrese el monto" minlength="1000">
+                            <br>
+
+                            <label>Cantidad de días</label>
+                            <select name="dias">
+                                <option value="30">30</option>
+                                <option value="60">60</option>
+                                <option value="90">90</option>
+                                <option value="Otro">Más días</option>
+                            </select>
+                            
+                                <div id="otroPlazo" style="display: none;">
+                                    <label for="Otro">Ingrese la cantidad de días:</label>
+                                    <input type="number" id="otrodia" placeholder="Ingrese la cantidad de días"><br>
+                                </div>
+                                <br>
+                            <button id="calcular">Calcular</button>
+                                
+                            <div id="resultado" style="display: none;">
+                                <h3>Resultado:</h3>
+                                <p>Intereses acumulados: <span id="intereses"></span></p>
+                                <p>Monto total: <span id="total"></span></p>
+                            </div>
+                        </form> 
+                    </div>
+                </section>
+            </main>
+        
+            
+            <footer>
+                <div id="container-footer">
+                    <div id="container-politica-empresa">
+                        <a href="/sprint 1/htmls/p-privacidad.html">Políticas de privacidad.</a>
+                        <br><a href="/sprint 1/htmls/terminos-condiciones.html">Términos y Condiciones</a>
+                        <br><a href="/sprint 1/htmls/contacto.html">Contacto</a>
+                    </div>
+                    <div id="redes">
+                        <p>Encontranos en:</p>
+                        <a href="https://www.instagram.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.twitter.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-twitter"></i></a>
+                        <a href="https://www.facebook.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-facebook"></i></a>
+                    </div>
+                </div>
+
+                <p id="copy">&copy; 2023 ITBANK. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </div>
+    <!--  SCRIP DEFONT AWESOME (ICONOS) -->
+    <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <script src="/sprint 1/javascript/simulador.js"></script>
+</body>
+    
+    </html>
