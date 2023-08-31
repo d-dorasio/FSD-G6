@@ -70,7 +70,7 @@
                             </div>
                             <div>
                                 <h2>Pagos realizados</h2>
-                                <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" width="100%" id="transactionTable">
+                                <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse;" width="100%" id="transactionTable">
                                     <tr>
                                         <th style="background-color: #C2B2B4;">Fecha:</th>
                                         <th style="background-color: #C2B2B4;">Pago realizado:</th>
@@ -129,31 +129,9 @@
             </footer>
         </div>
     </div>
-    <!--  SCRIP DEFONT AWESOME (ICONOS) -->
+    <!--  SCRIPT  -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('.form-container');
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-            // Obtener los valores de los campos del formulario
-            const payment = form.querySelector('[name="paymentMethod"]').value;
-            const amount = parseFloat(form.querySelector('[name="amount"]').value);
-            const paymentMethod = form.querySelector('[name="paymentMethod"]').value;
-
-            // Aquí puedes realizar la lógica de procesamiento del pago
-            // Por ejemplo, podrías enviar los datos a un servidor
-
-            // Luego de procesar el pago, podrías mostrar un mensaje o redirigir a otra página
-            alert(`Pago realizado:\nServicio: ${payment}\nMonto: $${amount.toFixed(2)}\nMétodo de pago: ${paymentMethod}`);
-
-            // Puedes agregar aquí la lógica para limpiar el formulario si es necesario
-            form.reset();
-        });
-    });
-    </script>
+    <script src="/sprint 1/javascript/pagos.js"></script>
 </body>
 
 </html>

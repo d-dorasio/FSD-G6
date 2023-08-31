@@ -41,6 +41,7 @@
             </header>
             <main>
                 <section>
+                    <!-- Add card -->
                     <form id="tarjeta-form" class="form-container">
                         <h1>Agregar tarjeta</h1>
                         <label for="nombre">Nombre del Titular:</label>
@@ -57,6 +58,8 @@
 
                         <button class="boton-form" type="submit">Agregar</button>
                     </form>
+
+                    <!-- Registered cards -->
                     <h1 class="h1-center">Mis Tarjetas</h1>
                     <div id="card"></div>
                         <div class="card">
@@ -108,36 +111,6 @@
     </div>
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.getElementById("tarjeta-form");
-            const tarjetasContainer = document.getElementById("tarjetas-container");
-
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-
-                const nombre = document.getElementById("nombre").value;
-                const numero = document.getElementById("numero").value;
-                const vencimiento = document.getElementById("vencimiento").value;
-                const codigo = document.getElementById("codigo").value;
-
-                const nuevaTarjeta = document.createElement("div");
-                nuevaTarjeta.className = "card"; // Agregar la clase "credit-card"
-                nuevaTarjeta.innerHTML = `
-                    <h3>${nombre}</h3>
-                    <p>Número de Tarjeta: ${numero}</p>
-                    <p>Vencimiento: ${vencimiento}</p>
-                    <p>Código de Seguridad: ***</p>
-                `;
-
-                tarjetasContainer.appendChild(nuevaTarjeta);
-
-                form.reset(); // Limpia los campos del formulario
-            });
-        });
-    </script>
-
-
 </body>
 
 </html>

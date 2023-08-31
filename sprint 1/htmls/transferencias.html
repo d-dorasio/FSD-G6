@@ -42,6 +42,7 @@
             </header>
             <main>
                 <h1 class="h1-center">Transferencias</h1>
+                <!-- Transfer form -->
                 <div id="container-form">
                     <form class="form-container">
                         <h2>Formulario de Transferencia</h2>
@@ -49,14 +50,12 @@
                         <select class="tipo" name="accountFrom">
                             <option value="cuenta1">Cuenta 1</option>
                             <option value="cuenta2">Cuenta 2</option>
-                            <!-- Agregar más opciones de cuentas aquí -->
                         </select>
 
                         <label for="">Cuenta de Destino:</label>
                         <select class="tipo" name="accountTo">
                             <option value="cuenta3">Cuenta 3</option>
                             <option value="cuenta4">Cuenta 4</option>
-                            <!-- Agregar más opciones de cuentas aquí -->
                         </select>
 
                         <label for="amount">Monto:</label>
@@ -71,6 +70,7 @@
                         <button type="button" class="boton-form">Transferir</button>
                     </form>
                 </div>
+                
                 <h2>Transferencias realizadas</h2>
                 <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" width="100%"
                     id="transactionTable">
@@ -140,25 +140,7 @@
     </div>
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const botonForm = document.querySelector(".boton-form");
-            const containerForm = document.getElementById("container-form");
-
-            botonForm.addEventListener("click", function () {
-                containerForm.innerHTML = "";
-
-                const mensaje = document.createElement("p");
-                mensaje.textContent = "Transferencia enviada con exito  ";
-
-                const icono = document.createElement("i");
-                icono.classList.add("fas", "fa-check-circle", "icon");
-
-                mensaje.appendChild(icono);
-                containerForm.appendChild(mensaje);
-            });
-        });
-    </script>
+    <script src="/sprint 1/javascript/transferencias.js"></script>
 
 </body>
 
