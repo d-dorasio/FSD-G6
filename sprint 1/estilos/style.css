@@ -228,6 +228,12 @@ footer a {
     font-size: 30px;
 }
 
+/* POSICIONARSE EN EL MENU */
+.focused {
+    color: #FF7344;
+    outline: none;
+    font-size: 17px;
+}
 
 /* MEDIAS QUERIES */
 /* @media(max-width:650px){
