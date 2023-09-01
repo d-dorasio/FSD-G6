@@ -41,6 +41,7 @@
             <main>
                 <section id="prestamos">
                     <h1>Préstamos</h1>
+                     <p>Simulá tu préstamo bancario aca: <a style="text-decoration:none" style="color:#e064ff;" href="#simuladorprestamo">Simulador de préstamos</a> </p>
                     <h2 class="h2-prestamos">Préstamos Hipotecarios:</h2> 
                     <p>Los préstamos hipotecarios se utilizan para comprar una vivienda. La propiedad se utiliza como garantía del préstamo. 
                         Los términos, tasas de interés y plazos pueden variar.</p>                     
@@ -52,6 +53,43 @@
                     <p>Estos préstamos son de menor monto y se pagan en un período corto, a menudo en unos pocos meses.</p>
                     <h2 class="h2-prestamos">Préstamos a Largo Plazo:</h2> 
                     <p>Los préstamos a largo plazo tienen plazos más largos, a menudo varios años, y son adecuados para financiar proyectos más grandes.</p>
+                </section>
+
+                <section>
+                     <a id="simuladorprestamo"></a>
+                    <h1 class="h1-center">Simulador de préstamos</h1>
+                    <div id="container-form">
+                        <form class="form-container">
+                            <label>Sector de Pertenencia</label>
+                            <select class="tipo" name="">
+                                <option value="publica">Administración Pública</option>
+                                <option value="privado">Sector privado</option>
+                                <option value="IPS">IPS</option>
+                                <option value="ANSES">ANSES</option>
+                            </select>
+
+                            <label for="amount">Monto:</label>
+                            <input type="text" class="campo-form" name="amount" placeholder="Ingrese el monto">
+
+                            <label for="months">Plazo en meses:</label>
+                            <input type="number" class="campo-form" name="months" placeholder="Ingrese los meses">
+
+                            <button type="button" class="boton-form">Calcular</button>
+                          
+                            <table cellspacing="10" cellpadding="15" class="table" style="margin: 0 auto;">
+    
+                                <tbody><tr>
+                                    </tr></tbody><thead>
+                                        <tr><th></th>
+                                        <tr><th>Cuota</th>
+                                        <th>Saldo</th>
+                                        <th>Amortización</th>
+                                        <th>Interés</th>
+                                        <th>Cuota sin I.V.A.</th>
+                                    </tr></thead>      
+                            </tbody></table>
+                        </form>
+                    </div>    
                 </section>
             </main>
             <footer>
