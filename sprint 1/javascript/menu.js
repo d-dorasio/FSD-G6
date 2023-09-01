@@ -1,4 +1,3 @@
-/* Agrega la funcionalidad de moverse con flechitas en el menu*/
 document.addEventListener('DOMContentLoaded', function () {
     const linkList = document.getElementById('nav');
     const links = nav.getElementsByTagName('a');
