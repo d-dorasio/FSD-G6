@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const plazoEjecucion = parseInt(document.querySelector("[name='months']").value);
   
   
-      // Define tu lógica de cálculo aquí
-      // Por ejemplo, un cálculo simple basado en el tipo seleccionado y el monto
-      let tasaInteres = 0.012; // Tasa de interés predeterminada
+      let tasaInteres = 0.012; 
       if (tipoSeleccionado === "publica") {
         tasaInteres = 0.012;
       } else if (tipoSeleccionado === "privado") {
@@ -40,11 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
           break;
         }
       }
-  
-      // Borra los datos existentes de la tabla
+
       cuerpoTabla.innerHTML = "";
   
-      // Llena la tabla con los datos calculados
       datosTabla.forEach(datos => {
         const fila = document.createElement("tr");
         datos.forEach(valorCelda => {
