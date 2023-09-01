@@ -19,6 +19,7 @@ body {
 h1,
 h2 {
     font-family: 'Lato', sans-serif;
+    color: #FF7344;
 }
 
 header {
@@ -32,11 +33,10 @@ header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/*Modifique el width del logo*/
 #logo-banco {
-    width: 10%;
+    width: 15%;
     padding: 10px;
-    float: left;
+
 }
 
 nav ul {
@@ -67,8 +67,9 @@ nav li:hover {
 }
 
 section {
-    padding: 16% 8%;
+    padding: 13% 8%;
 }
+
 
 footer {
     background-color: rgb(23, 23, 23);
@@ -106,8 +107,6 @@ footer a {
     transition: border-bottom 0.3s ease;
 }
 
-
-
 #redes {
     float: right;
     width: 50%;
@@ -134,12 +133,14 @@ footer a {
     background-position: center;
     text-align: center;
     padding: 150px 0;
-    color: white;
+
 }
 
 #banner h1 {
+    margin-top: 50px;
     font-size: 200%;
     margin-bottom: 2%;
+    color: white;
 }
 
 #banner p {
@@ -176,63 +177,145 @@ footer a {
     margin: 0 20px;
 }
 
-.feature h2 {
-    font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+.service img {
+    width: 50%;
+    height: 50%;
 }
 
-#banner h1 {
-    margin-top: 50px;
+/* MENU HAMBURGUESA */
+.btn-menu {
+    display: none;
 }
 
-/* SERVICIOS */
-.h1-servicios {
-    color: #ff7344;
-    font-size: 30px;
-    margin-bottom: 25px;
-}
+/* MEDIAS QUERIES*/
 
-.img-servicios {
-    padding: 15px 0;
-}
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
 
+    header {
+        height: 6%;
+    }
 
-/*NOSOTROS*/
+    nav li {
+        margin: 5px;
+    }
 
-.nosotros-h1 {
-    font-size: 30px;
-    font-family: 'Lato', sans-serif;
-    color: #ff7344;
-}
+    section {
+        padding: 25% 5%;
+    }
 
-.div-list {
-    margin-left: 20px;
-}
+    #banner h1 {
+        font-size: 140%;
+    }
 
-#nosotros h2 {
-    color: #ff7344;
-}
-
-
-
-
-/* RESPONSIVE */
-@media (max-width: 534px) {
-    #nosotros .nosotros-h1 {
-        margin-top: 50px;
+    #banner p {
+        font-size: 80%;
     }
 }
 
-/* Logo del menú */
-@media (min-width: 780px) and (max-width: 1200px) {
-    #logo-banco {
-        width: 20%;
+@media screen and (max-width: 750px) {
+    /* MENU HAMBURGUESA */
+    .btn-menu,
+    .btn-close {
+        display: block;
+        background: #35103D;
+        color: white;
+    }
+
+    nav {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #35103D;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: end;
+    }
+    /* PAGINA */
+    #features {
+        flex-direction: column;
+    }
+
+    .feature {
+        margin: auto;
+    }
+
+    section {
+        padding: 30% 10%;
     }
 }
 
-@media (max-width: 779px) {
-    #logo-banco {
-        width: 30%;
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    header {
+        height: 8%;
+    }
+
+    nav ul {
+        justify-content: space-evenly;
+    }
+
+    nav li {
+        margin: 8px;
+    }
+
+    #container-footer {
+        flex-direction: row;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        height: 15%;
+    }
+
+    nav li {
+        margin: 10px;
+    }
+
+    section {
+        padding: 12% 8%;
+    }
+
+
+}
+
+@media (min-width: 1400px) {
+    body {
+        font-size: 20px;
+    }
+
+    header {
+        height: 25%;
+    }
+
+    nav li {
+        margin: 15px;
+    }
+
+    section {
+        padding: 10% 5%;
     }
 }

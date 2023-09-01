@@ -8,21 +8,25 @@
     <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/sprint 1/estilos/style.css">
+    <link rel="stylesheet" href="/sprint 1/estilos/formularios.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
     <div class="container">
-        <nav>
+        <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button> <!--BTN MENU BURGUER -->
+        <nav id="nav">
             <div class="container-nav">
+                <button class="btn-menu" id="btn-close"><i
+                        class="fa-solid fa-xmark"></i></button><!-- BTN MENU BURGUER -->
                 <a href="menu.html">
                     <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo" />
                 </a>
-                <ul id="nav">
+                <ul>
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
@@ -36,29 +40,35 @@
         </nav>
         <div class="hola">
             <header>
-                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
+                <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta"
+                        height="40" id="perfilusuario"></a>
             </header>
             <main>
-                <section id="prestamos">
-                    <h1>Préstamos</h1>
-                     <p>Simulá tu préstamo bancario aca: <a style="text-decoration:none" style="color:#e064ff;" href="#simuladorprestamo">Simulador de préstamos</a> </p>
-                    <h2 class="h2-prestamos">Préstamos Hipotecarios:</h2> 
-                    <p>Los préstamos hipotecarios se utilizan para comprar una vivienda. La propiedad se utiliza como garantía del préstamo. 
-                        Los términos, tasas de interés y plazos pueden variar.</p>                     
-                    <h2 class="h2-prestamos">Préstamos Automotores:</h2>
-                    <p>Estos préstamos están diseñados para financiar la compra de vehículos, ya sean automóviles nuevos o usados. El vehículo suele servir como garantía.</p>
-                    <h2 class="h2-prestamos">Préstamos con Tasa Fija o Variable:</h2>
-                    <p>Los préstamos pueden tener tasas de interés fijas (que no cambian) o variables (que se ajustan según las tasas de mercado).</p>
-                    <h2 class="h2-prestamos">Préstamos a Corto Plazo:</h2> 
-                    <p>Estos préstamos son de menor monto y se pagan en un período corto, a menudo en unos pocos meses.</p>
-                    <h2 class="h2-prestamos">Préstamos a Largo Plazo:</h2> 
-                    <p>Los préstamos a largo plazo tienen plazos más largos, a menudo varios años, y son adecuados para financiar proyectos más grandes.</p>
-                </section>
-
                 <section>
-                     <a id="simuladorprestamo"></a>
-                    <h1 class="h1-center">Simulador de préstamos</h1>
-                    <div id="container-form">
+                    <h1>Préstamos</h1>
+                    <p>Simulá tu préstamo bancario aca: <a style="text-decoration:none" style="color:#e064ff;"
+                            href="#simuladorprestamo">Simulador de préstamos</a> </p>
+                    <h2>Préstamos Hipotecarios:</h2>
+                    <p>Los préstamos hipotecarios se utilizan para comprar una vivienda. La propiedad se utiliza como
+                        garantía del préstamo.
+                        Los términos, tasas de interés y plazos pueden variar.</p>
+                    <h2>Préstamos Automotores:</h2>
+                    <p>Estos préstamos están diseñados para financiar la compra de vehículos, ya sean automóviles nuevos
+                        o usados. El vehículo suele servir como garantía.</p>
+                    <h2>Préstamos con Tasa Fija o Variable:</h2>
+                    <p>Los préstamos pueden tener tasas de interés fijas (que no cambian) o variables (que se ajustan
+                        según las tasas de mercado).</p>
+                    <h2>Préstamos a Corto Plazo:</h2>
+                    <p>Estos préstamos son de menor monto y se pagan en un período corto, a menudo en unos pocos meses.
+                    </p>
+                    <h2>Préstamos a Largo Plazo:</h2>
+                    <p>Los préstamos a largo plazo tienen plazos más largos, a menudo varios años, y son adecuados para
+                        financiar proyectos más grandes.</p>
+                </section>
+                <section>
+                    <a id="simuladorprestamo"></a>
+                    <h1>Simulador de préstamos</h1>
+                    <div class="container-form">
                         <form class="form-container">
                             <label>Sector de Pertenencia</label>
                             <select class="tipo" name="">
@@ -75,21 +85,24 @@
                             <input type="number" class="campo-form" name="months" placeholder="Ingrese los meses">
 
                             <button type="button" class="boton-form">Calcular</button>
-                          
-                            <table cellspacing="10" cellpadding="15" class="table" style="margin: 0 auto;">
-    
-                                <tbody><tr>
-                                    </tr></tbody><thead>
-                                        <tr><th></th>
-                                        <tr><th>Cuota</th>
-                                        <th>Saldo</th>
-                                        <th>Amortización</th>
-                                        <th>Interés</th>
-                                        <th>Cuota sin I.V.A.</th>
-                                    </tr></thead>      
-                            </tbody></table>
                         </form>
-                    </div>    
+                        <table cellspacing="1" style="border-collapse: collapse" width="100%" id="transactionTable" class="table tab-movimientos">
+                                <tbody>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th style="background-color: #C2B2B4;">Cuota</th>
+                                        <th style="background-color: #C2B2B4;">Saldo</th>
+                                        <th style="background-color: #C2B2B4;">Amortización</th>
+                                        <th style="background-color: #C2B2B4;">Interés</th>
+                                        <th style="background-color: #C2B2B4;">Cuota sin I.V.A.</th>
+                                    </tr>
+                                </thead>
+                                </tbody>
+                        </table>
+                    </div>
                 </section>
             </main>
             <footer>
@@ -116,8 +129,10 @@
     </div>
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <!-- SCRIPTS -->
     <script src="/sprint 1/javascript/menu.js"></script>
-    <script src="/sprint 1/javascript/prestamos.js"
+    <script src="/sprint 1/javascript/menu-hamburguesa.js"></script>
+    <script src="/sprint 1/javascript/prestamos.js"></script>
 </body>
 
 </html>

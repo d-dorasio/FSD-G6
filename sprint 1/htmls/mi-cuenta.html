@@ -16,8 +16,10 @@
 
 <body>
     <div class="container">
-        <nav>
-            <div class="container-nav">
+        <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button> <!--BTN MENU BURGUER -->
+        <nav id="nav">
+            <div class="container-nav"> 
+            <button class="btn-menu" id="btn-close"><i class="fa-solid fa-xmark"></i></button><!-- BTN MENU BURGUER -->
                 <a href="menu.html">
                     <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo" />
                 </a>
@@ -43,10 +45,11 @@
                     <h1>Perfil:</h1>
                     <form id="profileForm">
                         <label for="">Subir foto</label>
-                        <input type="file" id="profileImage" accept="image/*" onchange="previewImage(event)">
+                        <br>
+                        <input type="file" id="profileImage" accept="image/*" onchange="previewImage(event)" class="btn"><br>
                         <img id="preview" src="#" alt="Vista previa de la imagen"
-                            style="max-width: 300px; display: none;">
-                            <span>[Nombre de Usuario]</span>
+                            style="max-width: 50%; display: none;">
+                            <p>[Nombre de Usuario]</p>
                     </form>
                     
                     <h3>Datos:</h3>
@@ -55,12 +58,12 @@
                         <li>Email: <span>nombre@mail.com</span></li>
                         <li>DNI: <span>12.345.678</span></li>
                         <li>Sexo: <span>Indefinido</span></li>
-                        <li> Edad: <span><button>Agregar edad</button></span></li>
-                        <li> Fecha de nacimiento: <span><button>Agregar fecha</button></span></li>
-                        <li> Estado civil: <span><button>Agregar Estado</button></span></li>
-                        <li> Profesión: <span><button>Agregar profesión</button></span></li>
+                        <li> Edad: <span><button class="btn">Agregar edad</button></span></li>
+                        <li> Fecha de nacimiento: <span><button class="btn">Agregar fecha</button></span></li>
+                        <li> Estado civil: <span><button class="btn">Agregar Estado</button></span></li>
+                        <li> Profesión: <span><button class="btn">Agregar profesión</button></span></li>
                         <br>
-                        <button> <a href="/sprint 1/htmls/index.html">CERRAR SESIÓN</a> </button>
+                        <button class="btn"> <a href="/sprint 1/htmls/index.html">CERRAR SESIÓN</a> </button>
                     </ul>
                 </section>
             </main>
@@ -86,9 +89,11 @@
             </footer>
         </div>
     </div>
-    <!--  SCRIPT -->
+    <!-- SCRIPT DE FONT AWESOME -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <!-- SCRIPTS -->
     <script src="/sprint 1/javascript/mi-cuenta.js"></script>
     <script src="/sprint 1/javascript/menu.js"></script>
+    <script src="/sprint 1/javascript/menu-hamburguesa.js"></script>
 </body>
 </html>

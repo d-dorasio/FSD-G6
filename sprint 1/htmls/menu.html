@@ -12,17 +12,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
     <div class="container">
-        <nav>
-            <div class="container-nav">
+         <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button> <!--BTN MENU BURGUER -->
+        <nav id="nav">
+            <div class="container-nav"> 
+                <button class="btn-menu" id="btn-close"><i class="fa-solid fa-xmark"></i></button><!-- BTN MENU BURGUER -->
                 <a href="menu.html">
                     <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo" />
                 </a>
-                <ul id="nav">
+                <ul>
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li><a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li><a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
@@ -33,16 +35,17 @@
                     <li><a href="/sprint 1/htmls/movimientos.html">Mis Movimientos</a></li>
                 </ul>
             </div>
+
         </nav>
         <div class="hola">
             <header>
                 <a href="/sprint 1/htmls/mi-cuenta.html"><img src="/sprint 1/imagenes/usuario.png" alt="Mi cuenta" height="40" id="perfilusuario"></a>
             </header>
             <main>
-                <section id="inicio">
+                <section>
                     <img src="/sprint 1/imagenes/pexels-anni-roenkae-3109807.jpg" alt="Baner Ilustrativo"  width="100%">
                     <h1 class="menu-h1"><strong>Bienvenido a ITBANK</strong></h1>
-                    <p> Somos una institución financiera comprometida con la excelencia en servicios bancarios y 
+                    <p> Somos una institución financiera comprometida con la excelencia en servicios bancarios y
                         la satisfacción del cliente. A través de décadas de experiencia, hemos construido una reputación sólida como un socio confiable para todas tus necesidades financieras.
                     </p>
                     <h2>Nuestra Misión:</h2>
@@ -65,7 +68,7 @@
                         <li>Inversiones y Planificación Financiera</li>
                     </ul>
                     <h2>Compromiso social:</h2>
-                    <p>   
+                    <p>
                         Creemos en hacer una diferencia en nuestras comunidades. Participamos en proyectos de responsabilidad social que abordan desafíos locales y fomentan el bienestar.
                     </p>
                     <h2>Innovación Tecnológica:</h2>
@@ -100,7 +103,9 @@
     </div>
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <!-- SCRIPTS -->
     <script src="/sprint 1/javascript/menu.js"></script>
+    <script src="/sprint 1/javascript/menu-hamburguesa.js"></script>
 </body>
 
 </html>

@@ -16,7 +16,7 @@ label {
 /* ESTILOS PARA LOS FORM */
 .form-container {
     background-color: #ffffff;
-    width: 50%;
+    width: 70%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -27,6 +27,7 @@ label {
 
 /* ESTILOS PARA LOS INPUTS */
 .campo-form {
+    max-width: 100%;
     padding: 2%;
     margin: 1%;
     border: none;

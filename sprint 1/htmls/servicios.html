@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="/sprint 1/imagenes/logo.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/sprint 1/estilos/landingPage.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -21,8 +21,10 @@
         <a href="index.html">
             <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo-banco" />
         </a>
-
-        <nav>
+        <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button>
+        <nav id="nav">
+            <button class="btn-menu" id="btn-close"><i class="fa-solid fa-xmark"></i></button>
+            
             <ul>
                 <li><a href="/sprint 1/htmls/servicios.html">Servicios</a></li>
                 <li><a href="/sprint 1/htmls/nosotros.html">Nosotros</a></li>
@@ -33,37 +35,41 @@
     </header>
 
     <section>
-        <h1 class="h1-servicios">Nuestros Servicios</h1>
-        <div class="service">
-            <h3>Transferencias Seguras</h3>
-            <p>Realiza transferencias seguras a cualquier parte del mundo.</p>
-            <img class="img-servicios" src="../imagenes/transferencias.jpg" alt="Imagen de transferencias seguras">
+        <h1>Nuestros Servicios</h1>
+        <div>
+            <div class="service">
+                <h3>Transferencias Seguras</h3>
+                <p>Realiza transferencias seguras a cualquier parte del mundo.</p>
+                <img class="img-service" src="../imagenes/transferencias.jpg" alt="Imagen de transferencias seguras">
+            </div>
+            <div class="service">
+                <h3>Pagos en Línea</h3>
+                <p>Paga tus facturas y realiza compras en línea de forma conveniente.</p>
+                <img src="../imagenes/pago-linea.jpg" alt="imagen de pagos seguros">
+
+            </div>
+            <div class="service">
+                <h3>Administración de Cuentas</h3>
+                <p>Administra tus cuentas y finanzas personales de manera eficiente.</p>
+                <img  src="../imagenes/administracion-cuentas.jpg"
+                    alt="Imagen sobre la administración de cuentas">
+            </div>
+            <div class="service">
+                <h3>Prestamos</h3>
+                <p>Hacemos prestamos sin o con intereses bajos!</p>
+                <img  src="../imagenes/prestamos.jpg" alt="Imagen de prestamos sin intereses">
+            </div>
         </div>
-        <div class="service">
-            <h3>Pagos en Línea</h3>
-            <p>Paga tus facturas y realiza compras en línea de forma conveniente.</p>
-            <img class="img-servicios" src="../imagenes/pago-linea.jpg" alt="imagen de pagos seguros">
-            
-        </div>
-        <div class="service">
-            <h3>Administración de Cuentas</h3>
-            <p>Administra tus cuentas y finanzas personales de manera eficiente.</p>
-            <img class="img-servicios" src="../imagenes/administracion-cuentas.jpg" alt="Imagen sobre la administración de cuentas">
-        </div>
-        <div class="service">
-            <h3>Prestamos</h3>
-            <p>Hacemos prestamos sin o con intereses bajos!</p>
-            <img class="img-servicios" src="../imagenes/prestamos.jpg" alt="Imagen de prestamos sin intereses">
-        </div>
+
     </section>
-    
+
 
     <footer>
         <div id="container-footer">
             <div id="container-politica-empresa">
-                <a href="/sprint 1/htmls/p-privacidad.html">Políticas de privacidad.</a>
-                <br><a href="/sprint 1/htmls/terminos-condiciones.html">Términos y Condiciones</a>
-                <br><a href="/sprint 1/htmls/contacto.html">Contacto</a>
+                <a href="/sprint 1/htmls/inicio-sesion.html">Políticas de privacidad.</a>
+                <br><a href="/sprint 1/htmls/inicio-sesion.html">Términos y Condiciones</a>
+                <br><a href="/sprint 1/htmls/inicio-sesion.html">Contacto</a>
             </div>
             <div id="redes">
                 <p>Encontranos en:</p>
@@ -80,6 +86,8 @@
 
     <!--  SCRIP DEFONT AWESOME (ICONOS) -->
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+    <!-- SCRIPTS -->
+    <script src="/sprint 1/javascript/menu-hamburguesa.js"></script>
 </body>
 
 </html>

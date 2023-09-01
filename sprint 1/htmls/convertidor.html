@@ -19,12 +19,14 @@
 
 <body>
     <div class="container">
-        <nav>
+        <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button> <!--BTN MENU BURGUER -->
+        <nav id="nav">
             <div class="container-nav">
+                <button class="btn-menu" id="btn-close"><i class="fa-solid fa-xmark"></i></button><!-- BTN MENU BURGUER -->
                 <a href="menu.html">
                     <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo" />
                 </a>
-                <ul id="nav">
+                <ul>
                     <li><a href="/sprint 1/htmls/estado.html">Estado de cuenta</a></li>
                     <li> <a href="/sprint 1/htmls/transferencias.html">Transferencias</a> </li>
                     <li> <a href="/sprint 1/htmls/tarjetas.html">Tarjetas</a> </li>
@@ -32,7 +34,7 @@
                     <li><a href="/sprint 1/htmls/prestamos.html">Préstamos</a></li>
                     <li><a href="/sprint 1/htmls/simulador.html">Simulador</a></li>
                     <li id="li-a-select"><a href="/sprint 1/htmls/convertidor.html">Convertidor de moneda</a></li>
-                    <li><a href="/sprint 1/htmls/movimientos.html">Mis Movimientos</a></li>
+                    <li ><a href="/sprint 1/htmls/movimientos.html">Mis Movimientos</a></li>
                 </ul>
             </div>
         </nav>
@@ -46,7 +48,7 @@
                     <h1 class="h1-center">Convertidor de moneda</h1>
                     <form class="form-container" action="">
                         <h2>Ingrese el monto en pesos:</h2>
-                        <input class="campo-form" type="number" id="valor" min="1" max="100000000">
+                        <input class="campo-form" type="number" id="valor" min="1" max="100000000" required>
                         <p>Seleccionar moneda a cotizar:</p>
                         <div>
                             <input class="campo-form" type="radio" id="uno" name="cambio" value="dolar">Dolar (US$)
@@ -86,6 +88,7 @@
     <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
     <script src="/sprint 1/javascript/convertidor.js"></script>
     <script src="/sprint 1/javascript/menu.js"></script>
+    <script src="/sprint 1/javascript/menu-hamburguesa.js"></script>
 </body>
 
 </html>
