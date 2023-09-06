@@ -1,0 +1,139 @@
+- Contacto
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Form: Contacto
+        - Footer
+- Convertidor
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Form: Convertidor
+        - Footer
+- Estado
+    - Body 
+        - Nav
+            - Ul
+    - Header
+    - Main
+        - Card: Saldo actual
+        - Card: Comparación de balances
+    - Footer
+- Index
+    - Body 
+        - Header
+            - Nav
+                - Ul
+        - Section (debería ser Main)
+            - Form: Inicio de sesión
+        - Footer
+- Menu
+    - Body
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Ul: valores
+            - Ul: servicios
+        - Footer
+- Mi cuenta
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Form: subir foto
+            - Ul: datos personales
+        - Footer
+- Movimientos
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Table: movimientos
+        - Footer
+- Nosotros
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Section (debería ser main) textos
+            - Ul: valores
+            - Ul: serivicios
+        - Footer
+- Privacidad
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Ol: recopilación uso de información
+            - Ol: uso de la información
+            - Ol: compartir información
+        - Footer
+- Pagos
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Form: realizar Pagos
+            - Table: historial de pagos
+        - Footer
+- Prestamos
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+        - Footer
+- Registro
+    - Body 
+        - Header
+            - Nav
+                - Ul
+        - Section (debería ser main)
+        - Footer
+- Servicios
+    - Body 
+        - Header
+            - Nav
+                - Ul
+        - Section (debería ser main)
+        - Footer
+- Simulador
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+        - Footer
+- Tarjetas
+    - Body 
+        - Nav
+        - Header
+        - Main
+            - Form: agregar tarjeta
+        - Footer
+- terminos y condiciones
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Section texto
+        - Footer
+- transferencias
+    - Body 
+        - Nav
+            - Ul
+        - Header
+        - Main
+            - Form: transferencias
+            - From: historial de transferencias
+        - Footer
