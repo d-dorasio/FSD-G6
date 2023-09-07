@@ -1,26 +1,44 @@
-import logo from './logo.svg';
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import './App.css';
-import Main from './components/main'
+
+
+import Main from './components/main';
+import Header from './components/header';
+import Nav from './components/nav';
+import Footer from './components/footer';
+import PagConvertidor from "./routes/pag-convertidor";
+import { Children } from "react";
+import Transactions from "./components/transactions";
+
+const router = createBrowserRouter ({
+  {
+    path: "/",
+    element: <Main />
+    children=[
+      {
+        path: "transacitions"
+        element: <Transactions />
+      }
+      {
+        path: "page-convertidor"
+        element: <PagConvertidor />
+      }
+
+      // ACA AÑADÍ TODAS LAS RUTAS NUEVAS COMO HIJOS
+      // POR AHORA SEGUIMOS ESA ESTRUCTURA DE PATH + ELEMENT NOMAS
+
+    ]
+  }
+})
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
+        <Header />
+        <Nav />
         <Main />
-
+        <Footer />
       </header>
     </div>
   );
