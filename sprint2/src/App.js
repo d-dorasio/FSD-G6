@@ -1,45 +1,51 @@
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-import './App.css';
+import Home from "./components/landingP";
+import AboutUs from "./components/aboutUs";
+import Services from "./components/services";
+import RegistrationForm from "./components/registration";
+import SingUpForm from "./components/singUp";
 
+import HomeBanking from "./components/homeBanking";
+import AccountStatus from "./components/accountStatus";
+import Transfers from "./components/transfers";
+import Cards from "./components/cards";
+import Payments from "./components/payments";
+import Loans from "./components/loan";
+import CurrencyConverter from "./components/currencyConverter";
+import Movements from "./components/movements";
+import Simulator from "./components/simulator";
 
-import Main from './components/main';
-import Header from './components/header';
-import Nav from './components/nav';
-import Footer from './components/footer';
-import PagConvertidor from "./routes/pag-convertidor";
-import { Children } from "react";
-import Transactions from "./components/transactions";
+import PrivacyPolicy from "./components/privacyPolicy";
+import TermsAndConditions from "./components/terms&Conditions";
+import ContactForm from "./components/contact";
 
-const router = createBrowserRouter ({
-  {
-    path: "/",
-    element: <Main />
-    children=[
-      {
-        path: "transacitions"
-        element: <Transactions />
-      }
-      {
-        path: "page-convertidor"
-        element: <PagConvertidor />
-      }
-
-      // ACA AÑADÍ TODAS LAS RUTAS NUEVAS COMO HIJOS
-      // POR AHORA SEGUIMOS ESA ESTRUCTURA DE PATH + ELEMENT NOMAS
-
-    ]
-  }
-})
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Header />
-        <Nav />
-        <Main />
-        <Footer />
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobreNosotros" element={<AboutUs />} />
+          <Route path="/servicios" element={<Services />} />
+          <Route path="/registro" element={<RegistrationForm />} />
+          <Route path="/inicioSesión" element={<SingUpForm />} />
+
+          <Route path="/inicio" element={<HomeBanking />} />
+          <Route path="/estadoDeCuenta" element={<AccountStatus />} />
+          <Route path="/transferencias" element={<Transfers />} />
+          <Route path="/tarjetas" element={<Cards />} />
+          <Route path="/pagos" element={<Payments />} />
+          <Route path="/préstamos" element={<Loans />} />
+          <Route path="/simuladorPlazoFijo" element={<Simulator></Simulator>}/>
+          <Route path="/convertidorDeMoneda" element={<CurrencyConverter />} />
+          <Route path="/movimientos" element={<Movements />} />
+
+          <Route path="/politicasDePrivacidad"element={<PrivacyPolicy></PrivacyPolicy>}/>
+          <Route path="/terminos&condiciones" element={<TermsAndConditions></TermsAndConditions>}/>          
+          <Route path="/contacto" element={<ContactForm></ContactForm>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
