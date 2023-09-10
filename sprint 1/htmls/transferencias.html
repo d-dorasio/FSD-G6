@@ -21,7 +21,8 @@
         <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button> <!--BTN MENU BURGUER -->
         <nav id="nav">
             <div class="container-nav">
-                <button class="btn-menu" id="btn-close"><i class="fa-solid fa-xmark"></i></button><!-- BTN MENU BURGUER -->
+                <button class="btn-menu" id="btn-close"><i
+                        class="fa-solid fa-xmark"></i></button><!-- BTN MENU BURGUER -->
                 <a href="menu.html">
                     <img src="/sprint 1/imagenes/logo.png" alt="Logo del banco" id="logo" />
                 </a>
@@ -50,15 +51,15 @@
                         <h2>Formulario de Transferencia</h2>
                         <label>Cuenta de Origen:</label>
                         <select class="tipo" name="accountFrom">
-                            <option value="cuenta1">Cuenta 1</option>
-                            <option value="cuenta2">Cuenta 2</option>
+                            <option value="otro">Otro ITBANK</option>
+                            <option value="cbu">CBU</option>
+                            <option value="alias">Alias</option>
                         </select>
 
-                        <label for="">Cuenta de Destino:</label>
-                        <select class="tipo" name="accountTo">
-                            <option value="cuenta3">Cuenta 3</option>
-                            <option value="cuenta4">Cuenta 4</option>
-                        </select>
+                        <label>Destino:</label>
+                        <input type='text' class="campo-form" name="destiny"
+                            placeholder="Ingrese CBU, Alias o nombreITBANK"></input>
+
 
                         <label for="amount">Monto:</label>
                         <input type="text" class="campo-form" name="amount" placeholder="Ingrese el monto">
@@ -72,7 +73,7 @@
                         <button type="button" class="boton-form">Transferir</button>
                     </form>
                 </div>
-                
+
                 <h2>Transferencias realizadas</h2>
                 <table class="tab-movimientos" cellspacing="1" style="border-collapse: collapse" width="100%"
                     id="transactionTable">
