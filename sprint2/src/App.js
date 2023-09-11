@@ -17,7 +17,6 @@ import Simulator from "./components/simulator";
 import PrivacyPolicy from "./components/privacyPolicy";
 import TermsAndConditions from "./components/terms&Conditions";
 import ContactForm from "./components/contact";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {

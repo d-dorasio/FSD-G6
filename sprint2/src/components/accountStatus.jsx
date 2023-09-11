@@ -8,7 +8,7 @@ function AccountStatus() {
     <div>
       <NavBar></NavBar>
       <div>
-<Header></Header>
+      <Header></Header>
         <main>
           {/* Current balance */}
           <h1>Estado de cuenta</h1>

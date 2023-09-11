@@ -6,9 +6,9 @@ import Footer from './footerHB';
 function HomeBanking() {
   return (
     <div className="container">
-        <NavBar></NavBar>
+      <NavBar></NavBar>
+      <Header></Header>
       <div className="hola">
-        <Header></Header>
         <main>
           <section>
             <img
@@ -79,9 +79,8 @@ function HomeBanking() {
             </p>
           </section>
         </main>
-        <Footer></Footer>
       </div>
-
+      <Footer></Footer>
     </div>
   );
 }

@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HeaderLanding from "./headerLanding";
 import FooterLanding from "./footerLanding";
+import '@fontsource-variable/montserrat/wght-italic.css';
+import { Button } from "@mui/material";
+import { TextField } from "@mui/material";
 
 function SingUpForm() {
   return (
@@ -35,6 +38,7 @@ function SingUpForm() {
             maxLength="45"
             required
           />
+          <TextField id="standard-basic" label="Standard" variant="standard"></TextField>
           <input
             className="campo-form"
             name="clave"
@@ -43,9 +47,9 @@ function SingUpForm() {
             minLength="8"
             required
           />
-          <button className="boton-form" type="submit" value="ingresar">
+          <Button variant="outlined" size="small">
             <Link to='/inicio'>Iniciar sesión </Link>
-          </button>
+          </Button>
         </form>
       </section>
       <FooterLanding></FooterLanding>
