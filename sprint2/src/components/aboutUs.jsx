@@ -3,8 +3,7 @@ import React from "react";
 
 function AboutUs() {
   return (
-    <div>
-
+    <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
       <section>
         <h1>Somos ITBANK</h1>
         <p>

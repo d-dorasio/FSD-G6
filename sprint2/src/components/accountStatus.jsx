@@ -6,9 +6,9 @@ import Footer from "./footerHB";
 function AccountStatus() {
   return (
     <div>
-      <NavBar></NavBar>
-      <div>
       <Header></Header>
+      <NavBar></NavBar>
+      <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
         <main>
           {/* Current balance */}
           <h1>Estado de cuenta</h1>

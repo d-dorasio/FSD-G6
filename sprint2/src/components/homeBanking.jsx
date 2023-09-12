@@ -10,7 +10,7 @@ function HomeBanking() {
       <Header></Header>
       <NavBar></NavBar>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}/>
-        <div className="hola">
+       <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
           <main>
             <section>
               <img

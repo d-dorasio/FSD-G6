@@ -19,9 +19,9 @@ function ContactForm() {
 
   return (
     <div>
-        <NavBar></NavBar>
-      <div>
-        <Header></Header>
+      <Header></Header>
+      <NavBar></NavBar>
+      <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
         <main>
           <div className="section-form">
             <h1 className="h1-center">Información de contacto</h1>

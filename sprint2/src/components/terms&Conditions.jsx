@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 function TermsAndConditions() {
   return (
     <div>
+      <Header></Header>
       <NavBar></NavBar>
-      <div>
-        <Header></Header>
+      <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
         <main>
           <section>
             <h1>Términos y Condiciones de ITBANK - Home Banking</h1>

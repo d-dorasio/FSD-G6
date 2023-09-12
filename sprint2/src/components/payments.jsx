@@ -2,14 +2,15 @@ import React from "react";
 import NavBar from './navHB'
 import Header from './headerHB'
 import Footer from "./footerHB";
+import BasicTable from "./basicTable";
 
 function Payments() {
   return (
     <div>
+      <Header></Header>
       <NavBar></NavBar>
-      <div>
+      <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
         <main>
-          <Header></Header>
           <section>
             <h1 className="h1-center">Pagos</h1>
             <div className="anotherContainer">
@@ -47,43 +48,7 @@ function Payments() {
               </div>
               <div>
                 <h2>Pagos realizados</h2>
-                <table
-                  className="tab-movimientos"
-                  cellSpacing="1"
-                  style={{ borderCollapse: "collapse" }}
-                  width="100%"
-                  id="transactionTable"
-                >
-                  <tr>
-                    <th style={{ backgroundColor: "#C2B2B4" }}>Fecha:</th>
-                    <th style={{ backgroundColor: "#C2B2B4" }}>
-                      Pago realizado:
-                    </th>
-                    <th style={{ backgroundColor: "#C2B2B4" }} colSpan="2">
-                      Monto:
-                    </th>
-                  </tr>
-                  <tr>
-                    <td>2023-08-28</td>
-                    <td>Agua</td>
-                    <td>$50.00</td>
-                  </tr>
-                  <tr>
-                    <td>2023-08-22</td>
-                    <td>Luz</td>
-                    <td>$30.00</td>
-                  </tr>
-                  <tr>
-                    <td>2023-08-18</td>
-                    <td>Gas</td>
-                    <td>$20.00</td>
-                  </tr>
-                  <tr>
-                    <td>2023-07-10</td>
-                    <td>Expensas</td>
-                    <td>$50.00</td>
-                  </tr>
-                </table>
+                <BasicTable />
               </div>
             </div>
           </section>

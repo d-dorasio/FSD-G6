@@ -6,9 +6,9 @@ import Footer from "./footerHB";
 function Cards() {
   return (
     <div>
+      <Header></Header>
       <NavBar></NavBar>
-      <div>
-        <Header></Header>
+      <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
         <main>
           <section>
             {/* Registered cards */}
