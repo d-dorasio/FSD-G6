@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from './navHB'
 import Header from './headerHB'
 import Footer from "./footerHB";
+import { Link } from "react-router-dom";
 
 function Profile() {
   const [profileImage, setProfileImage] = useState(null);
@@ -92,7 +93,7 @@ function Profile() {
               </li>
               <br />
               <button className="btn">
-                <a href="/sprint 1/htmls/index.html">CERRAR SESIÓN</a>
+                <Link to="/">CERRAR SESIÓN</Link>
               </button>
             </ul>
           </section>

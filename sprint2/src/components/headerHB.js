@@ -11,10 +11,10 @@ function Header() {
     <AppBar position="fixed"  sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to= "/homeBanking"><img src="/logo.png" height="80px"></img></Link>
+          <Link to= "/inicio"><img src="/logo.png" height="80px"></img></Link>
         </Typography>
           <div>
-              <Link to= "/account">
+              <Link to= "/cuenta">
                 <IconButton
                   sx={{ fontSize: 200 }}
                   color="secondary">

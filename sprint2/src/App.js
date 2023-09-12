@@ -17,6 +17,7 @@ import Simulator from "./components/simulator";
 import PrivacyPolicy from "./components/privacyPolicy";
 import TermsAndConditions from "./components/terms&Conditions";
 import ContactForm from "./components/contact";
+import Profile from "./components/account";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/politicasDePrivacidad"element={<PrivacyPolicy></PrivacyPolicy>}/>
           <Route path="/terminos&condiciones" element={<TermsAndConditions></TermsAndConditions>}/>          
           <Route path="/contacto" element={<ContactForm></ContactForm>} />
+          <Route path="/cuenta" element={<Profile></Profile>}></Route>
         </Routes>
       </Router>
     </div>
