@@ -42,7 +42,7 @@ function Services() {
   return (
     <div>
       <HeaderLanding></HeaderLanding>
-      <section>
+      <section className="sectionLandingPage">
         <h1>Nuestros Servicios</h1>
         <div>
           {servicesData.map((service, index) => (

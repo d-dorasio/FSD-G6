@@ -1,10 +1,14 @@
 import React from "react";
+import FooterLanding from "./footerLanding";
+import HeaderLanding from "./headerLanding";
+import './landingP.css';
 
 
 function AboutUs() {
   return (
-    <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
-      <section>
+    <div >
+      <HeaderLanding></HeaderLanding>
+      <section className="sectionLandingPage">
         <h1>Somos ITBANK</h1>
         <p>
           Somos más que un banco. Somos miembros de la comunidad que estamos
@@ -94,6 +98,7 @@ function AboutUs() {
           considerarnos como tu banco de elección.
         </p>
       </section>
+      <FooterLanding></FooterLanding>
     </div>
   );
 }

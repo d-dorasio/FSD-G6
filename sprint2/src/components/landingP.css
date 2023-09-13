@@ -50,9 +50,36 @@
     height: 50%;
 }
 
-@media (min-width: 250px) and (max-width: 500px) {
+.ul-LandingPage{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    list-style: none;
+    width: 50%;
+}
+.ul-LandingPage li{
+    margin: 3%;
+}
+
+.ul-LandingPage a{
+    text-decoration: none;
+    color: white;
+}
+.sectionLandingPage{
+
+    padding: 90px;
+}
+
+@media (min-width: 100px) and (max-width: 500px) {
     #banner h1 {
         font-size: 150%;
         margin-bottom: 1%;
     }
+    .ul-LandingPage{
+        flex-direction: column;
+    }
+    .sectionLandingPage{
+        padding: 90px 10px;
+    }
 }
+
