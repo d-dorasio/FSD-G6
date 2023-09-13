@@ -5,58 +5,123 @@ import FooterLanding from "./footerLanding";
 import '@fontsource-variable/montserrat/wght-italic.css';
 import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
+import { Box } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 
-function SingUpForm() {
+
+const id = [
+  {
+    value: 'DNI',
+    label: 'DNI',
+  },
+  {
+    value: 'LC',
+    label: 'LC',
+  },
+  {
+    value: 'LE',
+    label: 'LE',
+  },
+  {
+    value: 'CI',
+    label: 'CI',
+  },
+  {
+    value: 'Pasaporte',
+    label: 'Pasaporte',
+  },
+  {
+    value: 'RENAPER',
+    label: 'RENAPER',
+  },
+  {
+    value: 'Otro',
+    label: 'Otro',
+  },
+];
+
+
+function SignInForm() {
   return (
     <div>
       <HeaderLanding></HeaderLanding>
+      <div>
       <section id="ingreso">
-        <div style={{ paddingTop: '80px' }}>
-          <form className="form-container" action="" method="post">
-            <h1 className="h1-center">Iniciar sesión:</h1>
-            <label>Tipo de documento</label>
-            <select className="tipo" name="Documento" required>
-              <option value="DNI">DNI</option>
-              <option value="LC">LC</option>
-              <option value="LE">LE</option>
-              <option value="CI">CI</option>
-              <option value="Pasaporte">Pasaporte</option>
-              <option value="RENAPER">RENAPER</option>
-              <option value="Otro">Otro</option>
-            </select>
-            <input
-              className="campo-form"
-              name="numero de documento"
-              type="text"
-              placeholder="Número de documento"
-              required
-            />
-            <input
-              className="campo-form"
-              name="usuario"
-              type="text"
-              placeholder="Usuario"
-              maxLength="45"
-              required
-            />
-            <TextField id="standard-basic" label="Standard" variant="standard"></TextField>
-            <input
-              className="campo-form"
-              name="clave"
-              type="password"
-              placeholder="Clave digital"
-              minLength="8"
-              required
-            />
-            <Button variant="outlined" size="small">
-              <Link to='/inicio'>Iniciar sesión </Link>
-            </Button>
-          </form>
-        </div>
+        <form className="form-container" action="" method="post">
+          <Box
+            component="form"
+            sx={{
+              margin:"auto",
+              textAlign:"center",
+              minHeight: '100vh',
+              '& .MuiTextField-root': { m: 1, width: '25ch' }
+            }}
+            noValidate
+            autoComplete="off"
+          >  
+            <h1 className="h1-center">Iniciar sesión:</h1>     
+            <div>
+              <TextField
+                id="standard-select"
+                select
+                helperText="Tipo de documento"
+                defaultValue="Dni"
+                variant="standard"
+              >
+                {id.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>        
+            </div>
+
+            <div>
+              <TextField
+                required
+                id="standard-required"
+                label="Ingrese su documento"
+                variant="standard"
+              />
+            </div>
+
+            <div>
+              <TextField
+                required
+                id="standard-required"
+                label="Usuario"
+                variant="standard"
+              />
+            </div>
+
+            <div>
+              <TextField
+                required
+                id="standard-required"
+                label="Contraseña"
+                type="password"
+                variant="standard"
+              />
+            </div>
+          
+            <br/>
+
+            <div>
+              <Button>
+                <Link to='/inicio'>Iniciar sesión </Link>
+              </Button>
+            </div>
+
+          </Box>   
+
+        </form> 
       </section>
+      </div>
       <FooterLanding></FooterLanding>
+
     </div>
+      
   );
 }
 
-export default SingUpForm;
+export default SignInForm;

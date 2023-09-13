@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "./navHB";
-import Header from "./headerHB";
-import Footer from "./footerHB";
+import NavBar from './navHB';
+import Header from './headerHB';
+import Footer from './footerHB';
 
 function CurrencyConverter() {
   const [currencyOne, setCurrencyOne] = useState("ARS");

@@ -1,7 +1,62 @@
 import React from "react";
 import HeaderLanding from "./headerLanding";
-import FooterLanding from "./footerLanding";
+import FooterLanding from './footerLanding';
 import { Link } from "react-router-dom";
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Box from "@mui/material/Box";
+import { TextField } from "@mui/material";
+
+
+const id = [
+  {
+    value: 'DNI',
+    label: 'DNI',
+  },
+  {
+    value: 'LC',
+    label: 'LC',
+  },
+  {
+    value: 'LE',
+    label: 'LE',
+  },
+  {
+    value: 'CI',
+    label: 'CI',
+  },
+  {
+    value: 'Pasaporte',
+    label: 'Pasaporte',
+  },
+  {
+    value: 'RENAPER',
+    label: 'RENAPER',
+  },
+  {
+    value: 'Otro',
+    label: 'Otro',
+  },
+];
+
+const gender = [
+  {
+    value: 'Fem',
+    label: 'Femenino',
+  },
+  {
+    value: 'Masc',
+    label: 'Masculino',
+  },
+  {
+    value: 'Otro',
+    label: 'Otro',
+  },
+];
+
+
+
 
 function RegistrationForm() {
   return (
@@ -9,79 +64,107 @@ function RegistrationForm() {
       <HeaderLanding></HeaderLanding>
       <section>
         <form className="form-container" action="" method="post">
+        <Box
+          component="form"
+          sx={{
+            margin:"auto",
+            display:"table-row",
+            justifyContent:"center",
+            alignItems:"center",
+            minHeight: '100vh',
+            '& .MuiTextField-root': { m: 1, width: '25ch' }
+          }}
+          noValidate
+          autoComplete="off"
+        >  
+   
           <h1 className="h1-contacto">Registrate:</h1>
-          <input
-            className="campo-form"
-            name="nombre"
-            type="text"
-            placeholder="Nombre/"
-            required
-            maxLength="50"
-          />
-          <input
-            className="campo-form"
-            name="apellido"
-            type="text"
-            placeholder="Apellido/s"
-            required
-            maxLength="50"
-          />
-          <input
-            className="campo-form"
-            name="email"
-            type="text"
-            placeholder="Email"
-            maxLength="100"
-            required
-          />
-          <label className="label">Sexo:</label>
-          <select name="Sexo" className="tipo">
-            <option value="">Seleccionar:</option>
-            <option value="Masc">Masculino</option>
-            <option value="Fem">Femenino</option>
-            <option value="otro">Otro</option>
-          </select>
-          <label className="label">Tipo de documento</label>
-          <select className="tipo" name="Documento">
-            <option value="">Seleccionar:</option>
-            <option value="DNI">DNI</option>
-            <option value="LC">LC</option>
-            <option value="LE">LE</option>
-            <option value="CI">CI</option>
-            <option value="Pasaporte">Pasaporte</option>
-            <option value="RENAPER">RENAPER</option>
-            <option value="Otro">Otro</option>
-          </select>
-          <input
-            className="campo-form"
-            name="numero de documento"
-            type="text"
-            placeholder="Nro de documento"
-            required
-          />
-          <input
-            className="campo-form"
-            name="usuario"
-            type="text"
-            placeholder="Usuario"
-            maxLength="45"
-            required
-          />
-          <input
-            className="campo-form"
-            name="clave"
-            type="password"
-            placeholder="Clave digital"
-            minLength="8"
-            required
-          />
-          <input type="checkbox" name="condiciones" required /> Aceptar los{" "}
-          <Link>
-            terminos y condiciones.
-          </Link>
-          <button className="boton-form" type="submit" value="ingresar">
-            <Link to='/inicioSesión'/>Registrarse
-          </button>
+          <div>
+            <TextField
+              id="standard-select"
+              select
+              helperText="Tipo de documento"
+              defaultValue="Dni"
+              variant="standard"
+            >
+              {id.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>        
+          </div>
+
+          
+          <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Ingrese su documento"
+              variant="standard"
+            />
+            <TextField
+              required
+              id="standard-required"
+              label="Email"
+              variant="standard"
+            />
+
+          </div>
+
+         <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Nombre/s"
+              variant="standard"
+            />
+
+            <TextField
+              required
+              id="standard-required"
+              label="Apellido/s"
+              variant="standard"
+            />
+          </div>
+
+          <br/>
+
+          <div>
+            <TextField
+              id="standard-select"
+              select
+              helperText="Sexo"
+              variant="standard"
+            >
+              {gender.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>        
+          </div>
+
+          <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Usuario"
+              variant="standard"
+            />
+            <TextField
+              required
+              id="standard-required"
+              label="Clave digital"
+              type="password"
+              variant="standard"
+            />
+          </div>    
+
+          <FormControlLabel required control={<Checkbox />} label="Terminos y Condiciones" />
+
+         
+         </Box>
         </form>
       </section>
       <FooterLanding></FooterLanding>

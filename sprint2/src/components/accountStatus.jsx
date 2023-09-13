@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from './navHB'
-import Header from './headerHB'
-import Footer from "./footerHB";
+import NavBar from './navHB';
+import Header from './headerHB';
+import Footer from './footerHB';
 
 function AccountStatus() {
   return (
