@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function ImagenBanner() {
     return (
         <section id="banner">
-            <div className="banner-image" style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)',}}>
+            <div className="banner-image" style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)', backgroundSize: 'cover' , backgroundPosition: 'bottom',}}>
                 <h1 className="h1-banner-image">
                 Bienvenidos al Home Banking de ITBANK
                 <br />
