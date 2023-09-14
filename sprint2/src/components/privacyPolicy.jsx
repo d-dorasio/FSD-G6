@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
+import { Link } from "react-router-dom";
 
 
 function PrivacyPolicy() {
@@ -110,7 +111,7 @@ function PrivacyPolicy() {
                 Si tienes preguntas o inquietudes sobre esta Política de
                 Privacidad o sobre tus derechos de privacidad en virtud de las
                 leyes argentinas, no dudes en ponerte en{" "}
-                <a href="/sprint 1/htmls/contacto.html">contacto</a> con nuestro
+                <Link to="/contacto">contacto</Link> con nuestro
                 equipo de privacidad.
               </p>
             </section>

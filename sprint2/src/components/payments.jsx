@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import BasicTable from "./basicTable";
 
-
 function Payments() {
+  // ...
+
+useEffect(() => {
+  const form = document.querySelector('.form-container');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const payment = form.querySelector('[name="paymentMethod"]').value;
+    const amountInput = form.querySelector('[name="amount"]');
+    const amount = parseFloat(amountInput.value);
+
+    if (!isNaN(amount)) {
+      alert(`Pago realizado con éxito!\nServicio: ${payment}\nMonto: $${amount.toFixed(2)}`);
+      form.reset();
+    } else {
+      amountInput.focus(); 
+    }
+  });
+}, []);
+
+// ...
+
+
   return (
     <div className="container">
       <NavBar></NavBar>

@@ -56,7 +56,7 @@ function TermsAndConditions() {
 
               <p>
                 Tu privacidad es importante para nosotros. Consulta nuestra{" "}
-                <Link>Política de Privacidad</Link> para obtener información
+                <Link to="/politicasDePrivacidad">Política de Privacidad</Link> para obtener información
                 detallada sobre cómo recopilamos, utilizamos y protegemos tus
                 datos personales.
               </p>
@@ -74,8 +74,8 @@ function TermsAndConditions() {
 
               <p>
                 Si tienes alguna pregunta o inquietud sobre estos Términos y
-                Condiciones, por favor contáctanos por{" "}
-                <a href="/sprint 1/htmls/contacto.html">aquí</a>.
+                Condiciones, por favor contáctanos por
+                <Link to="/contacto">aquí</Link>.
               </p>
 
               <p>

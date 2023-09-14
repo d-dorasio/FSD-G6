@@ -1,9 +1,53 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 
 function Cards() {
+  const [cards, setCards] = useState([
+    {
+      nombre: "NOMBRE APELLIDO",
+      numero: "**** **** **** 1234",
+      vencimiento: "12/23",
+      codigo: "***",
+    },
+    {
+      nombre: "APELLIDO NOMBRE",
+      numero: "**** **** **** 5678",
+      vencimiento: "06/24",
+      codigo: "***",
+    },
+  ]);
+
+  const nombreRef = useRef(null);
+  const numeroRef = useRef(null);
+  const vencimientoRef = useRef(null);
+  const codigoRef = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const nombre = nombreRef.current.value;
+    const numero = numeroRef.current.value;
+    const vencimiento = vencimientoRef.current.value;
+    const codigo = codigoRef.current.value;
+
+    const nuevaTarjeta = {
+      nombre,
+      numero: `**** **** **** ${numero.substring(numero.length - 4)}`,
+      vencimiento,
+      codigo: "***",
+    };
+
+    setCards([...cards, nuevaTarjeta]);
+
+    // Limpiar el formulario
+    nombreRef.current.value = "";
+    numeroRef.current.value = "";
+    vencimientoRef.current.value = "";
+    codigoRef.current.value = "";
+  };
+
   return (
     <div className="container">
       <NavBar></NavBar>
@@ -12,30 +56,25 @@ function Cards() {
         <div className="main-container">
           <main>
             <section>
-              {/* Registered cards */}
               <h1 className="h1-center">Mis Tarjetas</h1>
-              <div className="card">
-                <h3>NOMBRE APELLIDO</h3>
-                <p>Número: **** **** **** 1234</p>
-                <p>Vencimiento: 12/23</p>
-                <p>Código de Seguridad: ***</p>
-              </div>
-
-              <div className="card">
-                <h3>APELLIDO NOMBRE</h3>
-                <p>Número: **** **** **** 5678</p>
-                <p>Vencimiento: 06/24</p>
-                <p>Código de Seguridad: ***</p>
-              </div>
+              {cards.map((card, index) => (
+                <div key={index} className="card">
+                  <h3>{card.nombre}</h3>
+                  <p>Número: {card.numero}</p>
+                  <p>Vencimiento: {card.vencimiento}</p>
+                  <p>Código de Seguridad: {card.codigo}</p>
+                </div>
+              ))}
               <div id="tarjetas-container"></div>
               {/* Add card */}
-              <form id="tarjeta-form" className="form-container">
+              <form onSubmit={handleSubmit} className="form-container">
                 <h1>Agregar tarjeta adicional:</h1>
                 <label htmlFor="nombre">Nombre del Titular:</label>
                 <input
                   className="campo-form"
                   type="text"
                   id="nombre"
+                  ref={nombreRef}
                   required
                 />
 
@@ -44,6 +83,7 @@ function Cards() {
                   className="campo-form"
                   type="text"
                   id="numero"
+                  ref={numeroRef}
                   maxLength="16"
                   required
                 />
@@ -53,6 +93,7 @@ function Cards() {
                   className="campo-form"
                   type="text"
                   id="vencimiento"
+                  ref={vencimientoRef}
                   required
                 />
 
@@ -61,6 +102,7 @@ function Cards() {
                   className="campo-form"
                   type="password"
                   id="codigo"
+                  ref={codigoRef}
                   maxLength="3"
                   required
                 />

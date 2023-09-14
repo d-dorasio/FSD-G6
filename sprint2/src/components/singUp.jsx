@@ -39,7 +39,7 @@ function SingUpForm() {
               maxLength="45"
               required
             />
-            <TextField id="standard-basic" label="Standard" variant="standard"></TextField>
+            {/* <TextField id="standard-basic" label="Standard" variant="standard"></TextField> */}
             <input
               className="campo-form"
               name="clave"
