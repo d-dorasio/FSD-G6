@@ -2,8 +2,8 @@ import HeaderLanding from "./headerLanding";
 import Footer from "./footerLanding";
 import Box from "@mui/material/Box";
 import 'font-awesome/css/font-awesome.min.css';
-import './landingP.css';
 import ImagenBanner from "./ImagenBanner.js";
+import "./styles.css";
 
 function Feature({ icon, title, description }) {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import FooterLanding from "./footerLanding";
 import HeaderLanding from "./headerLanding";
-import './landingP.css';
+
 
 
 function AboutUs() {

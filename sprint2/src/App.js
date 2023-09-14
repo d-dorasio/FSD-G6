@@ -20,6 +20,7 @@ import ContactForm from "./components/contact";
 import Profile from "./components/account";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="App">

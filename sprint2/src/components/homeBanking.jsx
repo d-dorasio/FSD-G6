@@ -1,32 +1,31 @@
 import React from "react";
-import NavBar from './navHB';
-import Header from './headerHB';
-import Footer from './footerHB';
+import NavBar from "./navHB";
+import Header from "./headerHB";
+import Footer from "./footerHB";
 import { Box } from "@mui/material";
+
 
 function HomeBanking() {
   return (
     <div className="container">
-      <Header></Header>
       <NavBar></NavBar>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}/>
-       <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
+      <div className="sub-container">
+        <Header></Header>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }} />
+        <div className="main-container">
           <main>
             <section>
-              <img
-                src=""
-                alt="Baner Ilustrativo"
-                width="100%"
-              />
-              <h1 className="menu-h1">
+              <img src="" alt="Baner Ilustrativo" width="100%" />
+              <h1>
                 <strong>Bienvenido a ITBANK</strong>
               </h1>
               <p>
                 {" "}
-                Somos una institución financiera comprometida con la excelencia en
-                servicios bancarios y la satisfacción del cliente. A través de
-                décadas de experiencia, hemos construido una reputación sólida
-                como un socio confiable para todas tus necesidades financieras.
+                Somos una institución financiera comprometida con la excelencia
+                en servicios bancarios y la satisfacción del cliente. A través
+                de décadas de experiencia, hemos construido una reputación
+                sólida como un socio confiable para todas tus necesidades
+                financieras.
               </p>
               <h2>Nuestra Misión:</h2>
               <p>
@@ -84,6 +83,7 @@ function HomeBanking() {
         </div>
         <Footer></Footer>
       </div>
+    </div>
   );
 }
 

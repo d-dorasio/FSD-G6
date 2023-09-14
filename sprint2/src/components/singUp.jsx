@@ -10,8 +10,8 @@ function SingUpForm() {
   return (
     <div>
       <HeaderLanding></HeaderLanding>
-      <section id="ingreso">
-        <div style={{ paddingTop: '80px' }}>
+      <section id="ingreso" className="sectionLandingPage">
+        <div>
           <form className="form-container" action="" method="post">
             <h1 className="h1-center">Iniciar sesión:</h1>
             <label>Tipo de documento</label>
@@ -48,9 +48,9 @@ function SingUpForm() {
               minLength="8"
               required
             />
-            <Button variant="outlined" size="small">
+            <button className="boton-form">
               <Link to='/inicio'>Iniciar sesión </Link>
-            </Button>
+            </button>
           </form>
         </div>
       </section>

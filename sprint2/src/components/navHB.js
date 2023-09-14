@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import { Link } from 'react-router-dom';
 
 
+
 export default function NavBar() {
   return (
     <Box textAlign='center' sx={{ display: 'flex' }}>
@@ -19,15 +20,16 @@ export default function NavBar() {
         }}
         PaperProps={{
           sx: {
-            backgroundColor: "rgba(245, 228, 255, 0.8)",
+            backgroundColor: "#000000",
             width : "250px",
             paddingTop : "25px"
           }
         }}
-      >
-        <Toolbar />
+      ><Link to="/inicio">
+      <img src="/logo.png" height="100px"></img>
+    </Link>
         <Box sx={{ overflow: 'auto' }}>
-         <ul style={{listStyleType:"none"}}>
+         <ul style={{listStyleType:"none"}} className='ul-nav'>
            <li>
              <Button>
                <Link to="/estadoDeCuenta">Estado de cuenta</Link>

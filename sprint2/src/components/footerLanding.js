@@ -25,7 +25,7 @@ function FooterLanding() {
           </a>
         </div>
       </div>
-      <p id="copy">&copy; 2023 ITBANK. Todos los derechos reservados.</p>
+      <span id="copy">&copy; 2023 ITBANK. Todos los derechos reservados.</span>
     </footer>
   );
 }

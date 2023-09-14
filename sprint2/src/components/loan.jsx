@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import NavBar from './navHB'
-import Header from './headerHB'
+import NavBar from "./navHB";
+import Header from "./headerHB";
 import Footer from "./footerHB";
+
 
 function Loans() {
   const [tipoSeleccionado, setTipoSeleccionado] = useState("publica");
@@ -53,116 +54,122 @@ function Loans() {
   };
 
   return (
-    <div>
-      <Header></Header>
+    <div className="container">
       <NavBar></NavBar>
-      <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
-        <main>
-          <section>
-            <h1>Préstamos</h1>
-            <h2>Préstamos Hipotecarios:</h2>
-            <p>
-              Los préstamos hipotecarios se utilizan para comprar una vivienda.
-              La propiedad se utiliza como garantía del préstamo. Los términos,
-              tasas de interés y plazos pueden variar.
-            </p>
-            <h2>Préstamos Automotores:</h2>
-            <p>
-              Estos préstamos están diseñados para financiar la compra de
-              vehículos, ya sean automóviles nuevos o usados. El vehículo suele
-              servir como garantía.
-            </p>
-            <h2>Préstamos con Tasa Fija o Variable:</h2>
-            <p>
-              Los préstamos pueden tener tasas de interés fijas (que no cambian)
-              o variables (que se ajustan según las tasas de mercado).
-            </p>
-            <h2>Préstamos a Corto Plazo:</h2>
-            <p>
-              Estos préstamos son de menor monto y se pagan en un período corto,
-              a menudo en unos pocos meses.
-            </p>
-            <h2>Préstamos a Largo Plazo:</h2>
-            <p>
-              Los préstamos a largo plazo tienen plazos más largos, a menudo
-              varios años, y son adecuados para financiar proyectos más grandes.
-            </p>
-          </section>
-          <section>
-            <h1 className="h1-center">Simulador de préstamos</h1>
-            <div className="container-form">
-              <form className="form-container">
-                <label>Sector de Pertenencia</label>
-                <select
-                  className="tipo"
-                  name=""
-                  onChange={(e) => setTipoSeleccionado(e.target.value)}
+      <div className="sub-container">
+        <Header></Header>
+        <div className="main-container">
+          <main>
+            <section>
+              <h1>Préstamos</h1>
+              <h2>Préstamos Hipotecarios:</h2>
+              <p>
+                Los préstamos hipotecarios se utilizan para comprar una
+                vivienda. La propiedad se utiliza como garantía del préstamo.
+                Los términos, tasas de interés y plazos pueden variar.
+              </p>
+              <h2>Préstamos Automotores:</h2>
+              <p>
+                Estos préstamos están diseñados para financiar la compra de
+                vehículos, ya sean automóviles nuevos o usados. El vehículo
+                suele servir como garantía.
+              </p>
+              <h2>Préstamos con Tasa Fija o Variable:</h2>
+              <p>
+                Los préstamos pueden tener tasas de interés fijas (que no
+                cambian) o variables (que se ajustan según las tasas de
+                mercado).
+              </p>
+              <h2>Préstamos a Corto Plazo:</h2>
+              <p>
+                Estos préstamos son de menor monto y se pagan en un período
+                corto, a menudo en unos pocos meses.
+              </p>
+              <h2>Préstamos a Largo Plazo:</h2>
+              <p>
+                Los préstamos a largo plazo tienen plazos más largos, a menudo
+                varios años, y son adecuados para financiar proyectos más
+                grandes.
+              </p>
+            </section>
+            <section>
+              <h1 className="h1-center">Simulador de préstamos</h1>
+              <div className="container-form">
+                <form className="form-container">
+                  <label>Sector de Pertenencia</label>
+                  <select
+                    className="tipo"
+                    name=""
+                    onChange={(e) => setTipoSeleccionado(e.target.value)}
+                  >
+                    <option value="publica">Administración Pública</option>
+                    <option value="privado">Sector privado</option>
+                    <option value="IPS">IPS</option>
+                    <option value="ANSES">ANSES</option>
+                  </select>
+
+                  <label htmlFor="amount">Monto:</label>
+                  <input
+                    type="text"
+                    className="campo-form"
+                    name="amount"
+                    placeholder="Ingrese el monto"
+                    value={monto}
+                    onChange={(e) => setMonto(e.target.value)}
+                  />
+
+                  <label htmlFor="months">Plazo en meses:</label>
+                  <input
+                    type="number"
+                    className="campo-form"
+                    name="months"
+                    placeholder="Ingrese los meses"
+                    value={plazoEjecucion}
+                    onChange={(e) => setPlazoEjecucion(e.target.value)}
+                  />
+
+                  <button
+                    type="button"
+                    className="boton-form"
+                    onClick={calcularPrestamo}
+                  >
+                    Calcular
+                  </button>
+                </form>
+                <table
+                  cellSpacing="1"
+                  style={{ borderCollapse: "collapse" }}
+                  width="100%"
+                  id="transactionTable"
+                  className="table tab-movimientos"
                 >
-                  <option value="publica">Administración Pública</option>
-                  <option value="privado">Sector privado</option>
-                  <option value="IPS">IPS</option>
-                  <option value="ANSES">ANSES</option>
-                </select>
-
-                <label htmlFor="amount">Monto:</label>
-                <input
-                  type="text"
-                  className="campo-form"
-                  name="amount"
-                  placeholder="Ingrese el monto"
-                  value={monto}
-                  onChange={(e) => setMonto(e.target.value)}
-                />
-
-                <label htmlFor="months">Plazo en meses:</label>
-                <input
-                  type="number"
-                  className="campo-form"
-                  name="months"
-                  placeholder="Ingrese los meses"
-                  value={plazoEjecucion}
-                  onChange={(e) => setPlazoEjecucion(e.target.value)}
-                />
-
-                <button
-                  type="button"
-                  className="boton-form"
-                  onClick={calcularPrestamo}
-                >
-                  Calcular
-                </button>
-              </form>
-              <table
-                cellSpacing="1"
-                style={{ borderCollapse: "collapse" }}
-                width="100%"
-                id="transactionTable"
-                className="table tab-movimientos"
-              >
-                <thead>
-                  <tr>
-                    <th style={{ backgroundColor: "#C2B2B4" }}>Cuota</th>
-                    <th style={{ backgroundColor: "#C2B2B4" }}>Saldo</th>
-                    <th style={{ backgroundColor: "#C2B2B4" }}>Amortización</th>
-                    <th style={{ backgroundColor: "#C2B2B4" }}>Interés</th>
-                    <th style={{ backgroundColor: "#C2B2B4" }}>
-                      Cuota sin I.V.A.
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cuotas.map((cuota, index) => (
-                    <tr key={index}>
-                      {cuota.map((valorCelda, indexCelda) => (
-                        <td key={indexCelda}>{valorCelda.toFixed(2)}</td>
-                      ))}
+                  <thead>
+                    <tr>
+                      <th style={{ backgroundColor: "#C2B2B4" }}>Cuota</th>
+                      <th style={{ backgroundColor: "#C2B2B4" }}>Saldo</th>
+                      <th style={{ backgroundColor: "#C2B2B4" }}>
+                        Amortización
+                      </th>
+                      <th style={{ backgroundColor: "#C2B2B4" }}>Interés</th>
+                      <th style={{ backgroundColor: "#C2B2B4" }}>
+                        Cuota sin I.V.A.
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        </main>
+                  </thead>
+                  <tbody>
+                    {cuotas.map((cuota, index) => (
+                      <tr key={index}>
+                        {cuota.map((valorCelda, indexCelda) => (
+                          <td key={indexCelda}>{valorCelda.toFixed(2)}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </main>
+        </div>
         <Footer></Footer>
       </div>
     </div>

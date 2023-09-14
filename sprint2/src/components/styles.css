@@ -1,0 +1,475 @@
+h1,
+h2 {
+    font-family: 'Lato', sans-serif;
+    color: #ff7344;
+}
+
+/* ESTILOS PARA LA LANDING PAGE */
+#banner {
+    text-align: center;
+}
+
+#banner h1 {
+    margin-top: 220px;
+    font-size: 180%;
+    margin-bottom: 3%;
+    color: white;
+}
+
+#banner p {
+    font-size: 100%;
+    margin: 2%;
+    font-weight: bold;
+    color: rgb(251, 251, 251);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #ff7344;
+}
+
+#features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 20px;
+}
+
+.service img {
+    width: 50%;
+    height: 50%;
+}
+
+.ul-LandingPage{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    list-style: none;
+    width: 50%;
+}
+.ul-LandingPage li{
+    margin: 3%;
+}
+
+.ul-LandingPage a{
+    text-decoration: none;
+    color: white;
+}
+.sectionLandingPage{
+    padding: 100px;
+}
+
+@media (min-width: 100px) and (max-width: 500px) {
+    #banner h1 {
+        font-size: 150%;
+        margin-bottom: 1%;
+    }
+    .ul-LandingPage{
+        flex-direction: column;
+    }
+    .sectionLandingPage{
+        padding: 90px 10px;
+    }
+} 
+
+/* /////////////////////////////////////////////////////////////////////////// */
+
+
+/* NAV */
+nav {
+    width: 20%;
+    float: left;
+    background-color: rgb(23, 23, 23);
+    color: white;
+}
+
+nav li {
+    list-style-type: none;
+    padding: 4%;
+    margin: 2%;
+}
+
+nav li:hover {
+    border-left: solid 4px #FF7344;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover {
+    color: #FF7344;
+}
+
+.ul-nav{
+    padding-left: 0px;
+    margin: 0%;
+}
+
+#li-a-select {
+    border-left: solid 4px #FF7344;
+}
+
+.sub-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left:250px
+}
+
+.main-container{
+    padding: 50px;
+}
+
+/* HEADER */
+
+header {
+    background-color: #35103D;
+    position: fixed;
+    width: 80%;
+}
+
+/* FOOTER */
+footer {
+    background-color: #C2B2B4;
+    text-align: center;
+    max-height: 100%;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+#container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container-politica-empresa {
+    float: left;
+    width: 50%;
+    margin: 2%;
+}
+
+#container-politica-empresa a:visited {
+    color: #35103D;
+}
+
+#redes {
+    float: right;
+    width: 50%;
+    margin: 2%;
+}
+
+#redes i {
+    font-size: x-large;
+    color: #35103D;
+    transition: 0.5s;
+}
+
+#redes i:hover {
+    color: #FF7344;
+}
+
+#redes p {
+    margin: 0;
+}
+
+
+
+/* ESTILOS PARA DIVS --> FONDOS BLANCOS */
+.card {
+    background-color: white;
+    width: 40%;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+
+.card {
+    max-width: 100%;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+/* ESTILOS PARA BOTONES */
+.btn {
+    background: #35103D;
+    padding: 1%;
+    margin: 1%;
+    color: white;
+    border: 1px solid grey;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #35103d81;
+}
+
+
+
+/* ESTILOS CORTO DE LOS HTMLS */
+
+/* TABLAS */
+/* .tab-movimientos {
+    text-align: left;
+    background-color: white;
+    max-width: 100%;
+    margin: 4% auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-movimientos td,
+.tab-movimientos th {
+    border: solid 1px black;
+} */
+
+/* POSICIONARSE EN EL MENU */
+.focused {
+    color: #FF7344;
+    outline: none;
+    font-size: 17px;
+}
+
+/* MENU HAMBURGUESA */
+.btn-menu {
+    display: none;
+}
+
+/* MEDIAS QUERIES */
+@media screen and (max-width: 768px) {
+
+    /* MENU HAMBURGUESA */
+    .btn-menu,
+    .btn-close {
+        display: block;
+        background: rgb(23, 23, 23);
+        color: white;
+    }
+
+    nav {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        width: 30%;
+    }
+
+    nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: end;
+        padding-left: 0;
+    }
+
+    /* RESTO PAGINA */
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container-nav {
+        position: static;
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        position: revert;
+    }
+
+    .hola {
+        width: 100%;
+        float: none;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .chart {
+        height: 150px;
+    }
+    main{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        width: 60%;
+    }
+
+    .chart {
+        height: 120px;
+    }
+
+    #container-footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #container-politica-empresa {
+        float: none;
+        width: 90%;
+        margin: 3%;
+    }
+
+    #redes {
+        float: none;
+        width: 90%;
+        margin: 3%;
+    }
+
+    .tab-movimientos td,
+    .tab-movimientos th {
+        font-size: x-small;
+    }
+}
+
+
+/* /////////////////////////////////////////////////////////// */
+
+/* ESTILOS PARA FORMULARIOS */
+label {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: large;
+    padding: 1%;
+}
+
+/* ESTILOS PARA QUE LOS H1 SE CENTREN */
+.h1-center {
+    text-align: center;
+    color: #81007f;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+/* ESTILOS PARA LOS FORM */
+.form-container {
+    background-color: #ffffff;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5%;
+    text-align: center;
+}
+
+/* ESTILOS PARA LOS INPUTS */
+.campo-form {
+    max-width: 100%;
+    padding: 2%;
+    margin: 1%;
+    border: none;
+    border-bottom: 2px solid #e4d4d6 ;
+    outline: none;
+    transition: border-bottom 0.3s ease;
+    text-align: center;
+}
+
+.campo-form:hover {
+    border-bottom: 2px solid #c97c63;
+}
+
+/* ESTILOS PARA LOS BOTONES */
+.boton-form {
+    background-color: #81007f;
+    width: auto;
+    padding: 10px;
+    margin: 1% auto;
+    color: #ffffff;
+    border: none;
+    transition: border-bottom 0.3s ease;
+}
+
+.boton-form:hover {
+    color: #c97c63
+}
+
+.boton-form a{
+    text-decoration: none;
+    color: white;
+}
+
+/* ESTILOS PARA LOS SELECT */
+.tipo {
+    text-align: center;
+    border-width: 2px;
+    border-color: #35103D;
+    padding: 1%;
+    background-color: #e4d4d6;
+    width: 30%;
+    margin: auto;
+}
+
+/* ESTILOS PARA DIV --> DE CONFIRMACION*/
+#container-form {
+    text-align: center;
+}
+
+#container-form p {
+    font-size: 150%;
+    color: green;
+    padding: 30px;
+}
+#container-form .icon {
+    font-size: 24px;
+    color: green;
+}

@@ -7,7 +7,7 @@ function RegistrationForm() {
   return (
     <div>
       <HeaderLanding></HeaderLanding>
-      <section>
+      <section className="sectionLandingPage">
         <form className="form-container" action="" method="post">
           <h1 className="h1-contacto">Registrate:</h1>
           <input

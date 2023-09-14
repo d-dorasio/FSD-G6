@@ -3,141 +3,47 @@ import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 
+
 function CurrencyConverter() {
   const [amountOne, setAmountOne] = useState("");
   const [currencyOne, setCurrencyOne] = useState("USD");
   const [currencyTwo, setCurrencyTwo] = useState("ARS");
-  const [exchangeRate, setExchangeRate] = useState(null);
-  const [amountTwo, setAmountTwo] = useState(0);
+  const [exchangeRates, setExchangeRates] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.exchangerate-api.com/v4/latest/${currencyOne}`)
       .then((response) => response.json())
       .then((data) => {
-        setExchangeRate(data.rates[currencyTwo]);
+        setExchangeRates(data.rates);
       })
       .catch((error) => {
-        console.log("Error:", error);
+        console.log("Error: ", error);
       });
-  }, [currencyOne, currencyTwo]);
+  }, [currencyOne]);
 
-  const handleCurrencyOneChange = (event) => {
-    setCurrencyOne(event.target.value);
-  };
-
-  const handleAmountOneChange = (event) => {
-    setAmountOne(event.target.value);
-  };
-
-  const handleCurrencyTwoChange = (event) => {
-    setCurrencyTwo(event.target.value);
-  };
-
-  const calculate = () => {
-    if (exchangeRate) {
-      const convertedAmount = parseFloat(amountOne) * exchangeRate;
-
-      setAmountTwo(convertedAmount);
-    }
+  const calculateEvent = () => {
+    console.log("Swapping currencies");
+    setCurrencyOne(currencyTwo);
+    setCurrencyTwo(currencyOne);
   };
 
   return (
-    <div>
-      <Header></Header>
+    <div className="container">
       <NavBar></NavBar>
-      <div style={{ paddingTop: "64px", paddingLeft: "300px" }}>
-        <main>
-          <section>
-            <h1 className="h1-center">Convertidor de moneda</h1>
+      <div className="sub-container">
+        <Header></Header>
+        <div className="main-container">
+          <main>
+            <section className="converter">
+              <h1 className="h1-center">Currency Converter</h1>
 
-            <form action="" className="form-container">
-              <div>
-                <div className="moneda">
-                  <select
-                    id="moneda-uno"
-                    className="tipo"
-                    value={currencyOne}
-                    onChange={handleCurrencyOneChange}
-                  >
-                    <option value="AED">AED</option>
-                    <option value="ARS">ARS</option>
-                    <option value="AUD">AUD</option>
-                    <option value="BGN">BGN</option>
-                    <option value="BRL">BRL</option>
-                    <option value="BSD">BSD</option>
-                    <option value="CAD">CAD</option>
-                    <option value="CHF">CHF</option>
-                    <option value="CLP">CLP</option>
-                    <option value="CNY">CNY</option>
-                    <option value="COP">COP</option>
-                    <option value="CZK">CZK</option>
-                    <option value="DKK">DKK</option>
-                    <option value="DOP">DOP</option>
-                    <option value="EGP">EGP</option>
-                    <option value="EUR">EUR</option>
-                    <option value="FJD">FJD</option>
-                    <option value="GBP">GBP</option>
-                    <option value="GTQ">GTQ</option>
-                    <option value="HKD">HKD</option>
-                    <option value="HRK">HRK</option>
-                    <option value="HUF">HUF</option>
-                    <option value="IDR">IDR</option>
-                    <option value="ILS">ILS</option>
-                    <option value="INR">INR</option>
-                    <option value="ISK">ISK</option>
-                    <option value="JPY">JPY</option>
-                    <option value="KRW">KRW</option>
-                    <option value="KZT">KZT</option>
-                    <option value="MXN">MXN</option>
-                    <option value="MYR">MYR</option>
-                    <option value="NOK">NOK</option>
-                    <option value="NZD">NZD</option>
-                    <option value="PAB">PAB</option>
-                    <option value="PEN">PEN</option>
-                    <option value="PHP">PHP</option>
-                    <option value="PKR">PKR</option>
-                    <option value="PLN">PLN</option>
-                    <option value="PYG">PYG</option>
-                    <option value="RON">RON</option>
-                    <option value="RUB">RUB</option>
-                    <option value="SAR">SAR</option>
-                    <option value="SEK">SEK</option>
-                    <option value="SGD">SGD</option>
-                    <option value="THB">THB</option>
-                    <option value="TRY">TRY</option>
-                    <option value="TWD">TWD</option>
-                    <option value="UAH">UAH</option>
-                    <option value="USD">USD</option>
-                    <option value="UYU">UYU</option>
-                    <option value="VND">VND</option>
-                    <option value="ZAR">ZAR</option>
-                  </select>
-
-                  <input
-                    className="campo-form"
-                    type="number"
-                    id="cantidad-uno"
-                    placeholder="0"
-                    value={amountOne}
-                    onChange={handleAmountOneChange}
-                  />
-                </div>
-
-                <div className="cambio" id="cambio">
-                  {exchangeRate && (
-                    <p>
-                      1 {currencyOne} = {exchangeRate} {currencyTwo}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              <div className="moneda">
+              <div className="invert-container form-container">
                 <select
-                  id="moneda-dos"
-                  className="tipo"
-                  value={currencyTwo}
-                  onChange={handleCurrencyTwoChange}
+                  name="currencyOne"
+                  id="currencyOne"
+                  value={currencyOne}
+                  onChange={(e) => setCurrencyOne(e.target.value)}
+                  className="conv-sel tipo"
                 >
                   <option value="AED">AED</option>
                   <option value="ARS">ARS</option>
@@ -192,28 +98,104 @@ function CurrencyConverter() {
                   <option value="VND">VND</option>
                   <option value="ZAR">ZAR</option>
                 </select>
-
                 <input
-                  type="number"
-                  id="cantidad-dos"
+                  type="text"
+                  className="borderless campo-form"
+                  name="amountOne"
+                  id="amountOne"
+                  value={amountOne}
                   placeholder="0"
-                  className="campo-form"
-                  value={amountTwo}
-                  readOnly
+                  onChange={(e) => {
+                    setAmountOne(e.target.value);
+                  }}
                 />
-                <div className="taza-cambio-container">
-                  <button
-                    className="btn boton-form"
-                    id="taza"
-                    onClick={(event) => calculate(event)}
-                  >
-                    Calcular
-                  </button>
+                <br></br>
+                <button
+                  title="Swap currencies"
+                  className="button boton-form"
+                  id="swapButton"
+                  onClick={calculateEvent}
+                >
+                  Intercambiar
+                </button>
+                <br></br>
+                <select
+                  name="currencyTwo"
+                  id="currencyTwo"
+                  value={currencyTwo}
+                  onChange={(e) => setCurrencyTwo(e.target.value)}
+                  className="conv-sel tipo"
+                >
+                  <option value="AED">AED</option>
+                  <option value="ARS">ARS</option>
+                  <option value="AUD">AUD</option>
+                  <option value="BGN">BGN</option>
+                  <option value="BRL">BRL</option>
+                  <option value="BSD">BSD</option>
+                  <option value="CAD">CAD</option>
+                  <option value="CHF">CHF</option>
+                  <option value="CLP">CLP</option>
+                  <option value="CNY">CNY</option>
+                  <option value="COP">COP</option>
+                  <option value="CZK">CZK</option>
+                  <option value="DKK">DKK</option>
+                  <option value="DOP">DOP</option>
+                  <option value="EGP">EGP</option>
+                  <option value="EUR">EUR</option>
+                  <option value="FJD">FJD</option>
+                  <option value="GBP">GBP</option>
+                  <option value="GTQ">GTQ</option>
+                  <option value="HKD">HKD</option>
+                  <option value="HRK">HRK</option>
+                  <option value="HUF">HUF</option>
+                  <option value="IDR">IDR</option>
+                  <option value="ILS">ILS</option>
+                  <option value="INR">INR</option>
+                  <option value="ISK">ISK</option>
+                  <option value="JPY">JPY</option>
+                  <option value="KRW">KRW</option>
+                  <option value="KZT">KZT</option>
+                  <option value="MXN">MXN</option>
+                  <option value="MYR">MYR</option>
+                  <option value="NOK">NOK</option>
+                  <option value="NZD">NZD</option>
+                  <option value="PAB">PAB</option>
+                  <option value="PEN">PEN</option>
+                  <option value="PHP">PHP</option>
+                  <option value="PKR">PKR</option>
+                  <option value="PLN">PLN</option>
+                  <option value="PYG">PYG</option>
+                  <option value="RON">RON</option>
+                  <option value="RUB">RUB</option>
+                  <option value="SAR">SAR</option>
+                  <option value="SEK">SEK</option>
+                  <option value="SGD">SGD</option>
+                  <option value="THB">THB</option>
+                  <option value="TRY">TRY</option>
+                  <option value="TWD">TWD</option>
+                  <option value="UAH">UAH</option>
+                  <option value="USD">USD</option>
+                  <option value="UYU">UYU</option>
+                  <option value="VND">VND</option>
+                  <option value="ZAR">ZAR</option>
+                </select>
+                <input
+                  type="text"
+                  className="borderless-disabled campo-form"
+                  name="amountTwo"
+                  id="amountTwo"
+                  placeholder="0"
+                  value={(amountOne * exchangeRates[currencyTwo]).toFixed(2)}
+                  disabled
+                />
+                <div className="price" id="price">
+                  1 {currencyOne} es igual a {exchangeRates[currencyTwo]}{" "}
+                  {currencyTwo}{" "}
                 </div>
               </div>
-            </form>
-          </section>
-        </main>
+            </section>
+          </main>
+        </div>
         <Footer></Footer>
       </div>
     </div>

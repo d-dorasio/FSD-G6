@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import NavBar from './navHB'
-import Header from './headerHB'
+import NavBar from "./navHB";
+import Header from "./headerHB";
 import Footer from "./footerHB";
 import { Link } from "react-router-dom";
+
+
 
 function Profile() {
   const [profileImage, setProfileImage] = useState(null);
@@ -24,80 +26,82 @@ function Profile() {
   };
 
   return (
-    <div>
-      <Header></Header>
+    <div className="container">
       <NavBar></NavBar>
-      <div style={{ paddingTop: '64px', paddingLeft: '300px' }}>
-        <main>
-          <section>
-            <h1>Perfil:</h1>
-            <form id="profileForm">
-              <label>Subir foto</label>
-              <br />
-              <input
-                type="file"
-                id="profileImage"
-                accept="image/*"
-                onChange={handleImageChange}
-                className="btn"
-              />
-              <br />
-              {imagePreview && (
-                <img
-                  id="preview"
-                  src={imagePreview}
-                  alt="Vista previa de la imagen"
-                  style={{ maxWidth: "50%" }}
+      <div className="sub-container">
+        <Header></Header>
+        <div className="main-container">
+          <main>
+            <section>
+              <h1>Perfil:</h1>
+              <form id="profileForm">
+                <label>Subir foto</label>
+                <br />
+                <input
+                  type="file"
+                  id="profileImage"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="btn"
                 />
-              )}
-              <p>[Nombre de Usuario]</p>
-            </form>
+                <br />
+                {imagePreview && (
+                  <img
+                    id="preview"
+                    src={imagePreview}
+                    alt="Vista previa de la imagen"
+                    style={{ maxWidth: "50%" }}
+                  />
+                )}
+                <p>[Nombre de Usuario]</p>
+              </form>
 
-            <h3>Datos:</h3>
-            <ul>
-              <li>
-                Nombre Completo: <span>Nombre Apellido</span>
-              </li>
-              <li>
-                Email: <span>nombre@mail.com</span>
-              </li>
-              <li>
-                DNI: <span>12.345.678</span>
-              </li>
-              <li>
-                Sexo: <span>Indefinido</span>
-              </li>
-              <li>
-                Edad:{" "}
-                <span>
-                  <button className="btn">Agregar edad</button>
-                </span>
-              </li>
-              <li>
-                Fecha de nacimiento:{" "}
-                <span>
-                  <button className="btn">Agregar fecha</button>
-                </span>
-              </li>
-              <li>
-                Estado civil:{" "}
-                <span>
-                  <button className="btn">Agregar Estado</button>
-                </span>
-              </li>
-              <li>
-                Profesión:{" "}
-                <span>
-                  <button className="btn">Agregar profesión</button>
-                </span>
-              </li>
-              <br />
-              <button className="btn">
-                <Link to="/">CERRAR SESIÓN</Link>
-              </button>
-            </ul>
-          </section>
-        </main>
+              <h3>Datos:</h3>
+              <ul>
+                <li>
+                  Nombre Completo: <span>Nombre Apellido</span>
+                </li>
+                <li>
+                  Email: <span>nombre@mail.com</span>
+                </li>
+                <li>
+                  DNI: <span>12.345.678</span>
+                </li>
+                <li>
+                  Sexo: <span>Indefinido</span>
+                </li>
+                <li>
+                  Edad:{" "}
+                  <span>
+                    <button className="btn">Agregar edad</button>
+                  </span>
+                </li>
+                <li>
+                  Fecha de nacimiento:{" "}
+                  <span>
+                    <button className="btn">Agregar fecha</button>
+                  </span>
+                </li>
+                <li>
+                  Estado civil:{" "}
+                  <span>
+                    <button className="btn">Agregar Estado</button>
+                  </span>
+                </li>
+                <li>
+                  Profesión:{" "}
+                  <span>
+                    <button className="btn">Agregar profesión</button>
+                  </span>
+                </li>
+                <br />
+                <button className="btn">
+                  <Link to="/">CERRAR SESIÓN</Link>
+                </button>
+              </ul>
+            </section>
+          </main>
+        </div>
         <Footer></Footer>
       </div>
     </div>
