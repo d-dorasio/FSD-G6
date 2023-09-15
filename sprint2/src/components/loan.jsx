@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
+import { Button, Card, CardContent, Select, Table, TableBody, TableCell, TableHead, TableRow, TextField, MenuItem } from "@mui/material";
 
 
 function Loans() {
@@ -93,80 +94,99 @@ function Loans() {
               </p>
             </section>
             <section>
-              <h1 className="h1-center">Simulador de préstamos</h1>
-              <div className="container-form">
-                <form className="form-container">
-                  <label>Sector de Pertenencia</label>
-                  <select
-                    className="tipo"
-                    name=""
-                    onChange={(e) => setTipoSeleccionado(e.target.value)}
-                  >
-                    <option value="publica">Administración Pública</option>
-                    <option value="privado">Sector privado</option>
-                    <option value="IPS">IPS</option>
-                    <option value="ANSES">ANSES</option>
-                  </select>
+              <Card sx={{boxShadow: 5}}>
+                <CardContent>
+                  <h1 className="h1-center">Simulador de préstamos</h1>
+                  <div className="container-form">
+                  <br/>
+                  <Card variant="outlined" sx={{ borderColor: 'secondary.main'}} >
+                    <CardContent>
+                      <form className="form-container">
+                        <label>Sector de Pertenencia</label>
+                        <Select
+                          required
+                          name=""
+                          label="Seleccione"
+                          variant="standard"
+                          onChange={(e) => setTipoSeleccionado(e.target.value)}
+                        >
+                          <MenuItem value="publica">Administración Pública</MenuItem>
+                          <MenuItem value="privado">Sector privado</MenuItem>
+                          <MenuItem value="IPS">IPS</MenuItem>
+                          <MenuItem value="ANSES">ANSES</MenuItem>
+                        </Select>
 
-                  <label htmlFor="amount">Monto:</label>
-                  <input
-                    type="text"
-                    className="campo-form"
-                    name="amount"
-                    placeholder="Ingrese el monto"
-                    value={monto}
-                    onChange={(e) => setMonto(e.target.value)}
-                  />
+                        {/* <label htmlFor="amount">Monto:</label> */}
+                        <TextField
+                          required
+                          type="text"
+                          name="amount"
+                          label="Monto"
+                          placeholder="Ingrese el monto"
+                          variant="standard"
+                          value={monto}
+                          onChange={(e) => setMonto(e.target.value)}
+                        />
 
-                  <label htmlFor="months">Plazo en meses:</label>
-                  <input
-                    type="number"
-                    className="campo-form"
-                    name="months"
-                    placeholder="Ingrese los meses"
-                    value={plazoEjecucion}
-                    onChange={(e) => setPlazoEjecucion(e.target.value)}
-                  />
-
-                  <button
-                    type="button"
-                    className="boton-form"
-                    onClick={calcularPrestamo}
-                  >
-                    Calcular
-                  </button>
-                </form>
-                <table
-                  cellSpacing="1"
-                  style={{ borderCollapse: "collapse" }}
-                  width="100%"
-                  id="transactionTable"
-                  className="table tab-movimientos"
-                >
-                  <thead>
-                    <tr>
-                      <th style={{ backgroundColor: "#C2B2B4" }}>Cuota</th>
-                      <th style={{ backgroundColor: "#C2B2B4" }}>Saldo</th>
-                      <th style={{ backgroundColor: "#C2B2B4" }}>
-                        Amortización
-                      </th>
-                      <th style={{ backgroundColor: "#C2B2B4" }}>Interés</th>
-                      <th style={{ backgroundColor: "#C2B2B4" }}>
-                        Cuota sin I.V.A.
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cuotas.map((cuota, index) => (
-                      <tr key={index}>
-                        {cuota.map((valorCelda, indexCelda) => (
-                          <td key={indexCelda}>{valorCelda.toFixed(2)}</td>
+                        {/* <label htmlFor="months">Plazo en meses:</label> */}
+                        <TextField
+                          required
+                          type="number"
+                          name="months"
+                          label="Plazo en meses"
+                          placeholder="Cantidad de meses en números"
+                          variant="standard"
+                          value={plazoEjecucion}
+                          onChange={(e) => setPlazoEjecucion(e.target.value)}
+                        />
+                        <br/>
+                        <Button
+                          type="button"
+                          className="boton-form"
+                          variant="contained"
+                          onClick={calcularPrestamo}
+                        >
+                          Calcular
+                        </Button>
+                      </form>
+                    </CardContent>
+                  </Card>
+                  <br/>
+                    <Table
+                      sx={{ minWidth: 650 }}
+                      aria-label="simple table"
+                      className="tab-movimientos"
+                      cellSpacing="1"
+                      style={{ borderCollapse: "collapse" }}
+                      width="100%"
+                      id="transactionTable">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Cuota</TableCell>
+                          <TableCell style={{ fontWeight: 900, color: "#000000", backgroundColor: "#C2B2B4" }} align="center">Saldo</TableCell>
+                          <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">
+                            Amortización
+                          </TableCell>
+                          <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Interés</TableCell>
+                          <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">
+                            Cuota sin I.V.A.
+                          </TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {cuotas.map((cuota, index) => (
+                          <TableRow key={index}>
+                            {cuota.map((valorCelda, indexCelda) => (
+                              <TableCell key={indexCelda}>{valorCelda.toFixed(2)}</TableCell>
+                            ))}
+                          </TableRow>
                         ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                      </TableBody>
+                    </Table>
+                  </div>
+                </CardContent>
+              </Card>
+              
             </section>
           </main>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
+import { Card, CardContent, Button, Select, MenuItem } from "@mui/material";
 
 
 function CurrencyConverter() {
@@ -35,164 +36,164 @@ function CurrencyConverter() {
         <div className="main-container">
           <main>
             <section className="converter">
-              <h1 className="h1-center">Currency Converter</h1>
+              <h1>Convertidor de moneda</h1>
 
-              <div className="invert-container form-container">
-                <select
-                  name="currencyOne"
-                  id="currencyOne"
-                  value={currencyOne}
-                  onChange={(e) => setCurrencyOne(e.target.value)}
-                  className="conv-sel tipo"
-                >
-                  <option value="AED">AED</option>
-                  <option value="ARS">ARS</option>
-                  <option value="AUD">AUD</option>
-                  <option value="BGN">BGN</option>
-                  <option value="BRL">BRL</option>
-                  <option value="BSD">BSD</option>
-                  <option value="CAD">CAD</option>
-                  <option value="CHF">CHF</option>
-                  <option value="CLP">CLP</option>
-                  <option value="CNY">CNY</option>
-                  <option value="COP">COP</option>
-                  <option value="CZK">CZK</option>
-                  <option value="DKK">DKK</option>
-                  <option value="DOP">DOP</option>
-                  <option value="EGP">EGP</option>
-                  <option value="EUR">EUR</option>
-                  <option value="FJD">FJD</option>
-                  <option value="GBP">GBP</option>
-                  <option value="GTQ">GTQ</option>
-                  <option value="HKD">HKD</option>
-                  <option value="HRK">HRK</option>
-                  <option value="HUF">HUF</option>
-                  <option value="IDR">IDR</option>
-                  <option value="ILS">ILS</option>
-                  <option value="INR">INR</option>
-                  <option value="ISK">ISK</option>
-                  <option value="JPY">JPY</option>
-                  <option value="KRW">KRW</option>
-                  <option value="KZT">KZT</option>
-                  <option value="MXN">MXN</option>
-                  <option value="MYR">MYR</option>
-                  <option value="NOK">NOK</option>
-                  <option value="NZD">NZD</option>
-                  <option value="PAB">PAB</option>
-                  <option value="PEN">PEN</option>
-                  <option value="PHP">PHP</option>
-                  <option value="PKR">PKR</option>
-                  <option value="PLN">PLN</option>
-                  <option value="PYG">PYG</option>
-                  <option value="RON">RON</option>
-                  <option value="RUB">RUB</option>
-                  <option value="SAR">SAR</option>
-                  <option value="SEK">SEK</option>
-                  <option value="SGD">SGD</option>
-                  <option value="THB">THB</option>
-                  <option value="TRY">TRY</option>
-                  <option value="TWD">TWD</option>
-                  <option value="UAH">UAH</option>
-                  <option value="USD">USD</option>
-                  <option value="UYU">UYU</option>
-                  <option value="VND">VND</option>
-                  <option value="ZAR">ZAR</option>
-                </select>
-                <input
-                  type="text"
-                  className="borderless campo-form"
-                  name="amountOne"
-                  id="amountOne"
-                  value={amountOne}
-                  placeholder="0"
-                  onChange={(e) => {
-                    setAmountOne(e.target.value);
-                  }}
-                />
-                <br></br>
-                <button
-                  title="Swap currencies"
-                  className="button boton-form"
-                  id="swapButton"
-                  onClick={calculateEvent}
-                >
-                  Intercambiar
-                </button>
-                <br></br>
-                <select
-                  name="currencyTwo"
-                  id="currencyTwo"
-                  value={currencyTwo}
-                  onChange={(e) => setCurrencyTwo(e.target.value)}
-                  className="conv-sel tipo"
-                >
-                  <option value="AED">AED</option>
-                  <option value="ARS">ARS</option>
-                  <option value="AUD">AUD</option>
-                  <option value="BGN">BGN</option>
-                  <option value="BRL">BRL</option>
-                  <option value="BSD">BSD</option>
-                  <option value="CAD">CAD</option>
-                  <option value="CHF">CHF</option>
-                  <option value="CLP">CLP</option>
-                  <option value="CNY">CNY</option>
-                  <option value="COP">COP</option>
-                  <option value="CZK">CZK</option>
-                  <option value="DKK">DKK</option>
-                  <option value="DOP">DOP</option>
-                  <option value="EGP">EGP</option>
-                  <option value="EUR">EUR</option>
-                  <option value="FJD">FJD</option>
-                  <option value="GBP">GBP</option>
-                  <option value="GTQ">GTQ</option>
-                  <option value="HKD">HKD</option>
-                  <option value="HRK">HRK</option>
-                  <option value="HUF">HUF</option>
-                  <option value="IDR">IDR</option>
-                  <option value="ILS">ILS</option>
-                  <option value="INR">INR</option>
-                  <option value="ISK">ISK</option>
-                  <option value="JPY">JPY</option>
-                  <option value="KRW">KRW</option>
-                  <option value="KZT">KZT</option>
-                  <option value="MXN">MXN</option>
-                  <option value="MYR">MYR</option>
-                  <option value="NOK">NOK</option>
-                  <option value="NZD">NZD</option>
-                  <option value="PAB">PAB</option>
-                  <option value="PEN">PEN</option>
-                  <option value="PHP">PHP</option>
-                  <option value="PKR">PKR</option>
-                  <option value="PLN">PLN</option>
-                  <option value="PYG">PYG</option>
-                  <option value="RON">RON</option>
-                  <option value="RUB">RUB</option>
-                  <option value="SAR">SAR</option>
-                  <option value="SEK">SEK</option>
-                  <option value="SGD">SGD</option>
-                  <option value="THB">THB</option>
-                  <option value="TRY">TRY</option>
-                  <option value="TWD">TWD</option>
-                  <option value="UAH">UAH</option>
-                  <option value="USD">USD</option>
-                  <option value="UYU">UYU</option>
-                  <option value="VND">VND</option>
-                  <option value="ZAR">ZAR</option>
-                </select>
-                <input
-                  type="text"
-                  className="borderless-disabled campo-form"
-                  name="amountTwo"
-                  id="amountTwo"
-                  placeholder="0"
-                  value={(amountOne * exchangeRates[currencyTwo]).toFixed(2)}
-                  disabled
-                />
-                <div className="price" id="price">
-                  1 {currencyOne} es igual a {exchangeRates[currencyTwo]}{" "}
-                  {currencyTwo}{" "}
-                </div>
-              </div>
+              <Card sx={{boxShadow: 5}}> 
+                <CardContent>
+                  <div className="invert-container form-container">
+                    <Select
+                      variant="outlined"
+                      color="secondary"
+                      name="currencyOne"
+                      id="currencyOne"
+                      value={currencyOne}
+                      onChange={(e) => setCurrencyOne(e.target.value)}
+                    >
+                      <MenuItem value="AED">AED</MenuItem>
+                      <MenuItem value="ARS">ARS</MenuItem>
+                      <MenuItem value="AUD">AUD</MenuItem>
+                      <MenuItem value="BGN">BGN</MenuItem>
+                      <MenuItem value="BRL">BRL</MenuItem>
+                      <MenuItem value="BSD">BSD</MenuItem>
+                      <MenuItem value="CAD">CAD</MenuItem>
+                      <MenuItem value="CHF">CHF</MenuItem>
+                      <MenuItem value="CLP">CLP</MenuItem>
+                      <MenuItem value="CNY">CNY</MenuItem>
+                      <MenuItem value="COP">COP</MenuItem>
+                      <MenuItem value="CZK">CZK</MenuItem>
+                      <MenuItem value="DKK">DKK</MenuItem>
+                      <MenuItem value="DOP">DOP</MenuItem>
+                      <MenuItem value="EGP">EGP</MenuItem>
+                      <MenuItem value="EUR">EUR</MenuItem>
+                      <MenuItem value="FJD">FJD</MenuItem>
+                      <MenuItem value="GBP">GBP</MenuItem>
+                      <MenuItem value="GTQ">GTQ</MenuItem>
+                      <MenuItem value="HKD">HKD</MenuItem>
+                      <MenuItem value="HRK">HRK</MenuItem>
+                      <MenuItem value="HUF">HUF</MenuItem>
+                      <MenuItem value="IDR">IDR</MenuItem>
+                      <MenuItem value="ILS">ILS</MenuItem>
+                      <MenuItem value="INR">INR</MenuItem>
+                      <MenuItem value="ISK">ISK</MenuItem>
+                      <MenuItem value="JPY">JPY</MenuItem>
+                      <MenuItem value="KRW">KRW</MenuItem>
+                      <MenuItem value="KZT">KZT</MenuItem>
+                      <MenuItem value="MXN">MXN</MenuItem>
+                      <MenuItem value="MYR">MYR</MenuItem>
+                      <MenuItem value="NOK">NOK</MenuItem>
+                      <MenuItem value="NZD">NZD</MenuItem>
+                      <MenuItem value="PAB">PAB</MenuItem>
+                      <MenuItem value="PEN">PEN</MenuItem>
+                      <MenuItem value="PHP">PHP</MenuItem>
+                      <MenuItem value="PKR">PKR</MenuItem>
+                      <MenuItem value="PLN">PLN</MenuItem>
+                      <MenuItem value="PYG">PYG</MenuItem>
+                      <MenuItem value="RON">RON</MenuItem>
+                      <MenuItem value="RUB">RUB</MenuItem>
+                      <MenuItem value="SAR">SAR</MenuItem>
+                      <MenuItem value="SEK">SEK</MenuItem>
+                      <MenuItem value="SGD">SGD</MenuItem>
+                      <MenuItem value="THB">THB</MenuItem>
+                      <MenuItem value="TRY">TRY</MenuItem>
+                      <MenuItem value="TWD">TWD</MenuItem>
+                      <MenuItem value="UAH">UAH</MenuItem>
+                      <MenuItem value="USD">USD</MenuItem>
+                      <MenuItem value="UYU">UYU</MenuItem>
+                      <MenuItem value="VND">VND</MenuItem>
+                      <MenuItem value="ZAR">ZAR</MenuItem>
+                    </Select>
+                    <br/>
+                    <input
+                      type="text"
+                      className="borderless campo-form"
+                      name="amountOne"
+                      id="amountOne"
+                      value={amountOne}
+                      placeholder="0"
+                      onChange={(e) => {
+                        setAmountOne(e.target.value);
+                      }}
+                    />
+                    <br></br>
+                    <Button
+                      title="Swap currencies"
+                      variant="contained"
+                      size="small"
+                      id="swapButton"
+                      onClick={calculateEvent}
+                    >
+                      Intercambiar
+                    </Button>
+                    <br></br>
+                    <Select
+                      variant="outlined"
+                      color="secondary"
+                      name="currencyTwo"
+                      id="currencyTwo"
+                      value={currencyTwo}
+                      onChange={(e) => setCurrencyTwo(e.target.value)}
+                    >
+                      <MenuItem value="AED">AED</MenuItem>
+                      <MenuItem value="ARS">ARS</MenuItem>
+                      <MenuItem value="AUD">AUD</MenuItem>
+                      <MenuItem value="BGN">BGN</MenuItem>
+                      <MenuItem value="BRL">BRL</MenuItem>
+                      <MenuItem value="BSD">BSD</MenuItem>
+                      <MenuItem value="CAD">CAD</MenuItem>
+                      <MenuItem value="CHF">CHF</MenuItem>
+                      <MenuItem value="CLP">CLP</MenuItem>
+                      <MenuItem value="CNY">CNY</MenuItem>
+                      <MenuItem value="COP">COP</MenuItem>
+                      <MenuItem value="CZK">CZK</MenuItem>
+                      <MenuItem value="DKK">DKK</MenuItem>
+                      <MenuItem value="DOP">DOP</MenuItem>
+                      <MenuItem value="EGP">EGP</MenuItem>
+                      <MenuItem value="EUR">EUR</MenuItem>
+                      <MenuItem value="FJD">FJD</MenuItem>
+                      <MenuItem value="GBP">GBP</MenuItem>
+                      <MenuItem value="GTQ">GTQ</MenuItem>
+                      <MenuItem value="HKD">HKD</MenuItem>
+                      <MenuItem value="HRK">HRK</MenuItem>
+                      <MenuItem value="HUF">HUF</MenuItem>
+                      <MenuItem value="IDR">IDR</MenuItem>
+                      <MenuItem value="ILS">ILS</MenuItem>
+                      <MenuItem value="INR">INR</MenuItem>
+                      <MenuItem value="ISK">ISK</MenuItem>
+                      <MenuItem value="JPY">JPY</MenuItem>
+                      <MenuItem value="KRW">KRW</MenuItem>
+                      <MenuItem value="KZT">KZT</MenuItem>
+                      <MenuItem value="MXN">MXN</MenuItem>
+                      <MenuItem value="MYR">MYR</MenuItem>
+                      <MenuItem value="NOK">NOK</MenuItem>
+                      <MenuItem value="NZD">NZD</MenuItem>
+                      <MenuItem value="PAB">PAB</MenuItem>
+                      <MenuItem value="PEN">PEN</MenuItem>
+                      <MenuItem value="PHP">PHP</MenuItem>
+                      <MenuItem value="PKR">PKR</MenuItem>
+                      <MenuItem value="PLN">PLN</MenuItem>
+                      <MenuItem value="PYG">PYG</MenuItem>
+                      <MenuItem value="RON">RON</MenuItem>
+                      <MenuItem value="RUB">RUB</MenuItem>
+                      <MenuItem value="SAR">SAR</MenuItem>
+                      <MenuItem value="SEK">SEK</MenuItem>
+                      <MenuItem value="SGD">SGD</MenuItem>
+                      <MenuItem value="THB">THB</MenuItem>
+                      <MenuItem value="TRY">TRY</MenuItem>
+                      <MenuItem value="TWD">TWD</MenuItem>
+                      <MenuItem value="UAH">UAH</MenuItem>
+                      <MenuItem value="USD">USD</MenuItem>
+                      <MenuItem value="UYU">UYU</MenuItem>
+                      <MenuItem value="VND">VND</MenuItem>
+                      <MenuItem value="ZAR">ZAR</MenuItem>
+                    </Select>
+                    <br/>
+                    <h4 className="price" id="price">
+                      {amountOne} {currencyOne} es igual a {(amountOne * exchangeRates[currencyTwo]).toFixed(2)}{" "}
+                      {currencyTwo}{" "}
+                    </h4>
+                  </div>
+                </CardContent>
+              </Card>
             </section>
           </main>
         </div>

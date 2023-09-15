@@ -3,6 +3,7 @@ import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import { Link } from "react-router-dom";
+import { Button, TextField } from "@mui/material";
 
 
 
@@ -37,13 +38,12 @@ function Profile() {
               <form id="profileForm">
                 <label>Subir foto</label>
                 <br />
-                <input
+                <TextField
                   type="file"
                   id="profileImage"
+                  variant="outlined"
                   accept="image/*"
-                  onChange={handleImageChange}
-                  className="btn"
-                />
+                  onChange={handleImageChange}                />
                 <br />
                 {imagePreview && (
                   <img
@@ -53,13 +53,13 @@ function Profile() {
                     style={{ maxWidth: "50%" }}
                   />
                 )}
-                <p>[Nombre de Usuario]</p>
+                <h2>Apellido, Nombre</h2>
               </form>
 
               <h3>Datos:</h3>
               <ul>
                 <li>
-                  Nombre Completo: <span>Nombre Apellido</span>
+                  Nombre Completo: <span>Apellido, Nombre</span>
                 </li>
                 <li>
                   Email: <span>nombre@mail.com</span>
@@ -73,31 +73,35 @@ function Profile() {
                 <li>
                   Edad:{" "}
                   <span>
-                    <button className="btn">Agregar edad</button>
+                    <Button variant="contained" size="small">Agregar edad</Button>
                   </span>
                 </li>
                 <li>
                   Fecha de nacimiento:{" "}
                   <span>
-                    <button className="btn">Agregar fecha</button>
+                    <Button variant="contained" size="small">Agregar fecha</Button>
                   </span>
                 </li>
                 <li>
                   Estado civil:{" "}
                   <span>
-                    <button className="btn">Agregar Estado</button>
+                    <Button variant="contained" size="small">Agregar Estado</Button>
                   </span>
                 </li>
                 <li>
                   Profesión:{" "}
                   <span>
-                    <button className="btn">Agregar profesión</button>
+                    <Button variant="contained" size="small">Agregar profesión</Button>
                   </span>
                 </li>
                 <br />
-                <button className="btn">
+                <Button 
+                  size="large" 
+                  color="secondary" 
+                  variant="outined"
+                  sx={{ border: 2, borderColor: 'secondary.main' }}>
                   <Link to="/">CERRAR SESIÓN</Link>
-                </button>
+                </Button>
               </ul>
             </section>
           </main>

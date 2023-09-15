@@ -57,7 +57,7 @@ export default function NavBar() {
            </li>
            <li>
             <Button>
-               <Link to="/simuladorPlazoFijo">Simulador</Link>
+               <Link to="/simuladorPlazoFijo">Plazos Fijos</Link>
              </Button>
            </li>
            <li>

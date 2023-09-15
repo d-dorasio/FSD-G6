@@ -3,6 +3,7 @@ import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import BasicTable from "./basicTable";
+import { Button } from "@mui/material";
 
 
 function Movements() {
@@ -22,9 +23,10 @@ function Movements() {
               <strong>solicite un resumen de cuenta</strong>.
             </p>
             <BasicTable />
-            <button type="submit" className="btn">
-              Solicitar resumen de cuenta
-            </button>
+            <br/>
+            <Button type="submit" variant="contained" disabled>
+              SOLICITAR RESUMEN DE CUENTA
+            </Button>
           </main>
         </div>
         <Footer></Footer>

@@ -1,6 +1,6 @@
 h1,
 h2 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #ff7344;
 }
 
@@ -385,10 +385,10 @@ footer a {
 
 /* ESTILOS PARA FORMULARIOS */
 label {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: black;
-    font-size: large;
+    font-size: medium;
     padding: 1%;
 }
 
@@ -396,7 +396,7 @@ label {
 .h1-center {
     text-align: center;
     color: #81007f;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
 }
 

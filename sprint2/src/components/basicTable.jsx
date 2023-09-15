@@ -33,9 +33,9 @@ export default function BasicTable() {
                 id="transactionTable">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="center">Fecha de realización</TableCell>
-                        <TableCell align="center">Descripción</TableCell>
-                        <TableCell align="center">Movimiento</TableCell>
+                        <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Fecha de realización</TableCell>
+                        <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Descripción</TableCell>
+                        <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Movimiento</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

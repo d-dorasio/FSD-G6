@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
+import { Button, Card, CardContent, TextField } from "@mui/material";
 
 function Cards() {
   const [cards, setCards] = useState([
@@ -56,7 +57,7 @@ function Cards() {
         <div className="main-container">
           <main>
             <section>
-              <h1 className="h1-center">Mis Tarjetas</h1>
+              <h1>Mis Tarjetas</h1>
               {cards.map((card, index) => (
                 <div key={index} className="card">
                   <h3>{card.nombre}</h3>
@@ -66,51 +67,54 @@ function Cards() {
                 </div>
               ))}
               <div id="tarjetas-container"></div>
+              <br/>
               {/* Add card */}
-              <form onSubmit={handleSubmit} className="form-container">
-                <h1>Agregar tarjeta adicional:</h1>
-                <label htmlFor="nombre">Nombre del Titular:</label>
-                <input
-                  className="campo-form"
-                  type="text"
-                  id="nombre"
-                  ref={nombreRef}
-                  required
-                />
+              <Card variant="outlined" sx={{boxShadow: 5}} >
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="form-container">
+                    <h1>Agregar nueva tarjeta:</h1>
 
-                <label htmlFor="numero">Número de la Tarjeta:</label>
-                <input
-                  className="campo-form"
-                  type="text"
-                  id="numero"
-                  ref={numeroRef}
-                  maxLength="16"
-                  required
-                />
-
-                <label htmlFor="vencimiento">Fecha de Vencimiento:</label>
-                <input
-                  className="campo-form"
-                  type="text"
-                  id="vencimiento"
-                  ref={vencimientoRef}
-                  required
-                />
-
-                <label htmlFor="codigo">Código de Seguridad:</label>
-                <input
-                  className="campo-form"
-                  type="password"
-                  id="codigo"
-                  ref={codigoRef}
-                  maxLength="3"
-                  required
-                />
-
-                <button className="boton-form" type="submit">
-                  Agregar
-                </button>
-              </form>
+                    <TextField
+                      required
+                      label="Nombre del Titular"
+                      type="text"
+                      id="nombre"
+                      ref={nombreRef}
+                    />
+                    <br/>
+                    <TextField
+                      required
+                      label="Número de la tarjeta"
+                      type="text"
+                      id="numero"
+                      ref={numeroRef}
+                      maxLength="16"
+                    />
+                    <br/>
+                    <TextField
+                      required
+                      label="Fecha de Vencimiento"
+                      type="text"
+                      id="vencimiento"
+                      ref={vencimientoRef}
+                    />
+                    <br/>
+                    <TextField
+                      required
+                      label="Código de Seguridad"
+                      type="password"
+                      id="codigo"
+                      ref={codigoRef}
+                      maxLength="3"
+                    />
+                    <br/>
+                    <Button variant="contained" type="submit">
+                      Agregar tarjeta
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+              
             </section>
           </main>
         </div>

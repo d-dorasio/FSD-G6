@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
+import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 
 function Simulator() {
@@ -52,111 +53,116 @@ function Simulator() {
         <div className="main-container">
           <main>
             <section>
-              <h1 className="h1-center">Simulador de plazo fijo</h1>
-              <div className="form-container">
-                <form action="" method="post">
-                  <label>
-                    <strong>Tipo de plazo fijo:</strong>
-                  </label>
-                  <br />
-                  <input
-                    type="radio"
-                    id="pesos"
-                    name="pfpesos"
-                    value="pesos"
-                    checked={tipoSeleccionado === "pesos"}
-                    onChange={() => setTipoSeleccionado("pesos")}
-                  />
-                  <label>Plazo fijo en pesos</label>
-                  <br />
-                  <input
-                    type="radio"
-                    id="dolar"
-                    name="pfdolar"
-                    value="dolar"
-                    checked={tipoSeleccionado === "dolar"}
-                    onChange={() => setTipoSeleccionado("dolar")}
-                  />
-                  <label>Plazo fijo en dólares</label>
-                  <br />
-                  <br />
-                  <label htmlFor="monto">Monto a invertir:</label>
-                  <br />
-                  <input
-                    type="number"
-                    id="monto"
-                    placeholder="Ingrese el monto"
-                    min="1000"
-                    className="campo-form"
-                    value={monto}
-                    onChange={(e) => setMonto(e.target.value)}
-                  />
-                  <br />
-                  <label>Cantidad de días</label>
-                  <br />
-                  <select
-                    name="dias"
-                    className="tipo"
-                    onChange={handlePlazoChange}
-                    value={plazoEjecucion}
-                  >
-                    <option value="30">30</option>
-                    <option value="60">60</option>
-                    <option value="90">90</option>
-                    <option value="Otro">Más días</option>
-                  </select>
-                  {plazoEjecucion === "Otro" && (
-                    <div id="otroPlazo">
-                      <label htmlFor="otrodia">
-                        Ingrese la cantidad de días:
-                      </label>
-                      <input
-                        type="number"
-                        id="otrodia"
-                        placeholder="Ingrese la cantidad de días"
-                        value={otroPlazo}
-                        onChange={(e) => setOtroPlazo(e.target.value)}
-                      />
-                      <br />
-                    </div>
-                  )}
-                  <br />
-                  <br />
-                  <button
-                    id="calcular"
-                    className="boton-form"
-                    onClick={calcularPlazoFijo}
-                  >
-                    Calcular
-                  </button>
-
-                  {resultadoVisible && (
-                    <div id="resultado">
-                      <h3>Resultado:</h3>
-                      <p>
-                        Intereses acumulados:{" "}
-                        <span id="intereses">{intereses}</span>
-                      </p>
-                      <p>
-                        Monto total: <span id="total">{total}</span>
-                      </p>
-                    </div>
-                  )}
-                </form>
-              </div>
-            </section>
-
-            <section>
-              <h1>Plazo fijo</h1>
+            <h1>Plazos fijos</h1>
               <p>
                 Un <em>plazo fijo</em> es un instrumento de ahorro, que consiste
                 en un depósito de dinero que podés hacer por un tiempo
                 determinado. Concluido ese tiempo, el banco te devuelve el
                 dinero que invertiste más los intereses generados.
               </p>
-
+              <br/>
+            </section>
+            <section>
+              <Card variant="outlined" sx={{boxShadow: 5}}>
+                <CardContent>
+                  <h1 className="h1-center">Simulador de plazo fijo</h1>
+                  <div className="form-container">
+                    <form action="" method="post">
+                      <label>
+                        <strong>Tipo de plazo fijo:</strong>
+                      </label>
+                      <br />
+                      <input
+                        type="radio"
+                        id="pesos"
+                        name="pfpesos"
+                        value="pesos"
+                        checked={tipoSeleccionado === "pesos"}
+                        onChange={() => setTipoSeleccionado("pesos")}
+                      />
+                      <label>Plazo fijo en pesos</label>
+                      <br />
+                      <input
+                        type="radio"
+                        id="dolar"
+                        name="pfdolar"
+                        value="dolar"
+                        checked={tipoSeleccionado === "dolar"}
+                        onChange={() => setTipoSeleccionado("dolar")}
+                      />
+                      <label>Plazo fijo en dólares</label>
+                      <br />
+                      <TextField
+                        type="number"
+                        id="monto"
+                        placeholder="Ingrese el monto"
+                        variant="standard"
+                        label="Monto a invertir"
+                        min="1000"
+                        value={monto}
+                        onChange={(e) => setMonto(e.target.value)}
+                      />
+                      <br /><br/>
+                      <InputLabel>Cantidad de días</InputLabel>
+                      <Select
+                        name="dias"
+                        onChange={handlePlazoChange}
+                        value={plazoEjecucion}
+                      >
+                        <MenuItem value="30">30</MenuItem>
+                        <MenuItem value="60">60</MenuItem>
+                        <MenuItem value="90">90</MenuItem>
+                        <MenuItem value="Otro">Más días</MenuItem>
+                      </Select>
+                      {plazoEjecucion === "Otro" && (
+                        <div id="otroPlazo">
+                          <br/>
+                          <InputLabel htmlFor="otrodia">
+                            Ingrese la cantidad de días:
+                          </InputLabel>
+                          <TextField
+                            type="number"
+                            id="otrodia"
+                            variant="standard"
+                            value={otroPlazo}
+                            onChange={(e) => setOtroPlazo(e.target.value)}
+                          />
+                          <br />
+                        </div>
+                      )}
+                      <br />
+                      <br />
+                      <Button
+                        id="calcular"
+                        variant="contained"
+                        onClick={calcularPlazoFijo}
+                      >
+                        Calcular
+                      </Button>
+                      {resultadoVisible && (
+                        <div id="resultado">
+                        <br/>
+                        <Card>
+                          <CardContent>
+                              <h3>Resultado:</h3>
+                              <p>
+                                Intereses acumulados:{" $"}
+                                <span id="intereses">{intereses}</span>
+                              </p>
+                              <p>
+                                Monto total:{" $"} <span id="total">{total}</span>
+                              </p>
+                          </CardContent>
+                        </Card>
+                        </div>
+                      )}
+                    </form>
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+            <section>
               <h2>Tipos de plazo fijo</h2>
-              <br />
               <p>
                 A la hora de invertir en tu futuro, queremos que cuentes con
                 todas las opciones disponibles para elegir; desde un plazo fijo
@@ -213,10 +219,9 @@ function Simulator() {
                   una tasa fija prepactada y otra variable.
                 </li>
               </ul>
-              <br />
               <p>
                 Podés calcular la cuota de tu plazo fijo online ahora, a través
-                del simulador de más arriba.
+                del simulador de la parte superior.
               </p>
               <h2>¿Qué es el interés en un plazo fijo?</h2>
               <p>

@@ -3,6 +3,7 @@ import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import BasicTable from "./basicTable";
+import { Alert, Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function Payments() {
   // ...
@@ -37,39 +38,45 @@ useEffect(() => {
         <div className="main-container">
           <main>
             <section>
-              <h1 className="h1-center">Pagos</h1>
+              <h1>Pagos</h1>
               <div className="anotherContainer">
                 <div id="container-form">
-                  <h2>Realizar Pago</h2>
-                  <form className="form-container">
-                    <label htmlFor="payment">Pago a realizar:</label>
-                    <select className="tipo" name="paymentMethod" required>
-                      <option value="gas">Gas</option>
-                      <option value="luz">Luz</option>
-                      <option value="agua">Agua</option>
-                      <option value="expensas">Expensas</option>
-                    </select>
-                    <br />
-                    <label htmlFor="amount">Monto:</label>
-                    <input
-                      type="number"
-                      className="campo-form"
-                      name="amount"
-                      step="0.01"
-                      required
-                    />
-                    <br />
-                    <label htmlFor="paymentMethod">Método de Pago:</label>
-                    <select className="tipo" name="paymentMethod" required>
-                      <option value="debito">Débito</option>
-                      <option value="credito">Crédito</option>
-                      <option value="transferencia">Transferencia</option>
-                    </select>
-                    <br />
-                    <button type="submit" className="boton-form">
-                      Realizar Pago
-                    </button>
-                  </form>
+                  <Card sx={{boxShadow: 5}}>
+                    <CardContent>
+
+                      <h1 className="h1-center">Realizar Pago</h1>
+                      <form className="form-container">
+                        <InputLabel htmlFor="payment">Pago a realizar:</InputLabel>
+                        <Select name="paymentMethod" variant="standard"required>
+                          <MenuItem value="gas">Gas</MenuItem>
+                          <MenuItem value="luz">Luz</MenuItem>
+                          <MenuItem value="agua">Agua</MenuItem>
+                          <MenuItem value="expensas">Expensas</MenuItem>
+                        </Select>
+                        <br />
+                        <TextField
+                          variant="standard"
+                          label="Monto"
+                          type="number"
+                          name="amount"
+                          step="0.01"
+                          required
+                        />
+                        <br />
+                        <InputLabel htmlFor="paymentMethod">Método de Pago:</InputLabel>
+                        <Select variant="standard" name="paymentMethod" required>
+                          <MenuItem value="debito">Débito</MenuItem>
+                          <MenuItem value="credito">Crédito</MenuItem>
+                          <MenuItem value="transferencia">Transferencia</MenuItem>
+                        </Select>
+                        <br />
+                        <Button type="submit" variant="contained">
+                          Realizar Pago
+                        </Button>
+                      </form>
+                    </CardContent>
+                  </Card>
+
                 </div>
                 <div>
                   <h2>Pagos realizados</h2>

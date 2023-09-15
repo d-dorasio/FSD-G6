@@ -2,87 +2,102 @@ import React from "react";
 import HeaderLanding from "./headerLanding";
 import FooterLanding from "./footerLanding";
 import { Link } from "react-router-dom";
+import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function RegistrationForm() {
   return (
     <div>
       <HeaderLanding></HeaderLanding>
       <section className="sectionLandingPage">
-        <form className="form-container" action="" method="post">
-          <h1 className="h1-contacto">Registrate:</h1>
-          <input
-            className="campo-form"
-            name="nombre"
-            type="text"
-            placeholder="Nombre/"
-            required
-            maxLength="50"
-          />
-          <input
-            className="campo-form"
-            name="apellido"
-            type="text"
-            placeholder="Apellido/s"
-            required
-            maxLength="50"
-          />
-          <input
-            className="campo-form"
-            name="email"
-            type="text"
-            placeholder="Email"
-            maxLength="100"
-            required
-          />
-          <label className="label">Sexo:</label>
-          <select name="Sexo" className="tipo">
-            <option value="">Seleccionar:</option>
-            <option value="Masc">Masculino</option>
-            <option value="Fem">Femenino</option>
-            <option value="otro">Otro</option>
-          </select>
-          <label className="label">Tipo de documento</label>
-          <select className="tipo" name="Documento">
-            <option value="">Seleccionar:</option>
-            <option value="DNI">DNI</option>
-            <option value="LC">LC</option>
-            <option value="LE">LE</option>
-            <option value="CI">CI</option>
-            <option value="Pasaporte">Pasaporte</option>
-            <option value="RENAPER">RENAPER</option>
-            <option value="Otro">Otro</option>
-          </select>
-          <input
-            className="campo-form"
-            name="numero de documento"
-            type="text"
-            placeholder="Nro de documento"
-            required
-          />
-          <input
-            className="campo-form"
-            name="usuario"
-            type="text"
-            placeholder="Usuario"
-            maxLength="45"
-            required
-          />
-          <input
-            className="campo-form"
-            name="clave"
-            type="password"
-            placeholder="Clave digital"
-            minLength="8"
-            required
-          />
-          <input type="checkbox" name="condiciones" required /> Aceptar los{" "}
-          <Link>
-            terminos y condiciones.
-          </Link>
-          <button className="boton-form" type="submit" value="ingresar">
-            <Link to='/inicioSesión'/>Registrarse
-          </button>
-        </form>
+        <Card variant="outlined" sx={{ borderColor: 'primary.main', border: 2 }}>
+          <CardContent>
+            <h1 align="center">Registrate:</h1>
+            <form className="form-container" action="" method="post">
+              <TextField
+                required
+                name="nombre"
+                type="text"
+                label="Nombre/s"
+                maxLength="50"
+                variant="standard"
+              />
+              <br/>
+              <TextField
+                required
+                name="apellido"
+                type="text"
+                label="Apellido/s"
+                maxLength="50"
+                variant="standard"
+              />
+              <br/>
+              <TextField
+                required
+                name="email"
+                type="text"
+                label="Email"
+                maxLength="100"
+                variant="standard"
+              />
+              <br/>
+              <InputLabel>Sexo:</InputLabel>
+              <Select name="Sexo" >
+                <MenuItem value="">Seleccionar:</MenuItem>
+                <MenuItem value="Masc">Masculino</MenuItem>
+                <MenuItem value="Fem">Femenino</MenuItem>
+                <MenuItem value="otro">Otro</MenuItem>
+              </Select>
+              <br/>
+              <InputLabel className="label">Tipo de documento</InputLabel>
+              <Select name="Documento">
+                <MenuItem value="">Seleccionar:</MenuItem>
+                <MenuItem value="DNI">DNI</MenuItem>
+                <MenuItem value="LC">LC</MenuItem>
+                <MenuItem value="LE">LE</MenuItem>
+                <MenuItem value="CI">CI</MenuItem>
+                <MenuItem value="Pasaporte">Pasaporte</MenuItem>
+                <MenuItem value="RENAPER">RENAPER</MenuItem>
+                <MenuItem value="Otro">Otro</MenuItem>
+              </Select>
+              <br/>
+              <TextField
+                required
+                name="numero de documento"
+                type="number"
+                label="Nro de documento"
+                variant="standard"
+              />
+              <br/>
+              <TextField
+                required
+                name="usuario"
+                type="text"
+                label="Usuario"
+                maxLength="45"
+                variant="standard"
+              />
+              <br/>
+              <TextField
+                required
+                name="clave"
+                type="password"
+                label="Clave digital"
+                minLength="8"
+                variant="standard"
+              />
+              <br/>
+              <input type="checkbox" name="condiciones" required /> Aceptar los{" "}
+              <Link>
+                terminos y condiciones.
+              </Link>
+              <br/>
+              <Button variant="outlined" color="secondary" sx={{border: 2}}>
+                <Link to='/inicioSesión' >Iniciar sesión </Link>
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+        
       </section>
       <FooterLanding></FooterLanding>
     </div>

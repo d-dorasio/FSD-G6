@@ -3,7 +3,7 @@ import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import { Box } from "@mui/material";
-
+import banner from "../img/banner.png";
 
 function HomeBanking() {
   return (
@@ -15,7 +15,7 @@ function HomeBanking() {
         <div className="main-container">
           <main>
             <section>
-              <img src="" alt="Baner Ilustrativo" width="100%" />
+              <img src={banner} alt="Baner Ilustrativo" width="100%" />
               <h1>
                 <strong>Bienvenido a ITBANK</strong>
               </h1>

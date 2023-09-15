@@ -3,6 +3,7 @@ import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import BasicTable from "./basicTable";
+import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function Transfers() {
   const [mensajeVisible, setMensajeVisible] = useState(false);
@@ -31,53 +32,56 @@ function Transfers() {
         <div className="main-container">
           <main>
             <h1 className="h1-center">Transferencias</h1>
+            <br/>
             {/* Transfer form */}
             <div id="container-form">
               {formularioVisible && (
-                <form className="form-container">
-                  <h2>Formulario de Transferencia</h2>
-                  <label>Nueva transferencia A:</label>
-                  <select className="tipo" name="accountFrom">
-                    <option value="otro">Otro ITBANK</option>
-                    <option value="cbu">CBU</option>
-                    <option value="alias">Alias</option>
-                  </select>
-
-                  <label>Cuenta de Destino:</label>
-                  <input
-                    type="text"
-                    className="campo-form"
-                    name="amount"
-                    placeholder="Ingrese CBU, Alias o nombreITBANK"
-                  ></input>
-
-                  <label htmlFor="amount">Monto:</label>
-                  <input
-                    type="text"
-                    className="campo-form"
-                    name="amount"
-                    placeholder="Ingrese el monto"
-                  />
-
-                  <label htmlFor="description">Descripción o Motivo:</label>
-                  <input
-                    type="text"
-                    className="campo-form"
-                    name="description"
-                    placeholder="Ingrese una descripción"
-                  />
-
-                  <label htmlFor="executionDate">Fecha de Ejecución:</label>
-                  <input
-                    type="date"
-                    className="campo-form"
-                    name="executionDate"
-                  />
-
-                  <button type="button" className="boton-form">
-                    Transferir
-                  </button>
-                </form>
+                <Card sx={{boxShadow: 5}}>
+                  <CardContent>
+                    <form className="form-container">
+                      <h2>Formulario de Transferencia</h2>
+                      <InputLabel>Nueva transferencia a:</InputLabel>
+                      <Select required name="accountFrom" variant="standard">
+                        <MenuItem value="otro">Otro ITBANK</MenuItem>
+                        <MenuItem value="cbu">CBU</MenuItem>
+                        <MenuItem value="alias">Alias</MenuItem>
+                      </Select>
+                      <br/>
+                      <TextField
+                        required
+                        label="Cuenta de destino"
+                        type="text"
+                        variant="standard"
+                        name="amount"
+                        placeholder="Ingrese CBU, Alias o nombreITBANK"
+                      />
+                      <br/>
+                      <TextField
+                        required
+                        type="text"
+                        label="Monto"
+                        className="campo-form"
+                        name="amount"
+                        variant="standard"
+                        placeholder="Ingrese el monto"
+                      />
+                      <br/>
+                      <TextField
+                        required
+                        type="text"
+                        className="campo-form"
+                        name="description"
+                        label="Referencia"
+                        placeholder="Ingrese una descripción de referencia"
+                        variant="standard"
+                      />
+                      <br/>
+                      <Button type="button" className="boton-form" variant="contained">
+                        Transferir
+                      </Button>
+                    </form>
+                  </CardContent>
+                </Card>
               )}
 
               {mensajeVisible && (
