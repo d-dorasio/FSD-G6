@@ -12,9 +12,10 @@ function HeaderLanding() {
       position="fixed"
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
     >
+      <div className="container-header">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        <Link to= "/"><img src="/logo.png" height="80px"></img></Link>
+        <Link to= "/"><img src="/logo.png" height="80px" className="logo-landingpage"></img></Link>
         </Typography>
         <div>
           <ul className="ul-LandingPage"> 
@@ -30,6 +31,7 @@ function HeaderLanding() {
           </ul>
         </div>
       </Toolbar>
+      </div>
     </AppBar>
   );
 }

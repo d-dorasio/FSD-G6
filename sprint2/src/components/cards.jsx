@@ -29,20 +29,18 @@ function Cards() {
     event.preventDefault();
 
     const nombre = nombreRef.current.value;
-    const numero = numeroRef.current.value;
+    const numeroValor = numeroRef.current.value || "";
     const vencimiento = vencimientoRef.current.value;
     const codigo = codigoRef.current.value;
 
     const nuevaTarjeta = {
       nombre,
-      numero: `**** **** **** ${numero.substring(numero.length - 4)}`,
+      numero: `**** **** **** ${numeroValor.substring(numeroValor.length - 4)}`,
       vencimiento,
       codigo: "***",
     };
 
     setCards([...cards, nuevaTarjeta]);
-
-    // Limpiar el formulario
     nombreRef.current.value = "";
     numeroRef.current.value = "";
     vencimientoRef.current.value = "";
@@ -67,9 +65,9 @@ function Cards() {
                 </div>
               ))}
               <div id="tarjetas-container"></div>
-              <br/>
+              <br />
               {/* Add card */}
-              <Card variant="outlined" sx={{boxShadow: 5}} >
+              <Card variant="outlined" sx={{ boxShadow: 5 }}>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="form-container">
                     <h1>Agregar nueva tarjeta:</h1>
@@ -81,7 +79,7 @@ function Cards() {
                       id="nombre"
                       ref={nombreRef}
                     />
-                    <br/>
+                    <br />
                     <TextField
                       required
                       label="Número de la tarjeta"
@@ -90,7 +88,7 @@ function Cards() {
                       ref={numeroRef}
                       maxLength="16"
                     />
-                    <br/>
+                    <br />
                     <TextField
                       required
                       label="Fecha de Vencimiento"
@@ -98,7 +96,7 @@ function Cards() {
                       id="vencimiento"
                       ref={vencimientoRef}
                     />
-                    <br/>
+                    <br />
                     <TextField
                       required
                       label="Código de Seguridad"
@@ -107,14 +105,13 @@ function Cards() {
                       ref={codigoRef}
                       maxLength="3"
                     />
-                    <br/>
+                    <br />
                     <Button variant="contained" type="submit">
                       Agregar tarjeta
                     </Button>
                   </form>
                 </CardContent>
               </Card>
-              
             </section>
           </main>
         </div>

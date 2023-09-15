@@ -50,7 +50,6 @@ function Home() {
       <HeaderLanding />
       <ImagenBanner />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          {/* <Banner /> */}
           <Features />
         </Box>
       <Footer></Footer>
