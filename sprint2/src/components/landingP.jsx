@@ -4,6 +4,11 @@ import Box from "@mui/material/Box";
 import 'font-awesome/css/font-awesome.min.css';
 import ImagenBanner from "./ImagenBanner.js";
 import './styles.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserShield } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { faIdCard } from '@fortawesome/free-solid-svg-icons'
+
 
 function Feature({ icon, title, description }) {
   return (
@@ -18,18 +23,18 @@ function Feature({ icon, title, description }) {
 function Features() {
   const featuresData = [
     {
-      icon: "fa-solid fa-shield-halved",
+      icon: <FontAwesomeIcon icon={faUserShield} />,
       title: "Transferencias Seguras",
       description: "Realiza transferencias con total confianza y seguridad.",
     },
     {
-      icon: "fa-solid fa-credit-card",
+      icon: <FontAwesomeIcon icon={faCartPlus} />,
       title: "Pagos en Línea",
       description:
         "Paga tus facturas y realiza compras en línea de forma conveniente.",
     },
     {
-      icon: "fa-solid fa-id-card",
+      icon: <FontAwesomeIcon icon={faIdCard} />,
       title: "Administración de Cuentas",
       description: "Administra tus cuentas y finanzas personales fácilmente.",
     },
