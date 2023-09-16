@@ -1,14 +1,12 @@
 # ITBA-FSD-G6 = ITBANK
 
 ## Descripción
+Como propuesta de trabajo para el curso de Full Stack Developer del ITBA, en este segundo Sprint, presentamos la banca digital del ITBANK codeada con React. 
 
-Como propuesta de trabajo para el curso de Full Stack Developer del ITBA, en este primer Sprint, presentamos la maqueta de la banca digital del ITBANK. 
-
-Durante el desarrollo de estas dos semanas, realizamos bosquejos a mano para diagramar la estructura general que nos pareciera accesible y cumpliera con los requerimientos de la consigna. 
-
-Luego, a medida que adqueríamos conocimientos, comenzamos a añadir el código para darle la forma que tiene hoy en día. 
-
-Orgullosas de los conocimientos que adquirimos y conscientes de que queda mucho trayecto por delante, seguiremos trabajando para brindar el mejor producto posible. 
+- Fortalezas y Debilidades
+Al comienzo del sprint 2, nos dimos cuenta de que nuestra familiaridad con React estaba por debajo del estándar que nos permitiría entregar a tiempo, por lo tanto, no pudimos tener el trabajo terminado para mostrarlo el día de la preentrega. 
+Al observar cómo los otros grupos desarrollaron sus tps y gracias a la ayuda que nos dio Yani por meet, nos dimos una idea de cómo comenzar a abordar el sprint.
+A pesar de que todavía tenemos mucho que aprender, después de una semana y muchas horas de trabajo, sentimos que avanzamos un montón con nuestros conocimientos sobre React.
 
 ## Instalación
 
@@ -27,7 +25,7 @@ Integrantes // En GitHub
 ## Funciones
 
 Dentro del proyecto, se encuentran las siguientes funcionalidades:
- - Un convertidor de moneda, con posibilidad de elegir entre Dólar - Euro - Libra.
+ - Un convertidor de moneda con API, con posibilidad de elegir entre Dólar - Euro - Libra.
  - Un formulario de pagos, y un historial de los realizados.
  - Un simulador de préstamos, 
  - Un simulador de plazo fijo.
