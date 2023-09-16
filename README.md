@@ -2,8 +2,7 @@
 
 ## Descripción
 Como propuesta de trabajo para el curso de Full Stack Developer del ITBA, en este segundo Sprint, presentamos la banca digital del ITBANK codeada con React. 
-
-- Fortalezas y Debilidades
+#### Fortalezas y Debilidades
 Al comienzo del sprint 2, nos dimos cuenta de que nuestra familiaridad con React estaba por debajo del estándar que nos permitiría entregar a tiempo, por lo tanto, no pudimos tener el trabajo terminado para mostrarlo el día de la preentrega. 
 Al observar cómo los otros grupos desarrollaron sus tps y gracias a la ayuda que nos dio Yani por meet, nos dimos una idea de cómo comenzar a abordar el sprint.
 A pesar de que todavía tenemos mucho que aprender, después de una semana y muchas horas de trabajo, sentimos que avanzamos un montón con nuestros conocimientos sobre React.
