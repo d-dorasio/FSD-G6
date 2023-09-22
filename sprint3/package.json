@@ -1,0 +1,23 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@fontsource-variable/montserrat": "^5.0.9",
+        "@fortawesome/fontawesome-svg-core": "^6.4.2",
+        "@fortawesome/free-solid-svg-icons": "^6.4.2",
+        "@mui/icons-material": "^5.14.9",
+        "@mui/material": "^5.14.10",
+        "create-next-app": "^13.5.2",
+        "create-react-app": "^5.0.1",
+        "next": "^13.5.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}
