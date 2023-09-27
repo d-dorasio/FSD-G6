@@ -1,3 +1,19 @@
+import {
+  Button,
+  Card,
+  CardContent,
+  Select,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  TextField,
+  MenuItem,
+  TableContainer,
+  Paper,
+} from "@mui/material";
+
 function Loans() {
   // const [tipoSeleccionado, setTipoSeleccionado] = useState("publica");
   // const [monto, setMonto] = useState("");
@@ -50,26 +66,26 @@ function Loans() {
   return (
     <div>
       <section>
-        {/* <Card sx={{ boxShadow: 5 }}>
-                  <CardContent> */}
+        <Card sx={{ boxShadow: 5 }}>
+                  <CardContent>
         <h1 className="h1-center">Simulador de préstamos</h1>
-        {/*  <div className="container-form">
+        <div className="container-form">
                       <br />
                       <Card
                         variant="outlined"
                         sx={{ borderColor: "secondary.main" }}
                       >
-                        <CardContent> */}
+                        <CardContent>
         <form className="form-container">
           <label>Sector de Pertenencia</label>
-          {/* <Select
+          <Select
                               required
                               name=""
                               label="Seleccione"
                               variant="standard"
-                              onChange={(e) =>
-                                setTipoSeleccionado(e.target.value)
-                              }
+                              // onChange={(e) =>
+                              //   setTipoSeleccionado(e.target.value)
+                              
                             >
                               <MenuItem value="publica">
                                 Administración Pública
@@ -86,8 +102,8 @@ function Loans() {
                               label="Monto"
                               placeholder="Ingrese el monto"
                               variant="standard"
-                              value={monto}
-                              onChange={(e) => setMonto(e.target.value)}
+                              // value={monto}
+                              // onChange={(e) => setMonto(e.target.value)}
                             />
   
                             
@@ -98,23 +114,21 @@ function Loans() {
                               label="Plazo en meses"
                               placeholder="Cantidad de meses en números"
                               variant="standard"
-                              value={plazoEjecucion}
-                              onChange={(e) => setPlazoEjecucion(e.target.value)}
+                              // value={plazoEjecucion}
+                              // onChange={(e) => setPlazoEjecucion(e.target.value)}
                             />
                             <br />
                             <Button
                               type="button"
                               className="boton-form"
                               variant="contained"
-                              onClick={calcularPrestamo}
-                            >*/}
-          Calcular
-          {/* </Button> */}
+                              // onClick={calcularPrestamo}
+                            >Calcular</Button>
         </form>
-        {/* </CardContent> 
-                      </Card>*/}
+        </CardContent> 
+                      </Card>
         <br />
-        {/* <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
                         <Table
                           sx={{ minWidth: 650 }}
                           aria-label="simple table"
@@ -178,22 +192,22 @@ function Loans() {
                               </TableCell>
                             </TableRow>
                           </TableHead>
-                          <TableBody>
-                            {cuotas.map((cuota, index) => (
-                              <TableRow key={index}>
+                          {/* <TableBody>
+                            {/* {cuotas.map((cuota, index) => ( */}
+                              {/* <TableRow key={index}>
                                 {cuota.map((valorCelda, indexCelda) => (
                                   <TableCell key={indexCelda}>
                                     {valorCelda.toFixed(2)}
                                   </TableCell>
                                 ))}
-                              </TableRow>
-                            ))}
-                          </TableBody>
+                              </TableRow> */}
+                            {/* ))} */}
+                          {/* </TableBody> */}
                         </Table>
                       </TableContainer>
                     </div>
                   </CardContent>
-                </Card> */}
+                </Card>
       </section>
       <section>
         <h2>Préstamos</h2>

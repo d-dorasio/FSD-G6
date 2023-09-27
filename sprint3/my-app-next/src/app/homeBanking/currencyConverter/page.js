@@ -1,3 +1,4 @@
+import { Card, CardContent, Button, Select, MenuItem } from "@mui/material";
 
 function CurrencyConverter() {
     // const [amountOne, setAmountOne] = useState("");
@@ -27,16 +28,16 @@ function CurrencyConverter() {
               <section className="converter">
                 <h1>Convertidor de moneda</h1>
   
-                {/* <Card sx={{boxShadow: 5}}> 
-                  <CardContent> */}
+                <Card sx={{boxShadow: 5}}> 
+                  <CardContent>
                     <div className="invert-container form-container">
-                      {/* <Select
+                      <Select
                         variant="outlined"
                         color="secondary"
                         name="currencyOne"
                         id="currencyOne"
-                        value={currencyOne}
-                        onChange={(e) => setCurrencyOne(e.target.value)}
+                        // value={currencyOne}
+                        // onChange={(e) => setCurrencyOne(e.target.value)}
                       >
                         <MenuItem value="AED">AED</MenuItem>
                         <MenuItem value="ARS">ARS</MenuItem>
@@ -90,7 +91,7 @@ function CurrencyConverter() {
                         <MenuItem value="UYU">UYU</MenuItem>
                         <MenuItem value="VND">VND</MenuItem>
                         <MenuItem value="ZAR">ZAR</MenuItem>
-                      </Select> */}
+                      </Select>
                       <br/>
                       <input
                         type="text"
@@ -104,23 +105,23 @@ function CurrencyConverter() {
                         // }}
                       />
                       <br></br>
-                      {/* <Button
+                      <Button
                         title="Swap currencies"
                         variant="contained"
                         size="small"
                         id="swapButton"
-                        onClick={calculateEvent}
-                      > */}
+                        // onClick={calculateEvent}
+                      >
                         Intercambiar
-                      {/* </Button>
+                      </Button>
                       <br></br>
                       <Select
                         variant="outlined"
                         color="secondary"
                         name="currencyTwo"
                         id="currencyTwo"
-                        value={currencyTwo}
-                        onChange={(e) => setCurrencyTwo(e.target.value)}
+                        // value={currencyTwo}
+                        // onChange={(e) => setCurrencyTwo(e.target.value)}
                       >
                         <MenuItem value="AED">AED</MenuItem>
                         <MenuItem value="ARS">ARS</MenuItem>
@@ -174,15 +175,15 @@ function CurrencyConverter() {
                         <MenuItem value="UYU">UYU</MenuItem>
                         <MenuItem value="VND">VND</MenuItem>
                         <MenuItem value="ZAR">ZAR</MenuItem>
-                      </Select> */}
+                      </Select>
                       <br/>
                       <h4 className="price" id="price"> coso es igual a cosa
                         {/* {amountOne} {currencyOne} es igual a {(amountOne * exchangeRates[currencyTwo]).toFixed(2)}{" "}
                         {currencyTwo}{" "} */}
                       </h4>
                     </div>
-                  {/* </CardContent>
-                </Card> */}
+                  </CardContent>
+                </Card>
               </section>
          
     );

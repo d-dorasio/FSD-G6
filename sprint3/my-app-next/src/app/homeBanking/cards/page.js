@@ -1,3 +1,6 @@
+import { Button, Card, CardContent, TextField } from "@mui/material";
+
+
 function Cards() {
 //   const [cards, setCards] = useState([
 //     {
@@ -54,20 +57,20 @@ function Cards() {
       ))} */}
       <div id="tarjetas-container"></div>
       <br />
-      {/* <Card variant="outlined" sx={{ boxShadow: 5 }}>
-        <CardContent> */}
+      <Card variant="outlined" sx={{ boxShadow: 5 }}>
+        <CardContent>
           <form 
           // onSubmit={handleSubmit} 
           className="form-container"
           >
             <h1>Agregar nueva tarjeta:</h1>
 
-            {/* <TextField
+            <TextField
               required
               label="Nombre del Titular"
               type="text"
               id="nombre"
-              ref={nombreRef}
+              // ref={nombreRef}
             />
             <br />
             <TextField
@@ -75,7 +78,7 @@ function Cards() {
               label="Número de la tarjeta"
               type="text"
               id="numero"
-              ref={numeroRef}
+              // ref={numeroRef}
               maxLength="16"
             />
             <br />
@@ -84,7 +87,7 @@ function Cards() {
               label="Fecha de Vencimiento"
               type="text"
               id="vencimiento"
-              ref={vencimientoRef}
+              // ref={vencimientoRef}
             />
             <br />
             <TextField
@@ -92,16 +95,16 @@ function Cards() {
               label="Código de Seguridad"
               type="password"
               id="codigo"
-              ref={codigoRef}
+              // ref={codigoRef}
               maxLength="3"
             />
             <br />
-            <Button variant="contained" type="submit"> */}
+            <Button variant="contained" type="submit">
               Agregar tarjeta
-            {/* </Button> */}
+            </Button>
           </form>
-        {/* </CardContent>
-      </Card> */}
+        </CardContent>
+      </Card>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button, TextField } from "@mui/material";
 
 function Profile() {
 //   const [profileImage, setProfileImage] = useState(null);
@@ -25,7 +26,7 @@ function Profile() {
       <form id="profileForm">
         <label>Subir foto</label>
         <br />
-        {/* <TextField
+        <TextField
                     type="file"
                     id="profileImage"
                     variant="outlined"
@@ -39,7 +40,7 @@ function Profile() {
                       alt="Vista previa de la imagen"
                       style={{ maxWidth: "50%" }}
                     />
-                  )} */}
+                  )}
         <h2>Apellido, Nombre</h2>
       </form>
 
@@ -60,35 +61,35 @@ function Profile() {
         <li>
           Edad:{" "}
           <span>
-            {/* <Button variant="contained" size="small">Agregar edad</Button> */}
+            <Button variant="contained" size="small">Agregar edad</Button>
           </span>
         </li>
         <li>
           Fecha de nacimiento:{" "}
           <span>
-            {/* <Button variant="contained" size="small">Agregar fecha</Button> */}
+            <Button variant="contained" size="small">Agregar fecha</Button>
           </span>
         </li>
         <li>
           Estado civil:{" "}
           <span>
-            {/* <Button variant="contained" size="small">Agregar Estado</Button> */}
+            <Button variant="contained" size="small">Agregar Estado</Button>
           </span>
         </li>
         <li>
           Profesión:{" "}
           <span>
-            {/* <Button variant="contained" size="small">Agregar profesión</Button> */}
+            <Button variant="contained" size="small">Agregar profesión</Button>
           </span>
         </li>
         <br />
-        {/* <Button 
+        <Button 
                     size="large" 
                     color="secondary" 
                     variant="outined"
-                    sx={{ border: 2, borderColor: 'secondary.main' }}> */}
-        <Link href="/landingPage">CERRAR SESIÓN</Link>
-        {/* </Button> */}
+                    sx={{ border: 2, borderColor: 'secondary.main' }}>
+          <Link href="/landingPage">CERRAR SESIÓN</Link>
+        </Button>
       </ul>
     </section>
   );

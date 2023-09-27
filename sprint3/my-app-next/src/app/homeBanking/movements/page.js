@@ -1,3 +1,5 @@
+import { Button } from "@mui/material";
+
 function Movements() {
   return (
     <div>
@@ -11,9 +13,9 @@ function Movements() {
       </p>
       {/* <BasicTable /> */}
       <br />
-      {/* <Button type="submit" variant="contained" disabled> */}
+      <Button type="submit" variant="contained" disabled>
         SOLICITAR RESUMEN DE CUENTA
-      {/* </Button> */}
+      </Button>
     </div>
   );
 }

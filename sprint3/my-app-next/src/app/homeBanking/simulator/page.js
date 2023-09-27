@@ -1,3 +1,5 @@
+import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+
 function Simulator() {
   // const [tipoSeleccionado, setTipoSeleccionado] = useState("pesos");
   // const [monto, setMonto] = useState("");
@@ -51,7 +53,7 @@ function Simulator() {
         <br />
       </section>
       <section>
-        {/* <Card variant="outlined" sx={{ boxShadow: 5 }}>
+        <Card variant="outlined" sx={{ boxShadow: 5 }}>
           <CardContent>
             <h1 className="h1-center">Simulador de plazo fijo</h1>
             <div className="form-container">
@@ -65,8 +67,8 @@ function Simulator() {
                   id="pesos"
                   name="pfpesos"
                   value="pesos"
-                  checked={tipoSeleccionado === "pesos"}
-                  onChange={() => setTipoSeleccionado("pesos")}
+                  // checked={tipoSeleccionado === "pesos"}
+                  // onChange={() => setTipoSeleccionado("pesos")}
                 />
                 <label>Plazo fijo en pesos</label>
                 <br />
@@ -75,8 +77,8 @@ function Simulator() {
                   id="dolar"
                   name="pfdolar"
                   value="dolar"
-                  checked={tipoSeleccionado === "dolar"}
-                  onChange={() => setTipoSeleccionado("dolar")}
+                  // checked={tipoSeleccionado === "dolar"}
+                  // onChange={() => setTipoSeleccionado("dolar")}
                 />
                 <label>Plazo fijo en dólares</label>
                 <br />
@@ -87,23 +89,23 @@ function Simulator() {
                   variant="standard"
                   label="Monto a invertir"
                   min="1000"
-                  value={monto}
-                  onChange={(e) => setMonto(e.target.value)}
+                  // value={monto}
+                  // onChange={(e) => setMonto(e.target.value)}
                 />
                 <br />
                 <br />
                 <InputLabel>Cantidad de días</InputLabel>
                 <Select
                   name="dias"
-                  onChange={handlePlazoChange}
-                  value={plazoEjecucion}
+                  // onChange={handlePlazoChange}
+                  // value={plazoEjecucion}
                 >
                   <MenuItem value="30">30</MenuItem>
                   <MenuItem value="60">60</MenuItem>
                   <MenuItem value="90">90</MenuItem>
                   <MenuItem value="Otro">Más días</MenuItem>
                 </Select>
-                {plazoEjecucion === "Otro" && (
+                {/* {plazoEjecucion === "Otro" && ( */}
                   <div id="otroPlazo">
                     <br />
                     <InputLabel htmlFor="otrodia">
@@ -113,22 +115,22 @@ function Simulator() {
                       type="number"
                       id="otrodia"
                       variant="standard"
-                      value={otroPlazo}
-                      onChange={(e) => setOtroPlazo(e.target.value)}
+                      // value={otroPlazo}
+                      // onChange={(e) => setOtroPlazo(e.target.value)}
                     />
                     <br />
                   </div>
-                )}
+                {/* )} */}
                 <br />
                 <br />
                 <Button
                   id="calcular"
                   variant="contained"
-                  onClick={calcularPlazoFijo}
+                  // onClick={calcularPlazoFijo}
                 >
                   Calcular
                 </Button>
-                {resultadoVisible && (
+                {/* {resultadoVisible && (
                   <div id="resultado">
                     <br />
                     <Card>
@@ -144,11 +146,11 @@ function Simulator() {
                       </CardContent>
                     </Card>
                   </div>
-                )}
+                )} */}
               </form>
             </div>
           </CardContent>
-        </Card> */}
+        </Card>
       </section>
       <section>
         <h2>Tipos de plazo fijo</h2>

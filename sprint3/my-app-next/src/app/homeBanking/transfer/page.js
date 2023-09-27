@@ -1,3 +1,10 @@
+// import React, { useEffect, useState } from "react";
+import Link from "next/link";
+// import BasicTable from "../../../components/basicTable";
+import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+// import { useClient } from "next/data-client";
+
+
 export default function transfer() {
   // const [mensajeVisible, setMensajeVisible] = useState(false);
   // const [formularioVisible, setFormularioVisible] = useState(true);
@@ -23,7 +30,7 @@ export default function transfer() {
       <br />
 
       <div id="container-form">
-        {/* {formularioVisible && (
+        {/* {formularioVisible && ( */}
                 <Card sx={{boxShadow: 5}}>
                   <CardContent>
                     <form className="form-container">
@@ -70,13 +77,13 @@ export default function transfer() {
                     </form>
                   </CardContent>
                 </Card>
-              )}
+              {/* )} */}
 
-              {mensajeVisible && (
+              {/* {mensajeVisible && (
                 <p>
                   Transferencia enviada con éxito &#10004; 
                 </p>
-              )}*/}
+              )} */}
       </div>
 
       <h2>Transferencias realizadas</h2>

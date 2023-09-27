@@ -1,3 +1,6 @@
+import { Alert, Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+
+
 function Payments() {
   //   useEffect(() => {
   //     const form = document.querySelector('.form-container');
@@ -23,11 +26,11 @@ function Payments() {
       <h1>Pagos</h1>
       <div className="anotherContainer">
         <div id="container-form">
-          {/* <Card sx={{ boxShadow: 5 }}>
-            <CardContent> */}
+          <Card sx={{ boxShadow: 5 }}>
+            <CardContent>
               <h1 className="h1-center">Realizar Pago</h1>
               <form className="form-container">
-                {/* <InputLabel htmlFor="payment">Pago a realizar:</InputLabel>
+                <InputLabel htmlFor="payment">Pago a realizar:</InputLabel>
                 <Select name="paymentMethod" variant="standard" required>
                   <MenuItem value="gas">Gas</MenuItem>
                   <MenuItem value="luz">Luz</MenuItem>
@@ -51,12 +54,12 @@ function Payments() {
                   <MenuItem value="transferencia">Transferencia</MenuItem>
                 </Select>
                 <br />
-                <Button type="submit" variant="contained"> */}
+                <Button type="submit" variant="contained">
                   Realizar Pago
-                {/* </Button> */}
+                </Button>
               </form>
-            {/* </CardContent>
-          </Card> */}
+            </CardContent>
+          </Card>
         </div>
         <div>
           <h2>Pagos realizados</h2>
