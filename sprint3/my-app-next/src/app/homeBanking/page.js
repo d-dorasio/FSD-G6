@@ -1,8 +1,9 @@
+
 export default function homeBanking() {
   return (
     <main>
             <section>
-              <img src="" alt="Baner Ilustrativo" width="100%" />
+              <img src="/banner.png" alt="Baner Ilustrativo" width="100%" />
               <h1>
                 <strong>Bienvenido a ITBANK</strong>
               </h1>

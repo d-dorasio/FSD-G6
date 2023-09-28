@@ -1,16 +1,19 @@
 import Link from "next/link";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 
 function HeaderLanding() {
     return (
-    //   <AppBar
-    //     position="fixed"
-    //     sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-    //   >
+      <AppBar
+        position="fixed"
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
         <div className="container-header">
-        {/* <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>*/}
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <Link href="/landingPage"><img src="/logo.png" height="80px" className="logo-landingpage"></img></Link>
-          {/* </Typography>  */}
+          </Typography> 
           <div>
              <ul>
               <li>
@@ -24,7 +27,7 @@ function HeaderLanding() {
               </li>
             </ul>
           </div>
-        {/* </Toolbar> */}
+        </Toolbar>
         </div>
     //   </AppBar>
     );
