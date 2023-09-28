@@ -2,23 +2,23 @@ import Link from "next/link";
 import { Button, TextField } from "@mui/material";
 
 function Profile() {
-//   const [profileImage, setProfileImage] = useState(null);
-//   const [imagePreview, setImagePreview] = useState(null);
+  //   const [profileImage, setProfileImage] = useState(null);
+  //   const [imagePreview, setImagePreview] = useState(null);
 
-//   const handleImageChange = (event) => {
-//     const selectedImage = event.target.files[0];
+  //   const handleImageChange = (event) => {
+  //     const selectedImage = event.target.files[0];
 
-//     if (selectedImage) {
-//       const reader = new FileReader();
+  //     if (selectedImage) {
+  //       const reader = new FileReader();
 
-//       reader.onload = (e) => {
-//         setProfileImage(selectedImage);
-//         setImagePreview(e.target.result);
-//       };
+  //       reader.onload = (e) => {
+  //         setProfileImage(selectedImage);
+  //         setImagePreview(e.target.result);
+  //       };
 
-//       reader.readAsDataURL(selectedImage);
-//     }
-//   };
+  //       reader.readAsDataURL(selectedImage);
+  //     }
+  //   };
 
   return (
     <section>
@@ -27,20 +27,21 @@ function Profile() {
         <label>Subir foto</label>
         <br />
         <TextField
-                    type="file"
-                    id="profileImage"
-                    variant="outlined"
-                    accept="image/*"
-                    onChange={handleImageChange}                />
-                  <br />
-                  {imagePreview && (
-                    <img
-                      id="preview"
-                      src={imagePreview}
-                      alt="Vista previa de la imagen"
-                      style={{ maxWidth: "50%" }}
-                    />
-                  )}
+          type="file"
+          id="profileImage"
+          variant="outlined"
+          accept="image/*"
+          //onChange={handleImageChange}
+        />
+        <br />
+        {/* {imagePreview && (
+          <img
+            id="preview"
+            src={imagePreview}
+            alt="Vista previa de la imagen"
+            style={{ maxWidth: "50%" }}
+          />
+        )} */}
         <h2>Apellido, Nombre</h2>
       </form>
 
@@ -61,33 +62,42 @@ function Profile() {
         <li>
           Edad:{" "}
           <span>
-            <Button variant="contained" size="small">Agregar edad</Button>
+            <Button variant="contained" size="small">
+              Agregar edad
+            </Button>
           </span>
         </li>
         <li>
           Fecha de nacimiento:{" "}
           <span>
-            <Button variant="contained" size="small">Agregar fecha</Button>
+            <Button variant="contained" size="small">
+              Agregar fecha
+            </Button>
           </span>
         </li>
         <li>
           Estado civil:{" "}
           <span>
-            <Button variant="contained" size="small">Agregar Estado</Button>
+            <Button variant="contained" size="small">
+              Agregar Estado
+            </Button>
           </span>
         </li>
         <li>
           Profesión:{" "}
           <span>
-            <Button variant="contained" size="small">Agregar profesión</Button>
+            <Button variant="contained" size="small">
+              Agregar profesión
+            </Button>
           </span>
         </li>
         <br />
-        <Button 
-                    size="large" 
-                    color="secondary" 
-                    variant="outined"
-                    sx={{ border: 2, borderColor: 'secondary.main' }}>
+        <Button
+          size="large"
+          color="secondary"
+          variant="outined"
+          sx={{ border: 2, borderColor: "secondary.main" }}
+        >
           <Link href="/landingPage">CERRAR SESIÓN</Link>
         </Button>
       </ul>

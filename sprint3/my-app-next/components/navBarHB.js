@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, {useClient} from "react";
+import React, { useClient } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,7 +12,7 @@ export default function NavBar() {
     <div className="navBar">
       <Box textAlign="center" sx={{ display: "flex" }}>
         <CssBaseline />
-        <Drawer>
+        <Drawer
           variant="permanent"
           sx={{
             flexShrink: 0,
@@ -23,7 +23,7 @@ export default function NavBar() {
               backgroundColor: "#000000",
               width: "250px",
               paddingTop: "25px",
-              '@media (max-width: 780px)': {
+              "@media (max-width: 780px)": {
                 maxWidth: "45px",
                 height: "56px",
                 paddingTop: "0px",
@@ -32,24 +32,22 @@ export default function NavBar() {
               },
             },
           }}
-        </Drawer>
+        ></Drawer>
         <div
-          // className={`nav-items ${isOpen && "open"}`}
+        // className={`nav-items ${isOpen && "open"}`}
         >
-
           <Box sx={{ overflow: "auto" }}>
             <div className="nav-logo">
               <Link href="/homeBanking">
                 <img src="/logo.png" height="100px"></img>
               </Link>
             </div>
-            <ul
-              style={{ listStyleType: "none" }}
-              className="ul-nav"
-            >
+            <ul style={{ listStyleType: "none" }} className="ul-nav">
               <li>
                 <Button>
-                  < Link href="/homeBanking/accountStatus">Estado de cuenta</Link>
+                  <Link href="/homeBanking/accountStatus">
+                    Estado de cuenta
+                  </Link>
                 </Button>
               </li>
               <li>
@@ -93,8 +91,8 @@ export default function NavBar() {
           </Box>
         </div>
         <div
-          // className={`nav-toggle ${isOpen && "open"}`}
-          // onClick={() => setIsOpen(!isOpen)}
+        // className={`nav-toggle ${isOpen && "open"}`}
+        // onClick={() => setIsOpen(!isOpen)}
         >
           <span></span>
           <span></span>
@@ -107,8 +105,7 @@ export default function NavBar() {
             p: 3,
           }}
         ></Box>
-      </Box> 
-        </div >
-        );
+      </Box>
+    </div>
+  );
 }
-
