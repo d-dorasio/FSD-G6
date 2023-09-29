@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { Alert, Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
-
+import BasicTable from "../basicTable/page";
 
 function Payments() {
   useEffect(() => {
@@ -66,7 +66,7 @@ function Payments() {
         </div>
         <div>
           <h2>Pagos realizados</h2>
-          {/* <BasicTable /> */}
+           <BasicTable /> 
         </div>
       </div>
     </section>

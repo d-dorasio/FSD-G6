@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-// import BasicTable from "../../../components/basicTable";
+import BasicTable from "../basicTable/page";
 import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+
 
 export default function transfer() {
   const [mensajeVisible, setMensajeVisible] = useState(false);
@@ -87,7 +88,7 @@ export default function transfer() {
       </div>
 
       <h2>Transferencias realizadas</h2>
-      {/* <BasicTable /> */}
+      <BasicTable /> 
     </div>
   );
 }

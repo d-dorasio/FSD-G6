@@ -2,7 +2,7 @@ import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { zIndex } from "../themes/theme"
+import { zIndex } from "../themes/ThemeRegistry"
 
 
 function HeaderLanding() {

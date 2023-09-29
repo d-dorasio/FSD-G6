@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import BasicTable from "../basicTable/page";
 
 function Movements() {
   return (
@@ -11,7 +12,7 @@ function Movements() {
         Para visualizar movimientos de fechas anteriores, por favor,{" "}
         <strong>solicite un resumen de cuenta</strong>.
       </p>
-      {/* <BasicTable /> */}
+       <BasicTable /> 
       <br />
       <Button type="submit" variant="contained" disabled>
         SOLICITAR RESUMEN DE CUENTA

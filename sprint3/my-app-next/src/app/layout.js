@@ -1,3 +1,4 @@
+import ThemeRegistry from "../../themes/ThemeRegistry";
 import { Inter } from "next/font/google";
 
 
@@ -8,12 +9,15 @@ export const metadata = {
   description: "Esta es mi descripción",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout(props) {
+  const { children } = props;
+
   return (
     <html lang="es">
-      <body className={inter.className}>
-        {children}
-      </body>
+      <ThemeRegistry>
+        <body className={inter.className}>{children}</body>
+      </ThemeRegistry>
     </html>
   );
 }
+
