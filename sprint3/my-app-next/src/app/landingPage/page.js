@@ -1,4 +1,10 @@
 import Link from "next/link";
+import '../../app/globals.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserShield } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { faIdCard } from '@fortawesome/free-solid-svg-icons'
+
 
 function Feature({ icon, title, description }) {
   return (
@@ -13,18 +19,18 @@ function Feature({ icon, title, description }) {
 function Features() {
   const featuresData = [
     {
-      // icon: <FontAwesomeIcon icon={faUserShield} />,
+      icon: <FontAwesomeIcon icon={faUserShield} />,
       title: "Transferencias Seguras",
       description: "Realiza transferencias con total confianza y seguridad.",
     },
     {
-      // icon: <FontAwesomeIcon icon={faCartPlus} />,
+      icon: <FontAwesomeIcon icon={faCartPlus} />,
       title: "Pagos en Línea",
       description:
         "Paga tus facturas y realiza compras en línea de forma conveniente.",
     },
     {
-      // icon: <FontAwesomeIcon icon={faIdCard} />,
+      icon: <FontAwesomeIcon icon={faIdCard} />,
       title: "Administración de Cuentas",
       description: "Administra tus cuentas y finanzas personales fácilmente.",
     },
@@ -44,7 +50,7 @@ export default function LandingPage() {
     <div>
       <section id="banner">
         <div
-          className="banner-image" /* style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)', backgroundSize: 'cover' , backgroundPosition: 'bottom',}} */
+          className="banner-image" style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)', backgroundSize: 'cover' , backgroundPosition: 'bottom',}}
         >
           <h1 className="h1-banner-image">
             Bienvenidos al Home Banking de ITBANK
@@ -57,9 +63,6 @@ export default function LandingPage() {
           </p>
           <Link href="/landingPage/signUp" className="cta-button">
             Iniciar sesión
-          </Link>
-          <Link href="/landingPage/register" className="cta-button">
-            Registrarse
           </Link>
         </div>
         <Features />

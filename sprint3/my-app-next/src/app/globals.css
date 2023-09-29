@@ -1,6 +1,6 @@
 h1,
 h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat Variable', sans-serif;
     color: #ff7344;
 }
 ul{
@@ -38,13 +38,14 @@ ul{
     font-size: 100%;
     margin: 2%;
     font-weight: bold;
-    color: rgb(251, 251, 251);
+    color:#000000;
+    background-color: #ffffff66;
 }
 
 .cta-button {
     display: inline-block;
     background-color: #000000;
-    color: #fff;
+    color: #ffffff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -67,6 +68,7 @@ ul{
     text-align: center;
     max-width: 300px;
     margin: 0 20px;
+    color:#35103D
 }
 
 .service img {
@@ -88,7 +90,7 @@ ul{
 
 .ul-LandingPage a {
     text-decoration: none;
-    color: white;
+    color:#35103D;
 }
 
 .sectionLandingPage {

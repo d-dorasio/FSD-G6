@@ -17,15 +17,12 @@ function HeaderLanding() {
             <Link href="/landingPage"><img src="/logo.png" height="80px" className="logo-landingpage" alt="Logo"></img></Link>
           </Typography> 
           <div>
-            <ul>
+            <ul className="ul-LandingPage">
               <li>
                 <Link href="/landingPage/aboutUs" >Nosotros</Link>
               </li>
               <li>
                 <Link href="/landingPage/services" >Servicios</Link>
-              </li>
-              <li>
-                <Link href="/landingPage/register" >Registrarse</Link>
               </li>
             </ul>
           </div>

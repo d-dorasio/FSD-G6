@@ -16,13 +16,13 @@ function FooterLanding() {
         </div>
         <div id="redes">
           <p>Encontranos en:</p>
-          <a href="https://www.instagram.com/" target="_blank"> ig
+          <a href="https://www.instagram.com/" target="_blank">
             <FontAwesomeIcon icon={faSquareInstagram} style={{ color: "#35103d", height: "30px" }} />
           </a>
-          <a href="https://www.twitter.com/" target="_blank"> tw
+          <a href="https://www.twitter.com/" target="_blank">
             <FontAwesomeIcon icon={faSquareTwitter} style={{ color: "#35103d", height: "30px" }} />
           </a>
-          <a href="https://www.facebook.com/" target="_blank"> fb
+          <a href="https://www.facebook.com/" target="_blank">
             <FontAwesomeIcon icon={faSquareFacebook} style={{ color: "#35103d", height: "30px" }} />
           </a>
         </div>
