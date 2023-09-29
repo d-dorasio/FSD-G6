@@ -9,7 +9,7 @@ A pesar de que todavía tenemos mucho que aprender, después de una semana y muc
 
 ## Instalación
 
-Para realizar una correcta instalación de este repositorio, sugerimos clonar el siguiente repositorio: https://github.com/d-dorasio/ITBA-FSD-G6.git
+Para realizar una correcta instalación de este repositorio, sugerimos clonar el siguiente repositorio: https://github.com/d-dorasio/FSD-G6.git
 
 ## Créditos
 
