@@ -1,15 +1,21 @@
+"use client"
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import '@fontsource-variable/montserrat/wght-italic.css';
+import { Button, Card, CardContent, MenuItem, Select } from "@mui/material";
+import { TextField, InputLabel } from "@mui/material";
 
 export default function signUp() {
   return (
     <section id="ingreso" className="sectionLandingPage">
       <div>
-        {/* <Card variant="outlined" sx={{ borderColor: 'primary.main',border: 2 }}>
-          <CardContent> */}
+        <Card variant="outlined" sx={{ borderColor: 'primary.main',border: 2 }}>
+          <CardContent>
         <form className="form-container" action="" method="post">
           <h1 className="h1-center">Iniciar sesión:</h1>
           <br />
-          {/* <InputLabel id="tipo-doc-label">Tipo de documento</InputLabel>
+          <InputLabel id="tipo-doc-label">Tipo de documento</InputLabel>
               <Select
                 id="tipo-doc-label"
                 required
@@ -53,12 +59,12 @@ export default function signUp() {
                 required
               />
               <br/>
-              <Button variant="outlined" color="secondary" sx={{border: 2}}> */}
+              <Button variant="outlined" color="secondary" sx={{border: 2}}>
           <Link href="/homeBanking">Iniciar sesión </Link>
-          {/* </Button> */}
+          </Button>
         </form>
-        {/* </CardContent>
-      </Card> */}
+        </CardContent>
+      </Card>
       </div>
     </section>
   );

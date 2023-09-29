@@ -1,5 +1,7 @@
+"use client"
+
 import Link from "next/link";
-import React, { useClient } from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -7,7 +9,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 
 export default function NavBar() {
-  // // const [isOpen, setIsOpen] = useClient(false);
+  // // const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="navBar">
       <Box textAlign="center" sx={{ display: "flex" }}>

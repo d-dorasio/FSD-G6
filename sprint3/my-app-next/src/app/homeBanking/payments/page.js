@@ -1,25 +1,28 @@
+"use client"
+
+import { useEffect } from "react";
 import { Alert, Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 
 function Payments() {
-  //   useEffect(() => {
-  //     const form = document.querySelector('.form-container');
+  useEffect(() => {
+    const form = document.querySelector('.form-container');
 
-  //     form.addEventListener('submit', function (event) {
-  //       event.preventDefault();
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-  //       const payment = form.querySelector('[name="paymentMethod"]').value;
-  //       const amountInput = form.querySelector('[name="amount"]');
-  //       const amount = parseFloat(amountInput.value);
+      const payment = form.querySelector('[name="paymentMethod"]').value;
+      const amountInput = form.querySelector('[name="amount"]');
+      const amount = parseFloat(amountInput.value);
 
-  //       if (!isNaN(amount)) {
-  //         alert(`Pago realizado con éxito!\nServicio: ${payment}\nMonto: $${amount.toFixed(2)}`);
-  //         form.reset();
-  //       } else {
-  //         amountInput.focus();
-  //       }
-  //     });
-  //   }, []);
+      if (!isNaN(amount)) {
+        alert(`Pago realizado con éxito!\nServicio: ${payment}\nMonto: $${amount.toFixed(2)}`);
+        form.reset();
+      } else {
+        amountInput.focus();
+      }
+    });
+  }, []);
 
   return (
     <section>

@@ -3,10 +3,12 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-     <button>
-      <Link href="/landingPage"> Ingresar</Link>
-     </button>
+    <div className='container'>
+      <div>
+        <button>
+          <Link href="/landingPage"> Ingresar</Link>
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquareFacebook, faSquareTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons' 
+import { faSquareFacebook, faSquareTwitter, faSquareInstagram } from '@fortawesome/free-brands-svg-icons'
 
 
 function FooterLanding() {
@@ -17,13 +17,13 @@ function FooterLanding() {
         <div id="redes">
           <p>Encontranos en:</p>
           <a href="https://www.instagram.com/" target="_blank"> ig
-            <FontAwesomeIcon icon={faSquareInstagram} size="2xl" style={{color: "#35103d",}} />
+            <FontAwesomeIcon icon={faSquareInstagram} style={{ color: "#35103d", height: "30px" }} />
           </a>
           <a href="https://www.twitter.com/" target="_blank"> tw
-            <FontAwesomeIcon icon={faSquareTwitter} size="2xl" style={{color: "#35103d",}} />
+            <FontAwesomeIcon icon={faSquareTwitter} style={{ color: "#35103d", height: "30px" }} />
           </a>
           <a href="https://www.facebook.com/" target="_blank"> fb
-            <FontAwesomeIcon icon={faSquareFacebook} size="2xl" style={{color: "#35103d",}} />
+            <FontAwesomeIcon icon={faSquareFacebook} style={{ color: "#35103d", height: "30px" }} />
           </a>
         </div>
       </div>

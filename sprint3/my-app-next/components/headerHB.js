@@ -18,8 +18,6 @@ function Header() {
           ></Typography>
           <div>
             <Link href="/homeBanking/account">
-              {" "}
-              mi cuenta
               <IconButton sx={{ fontSize: 200 }} color="secondary">
                 <AccountCircle />
               </IconButton>

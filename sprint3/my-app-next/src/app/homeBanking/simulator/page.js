@@ -1,44 +1,47 @@
+"use client"
+
+import { useState } from "react";
 import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function Simulator() {
-  // const [tipoSeleccionado, setTipoSeleccionado] = useState("pesos");
-  // const [monto, setMonto] = useState("");
-  // const [plazoEjecucion, setPlazoEjecucion] = useState("30");
-  // const [otroPlazo, setOtroPlazo] = useState("");
-  // const [intereses, setIntereses] = useState("");
-  // const [total, setTotal] = useState("");
-  // const [resultadoVisible, setResultadoVisible] = useState(false);
+  const [tipoSeleccionado, setTipoSeleccionado] = useState("pesos");
+  const [monto, setMonto] = useState("");
+  const [plazoEjecucion, setPlazoEjecucion] = useState("30");
+  const [otroPlazo, setOtroPlazo] = useState("");
+  const [intereses, setIntereses] = useState("");
+  const [total, setTotal] = useState("");
+  const [resultadoVisible, setResultadoVisible] = useState(false);
 
-  // const calcularPlazoFijo = () => {
-  //   let tasaInteres = 0.012;
+  const calcularPlazoFijo = () => {
+    let tasaInteres = 0.012;
 
-  //   if (tipoSeleccionado === "pesos") {
-  //     tasaInteres = 0.012;
-  //   } else if (tipoSeleccionado === "dolar") {
-  //     tasaInteres = 0.012;
-  //   }
+    if (tipoSeleccionado === "pesos") {
+      tasaInteres = 0.012;
+    } else if (tipoSeleccionado === "dolar") {
+      tasaInteres = 0.012;
+    }
 
-  //   const tasaInteresMensual = tasaInteres / 12;
-  //   const diasTotales =
-  //     plazoEjecucion === "Otro"
-  //       ? parseInt(otroPlazo)
-  //       : parseInt(plazoEjecucion);
-  //   const interesesAcumulados = (monto * tasaInteresMensual * diasTotales) / 30;
-  //   const montoTotal = parseFloat(monto) + interesesAcumulados;
+    const tasaInteresMensual = tasaInteres / 12;
+    const diasTotales =
+      plazoEjecucion === "Otro"
+        ? parseInt(otroPlazo)
+        : parseInt(plazoEjecucion);
+    const interesesAcumulados = (monto * tasaInteresMensual * diasTotales) / 30;
+    const montoTotal = parseFloat(monto) + interesesAcumulados;
 
-  //   setIntereses(interesesAcumulados.toFixed(2));
-  //   setTotal(montoTotal.toFixed(2));
-  //   setResultadoVisible(true);
-  // };
+    setIntereses(interesesAcumulados.toFixed(2));
+    setTotal(montoTotal.toFixed(2));
+    setResultadoVisible(true);
+  };
 
-  // const handlePlazoChange = (e) => {
-  //   const value = e.target.value;
-  //   setPlazoEjecucion(value);
+  const handlePlazoChange = (e) => {
+    const value = e.target.value;
+    setPlazoEjecucion(value);
 
-  //   if (value === "Otro") {
-  //     setOtroPlazo("");
-  //   }
-  // };
+    if (value === "Otro") {
+      setOtroPlazo("");
+    }
+  };
 
   return (
     <div>
@@ -67,8 +70,8 @@ function Simulator() {
                   id="pesos"
                   name="pfpesos"
                   value="pesos"
-                  // checked={tipoSeleccionado === "pesos"}
-                  // onChange={() => setTipoSeleccionado("pesos")}
+                  checked={tipoSeleccionado === "pesos"}
+                  onChange={() => setTipoSeleccionado("pesos")}
                 />
                 <label>Plazo fijo en pesos</label>
                 <br />
@@ -77,8 +80,8 @@ function Simulator() {
                   id="dolar"
                   name="pfdolar"
                   value="dolar"
-                  // checked={tipoSeleccionado === "dolar"}
-                  // onChange={() => setTipoSeleccionado("dolar")}
+                  checked={tipoSeleccionado === "dolar"}
+                  onChange={() => setTipoSeleccionado("dolar")}
                 />
                 <label>Plazo fijo en dólares</label>
                 <br />
@@ -89,23 +92,23 @@ function Simulator() {
                   variant="standard"
                   label="Monto a invertir"
                   min="1000"
-                  // value={monto}
-                  // onChange={(e) => setMonto(e.target.value)}
+                  value={monto}
+                  onChange={(e) => setMonto(e.target.value)}
                 />
                 <br />
                 <br />
                 <InputLabel>Cantidad de días</InputLabel>
                 <Select
                   name="dias"
-                  // onChange={handlePlazoChange}
-                  // value={plazoEjecucion}
+                  onChange={handlePlazoChange}
+                  value={plazoEjecucion}
                 >
                   <MenuItem value="30">30</MenuItem>
                   <MenuItem value="60">60</MenuItem>
                   <MenuItem value="90">90</MenuItem>
                   <MenuItem value="Otro">Más días</MenuItem>
                 </Select>
-                {/* {plazoEjecucion === "Otro" && ( */}
+                {plazoEjecucion === "Otro" && (
                   <div id="otroPlazo">
                     <br />
                     <InputLabel htmlFor="otrodia">
@@ -115,22 +118,22 @@ function Simulator() {
                       type="number"
                       id="otrodia"
                       variant="standard"
-                      // value={otroPlazo}
-                      // onChange={(e) => setOtroPlazo(e.target.value)}
+                      value={otroPlazo}
+                      onChange={(e) => setOtroPlazo(e.target.value)}
                     />
                     <br />
                   </div>
-                {/* )} */}
+                )}
                 <br />
                 <br />
                 <Button
                   id="calcular"
                   variant="contained"
-                  // onClick={calcularPlazoFijo}
+                  onClick={calcularPlazoFijo}
                 >
                   Calcular
                 </Button>
-                {/* {resultadoVisible && (
+                {resultadoVisible && (
                   <div id="resultado">
                     <br />
                     <Card>
@@ -146,7 +149,7 @@ function Simulator() {
                       </CardContent>
                     </Card>
                   </div>
-                )} */}
+                )}
               </form>
             </div>
           </CardContent>

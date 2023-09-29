@@ -7,13 +7,13 @@ let themeITBANK;
 
 // Verificar si estamos en el lado del cliente antes de crear el tema
 if (typeof window !== "undefined") {
-  themeITBANK = createTheme({
+  const themeITBANK = createTheme({
     palette: {
       mode: "light",
       primary: {
         main: "#35103d",
         dark: "#220829",
-        nav:"red,"
+        nav: "red,"
       },
       secondary: {
         main: "#ff6431",

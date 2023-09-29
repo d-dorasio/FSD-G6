@@ -1,24 +1,27 @@
+"use client"
+
+import { useState } from "react";
 import Link from "next/link";
 import { Button, TextField } from "@mui/material";
 
 function Profile() {
-  //   const [profileImage, setProfileImage] = useState(null);
-  //   const [imagePreview, setImagePreview] = useState(null);
+  const [profileImage, setProfileImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
-  //   const handleImageChange = (event) => {
-  //     const selectedImage = event.target.files[0];
+  const handleImageChange = (event) => {
+    const selectedImage = event.target.files[0];
 
-  //     if (selectedImage) {
-  //       const reader = new FileReader();
+    if (selectedImage) {
+      const reader = new FileReader();
 
-  //       reader.onload = (e) => {
-  //         setProfileImage(selectedImage);
-  //         setImagePreview(e.target.result);
-  //       };
+      reader.onload = (e) => {
+        setProfileImage(selectedImage);
+        setImagePreview(e.target.result);
+      };
 
-  //       reader.readAsDataURL(selectedImage);
-  //     }
-  //   };
+      reader.readAsDataURL(selectedImage);
+    }
+  };
 
   return (
     <section>
@@ -31,17 +34,17 @@ function Profile() {
           id="profileImage"
           variant="outlined"
           accept="image/*"
-          //onChange={handleImageChange}
+          onChange={handleImageChange}
         />
         <br />
-        {/* {imagePreview && (
+        {imagePreview && (
           <img
             id="preview"
             src={imagePreview}
             alt="Vista previa de la imagen"
             style={{ maxWidth: "50%" }}
           />
-        )} */}
+        )}
         <h2>Apellido, Nombre</h2>
       </form>
 
