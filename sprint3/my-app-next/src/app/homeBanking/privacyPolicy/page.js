@@ -1,6 +1,11 @@
 import Link from "next/link";
+import Head from "next/head";
 function PrivacyPolicy() {
   return (
+    <><Head>
+      <meta name="keywords" content="politicas, privacidad" />
+      <meta name="description" content="politicas de privacidad del banco"/>
+    </Head>
     <section>
       <h1>Política de Privacidad de ITBANK - Home Banking</h1>
       <p>
@@ -99,7 +104,7 @@ function PrivacyPolicy() {
         dudes en ponerte en <Link href="/homeBanking/contact">contacto</Link> con nuestro
         equipo de privacidad.
       </p>
-    </section>
+    </section></>
   );
 }
 

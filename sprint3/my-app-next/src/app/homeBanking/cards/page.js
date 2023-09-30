@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react";
+import Head from "next/head";
 import { Button, Card, CardContent, TextField } from "@mui/material";
 
 
@@ -48,6 +49,10 @@ function Cards() {
   };
 
   return (
+    <><Head>
+      <meta name="keywords" content="tarjetas, agregar tarjeta" />
+      <meta name="description" content="tarjetas registradas en el Itbank"/>
+    </Head>
     <section>
       <h1>Mis Tarjetas</h1>
       {cards.map((card, index) => (
@@ -108,7 +113,7 @@ function Cards() {
           </form>
         </CardContent>
       </Card>
-    </section>
+    </section></>
   );
 }
 

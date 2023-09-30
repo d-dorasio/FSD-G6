@@ -2,12 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import '@fontsource-variable/montserrat/wght-italic.css';
 import { Button, Card, CardContent, MenuItem, Select } from "@mui/material";
 import { TextField, InputLabel } from "@mui/material";
 
 export default function signUp() {
   return (
+    <><Head>
+    <meta name="keywords" content="ingreso, formulario" />
+    <meta name="description" content="formulario de ingreso del banco"/>
+  </Head>
     <section id="ingreso" className="sectionLandingPage">
       <div>
         <Card variant="outlined" sx={{ borderColor: 'primary.main',border: 2 }}>
@@ -66,6 +71,6 @@ export default function signUp() {
         </CardContent>
       </Card>
       </div>
-    </section>
+    </section></>
   );
 }

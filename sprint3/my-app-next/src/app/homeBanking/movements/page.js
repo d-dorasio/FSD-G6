@@ -1,8 +1,13 @@
+import Head from "next/head";
 import { Button } from "@mui/material";
 import BasicTable from "../basicTable/page";
 
 function Movements() {
   return (
+    <><Head>
+      <meta name="keywords" content="movimientos, tarjeta, resumen" />
+      <meta name="description" content="movimientos y resumenes de las tarjetas"/>
+    </Head>
     <div>
       <h1>Movimientos:</h1>
       <p>
@@ -17,7 +22,7 @@ function Movements() {
       <Button type="submit" variant="contained" disabled>
         SOLICITAR RESUMEN DE CUENTA
       </Button>
-    </div>
+    </div> </>
   );
 }
 

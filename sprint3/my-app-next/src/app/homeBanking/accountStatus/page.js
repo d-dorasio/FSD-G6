@@ -1,5 +1,5 @@
 "use client"
-
+import Head from "next/head";
 import Chart from 'chart.js/auto';
 import { useState, useRef, useEffect, } from "react";
 
@@ -51,6 +51,10 @@ function AccountStatus() {
   }, []);
 
   return (
+    <><Head>
+      <meta name="keywords" content="estado cuenta, balances, saldo" />
+      <meta name="description" content="estado de la cuenta"/>
+    </Head>
     <section>
       <h1>Estado de cuenta</h1>
       <p>
@@ -66,7 +70,7 @@ function AccountStatus() {
         <h2>Comparación de Balances</h2>
         <canvas id="barChart" className="chart"></canvas>
       </div>
-    </section>
+    </section> </>
   );
 }
 

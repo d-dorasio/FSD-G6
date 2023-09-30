@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import '../../app/globals.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserShield } from '@fortawesome/free-solid-svg-icons'
@@ -47,10 +48,14 @@ function Features() {
 
 export default function LandingPage() {
   return (
+    <><Head>
+    <meta name="keywords" content="pagina principal" />
+    <meta name="description" content="bienvenidos a la pagina principal del Itbank"/>
+  </Head>
     <div>
       <section id="banner">
         <div
-          className="banner-image" style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)', backgroundSize: 'cover' , backgroundPosition: 'bottom',}}
+          className="banner-image" alt="banner" style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)', backgroundSize: 'cover' , backgroundPosition: 'bottom',}}
         >
           <h1 className="h1-banner-image">
             Bienvenidos al Home Banking de ITBANK
@@ -67,6 +72,6 @@ export default function LandingPage() {
         </div>
         <Features />
       </section>
-    </div>
+    </div></>
   );
 }

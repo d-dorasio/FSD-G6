@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Head from "next/head";
 import {
   Button,
   Card,
@@ -67,6 +68,10 @@ function Loans() {
   };
 
   return (
+    <><Head>
+     <meta name="keywords" content="prestamos, simulador" />
+     <meta name="description" content="simulador de préstamos del Itbank"/>
+    </Head>
     <main>
       <section>
         <Card sx={{ boxShadow: 5 }}>
@@ -240,7 +245,7 @@ function Loans() {
           años, y son adecuados para financiar proyectos más grandes.
         </p>
       </section>
-    </main>
+    </main> </>
   );
 }
 

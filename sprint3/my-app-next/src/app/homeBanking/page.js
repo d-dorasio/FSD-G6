@@ -1,5 +1,10 @@
+import Head from "next/head";
+
 export default function homeBanking() {
   return (
+    <><Head>
+      <meta name="keywords" content="valores, mision" />
+    </Head>
     <main>
       <section>
         <img src="/banner.png" alt="Baner Ilustrativo" width="100%" />
@@ -63,6 +68,6 @@ export default function homeBanking() {
           considerarnos como tu banco de elección.
         </p>
       </section>
-    </main>
+    </main></>
   );
 }

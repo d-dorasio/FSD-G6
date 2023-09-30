@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import BasicTable from "../basicTable/page";
 import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
@@ -26,6 +27,10 @@ export default function transfer() {
   }, []);
 
   return (
+    <><Head>
+      <meta name="keywords" content="transferencias" />
+      <meta name="description" content="formulario de transferencia"/>
+    </Head>
     <div>
       <h1 className="h1-center">Transferencias</h1>
       <br />
@@ -89,6 +94,6 @@ export default function transfer() {
 
       <h2>Transferencias realizadas</h2>
       <BasicTable /> 
-    </div>
+    </div></>
   );
 }

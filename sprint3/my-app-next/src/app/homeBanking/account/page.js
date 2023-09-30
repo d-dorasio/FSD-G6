@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { Button, TextField } from "@mui/material";
 
 function Profile() {
@@ -24,6 +25,10 @@ function Profile() {
   };
 
   return (
+    <><Head>
+      <meta name="keywords" content="perfil, datos usuario" />
+      <meta name="description" content="datos del usuario del banco"/>
+    </Head>
     <section>
       <h1>Perfil:</h1>
       <form id="profileForm">
@@ -104,7 +109,7 @@ function Profile() {
           <Link href="/landingPage">CERRAR SESIÓN</Link>
         </Button>
       </ul>
-    </section>
+    </section></>
   );
 }
 

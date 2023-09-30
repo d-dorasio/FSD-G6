@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import { Card, CardContent, Button, Select, MenuItem } from "@mui/material";
 
 function CurrencyConverter() {
@@ -27,7 +28,10 @@ function CurrencyConverter() {
   };
 
   return (
-
+    <><Head>
+      <meta name="keywords" content="convertidor" />
+      <meta name="description" content="convertidor de moneda del banco"/>
+    </Head>
     <section className="converter">
       <h1>Convertidor de moneda</h1>
 
@@ -187,7 +191,7 @@ function CurrencyConverter() {
           </div>
         </CardContent>
       </Card>
-    </section>
+    </section> </>
 
   );
 }

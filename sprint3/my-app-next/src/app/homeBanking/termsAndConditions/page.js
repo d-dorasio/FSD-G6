@@ -1,6 +1,11 @@
 import Link from "next/link";
+import Head from "next/head";
 function TermsAndConditions() {
   return (
+    <><Head>
+      <meta name="keywords" content="terminos, condiciones" />
+      <meta name="description" content="terminos y condiciones del Itbank"/>
+    </Head>
     <section>
       <h1>Términos y Condiciones de ITBANK - Home Banking</h1>
       <p>
@@ -71,7 +76,7 @@ function TermsAndConditions() {
         Condiciones. Si no estás de acuerdo con estos términos, te recomendamos
         no utilizar nuestros servicios.
       </p>
-    </section>
+    </section></>
   );
 }
 

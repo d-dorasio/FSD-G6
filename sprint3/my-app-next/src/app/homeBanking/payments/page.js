@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react";
+import Head from "next/head";
 import { Alert, Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import BasicTable from "../basicTable/page";
 
@@ -25,6 +26,10 @@ function Payments() {
   }, []);
 
   return (
+    <><Head>
+      <meta name="keywords" content="pagos, pagos servicios" />
+      <meta name="description" content="pagos de servicios"/>
+    </Head>
     <section>
       <h1>Pagos</h1>
       <div className="anotherContainer">
@@ -69,7 +74,7 @@ function Payments() {
            <BasicTable /> 
         </div>
       </div>
-    </section>
+    </section></>
   );
 }
 

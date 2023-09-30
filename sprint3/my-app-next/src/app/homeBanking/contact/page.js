@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import { Button, Card, CardContent, MenuItem, Select } from "@mui/material";
 import { TextField, InputLabel } from "@mui/material";
 
@@ -19,6 +20,10 @@ function ContactForm() {
   };
 
   return (
+    <><Head>
+      <meta name="keywords" content="contacto" />
+      <meta name="description" content="informacion de tus contactos"/>
+    </Head>
     <div className="section-form">
       <h1 className="h1-center">Información de contacto</h1>
       <form
@@ -66,7 +71,7 @@ function ContactForm() {
           ENVIAR
         </Button>
       </form>
-    </div>
+    </div> </>
   );
 }
 

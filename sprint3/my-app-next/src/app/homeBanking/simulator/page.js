@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import Head from "next/head";
 import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function Simulator() {
@@ -44,6 +45,10 @@ function Simulator() {
   };
 
   return (
+    <><Head>
+      <meta name="keywords" content="plazo fijo" />
+      <meta name="description" content="simulador de plazos fijos en el Itbank"/>
+    </Head>
     <div>
       <section>
         <h1>Plazos fijos</h1>
@@ -226,7 +231,7 @@ function Simulator() {
           Banco Central de la República Argentina (BCRA).
         </p>
       </section>
-    </div>
+    </div></>
   );
 }
 
