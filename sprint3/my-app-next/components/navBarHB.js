@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
-import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 
 
@@ -13,12 +12,13 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="navBar">
-      <Box textAlign="center" sx={{ display: "flex" }}>
+      <Box textAlign="center" sx={{ display: "flex" ,}}>
         <CssBaseline />
         <Drawer
           variant="permanent"
           sx={{
             flexShrink: 0,
+            
             [`& .MuiDrawer-paper`]: { boxSizing: "border-box" },
           }}
           PaperProps={{
@@ -26,6 +26,7 @@ export default function NavBar() {
               backgroundColor: "#000000",
               width: "250px",
               paddingTop: "25px",
+              zIndex: 1,
               
               "@media (max-width: 780px)": {
                 maxWidth: "45px",

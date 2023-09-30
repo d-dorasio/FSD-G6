@@ -35,7 +35,7 @@ export default function transfer() {
       <h1 className="h1-center">Transferencias</h1>
       <br />
 
-      <div id="container-form">
+      <div id={styles.containerForm}>
         {formularioVisible && (
           <Card sx={{ boxShadow: 5 }}>
             <CardContent>
