@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Chart from 'chart.js/auto';
 import { useState, useRef, useEffect, } from "react";
+import styles from "../page.module.css"
 
 function AccountStatus() {
   const chartRef = useRef(null);
@@ -61,14 +62,14 @@ function AccountStatus() {
         Desde el panel de control, podés administrar tus finanzas de manera
         sencilla y segura.
       </p>
-      <div className="card">
+      <div className={styles.card}>
         <h2>Saldo Actual</h2>
         <p>Saldo: $1,234.56</p>
         <p>Nuevo Cobro: 03/09/23</p>
       </div>
-      <div className="card">
+      <div className={styles.card}>
         <h2>Comparación de Balances</h2>
-        <canvas id="barChart" className="chart"></canvas>
+        <canvas id="barChart" className={styles.chart}></canvas>
       </div>
     </section> </>
   );

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import BasicTable from "../basicTable/page";
 import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
-
+import styles from "./page.module.css"
 
 export default function transfer() {
   const [mensajeVisible, setMensajeVisible] = useState(false);

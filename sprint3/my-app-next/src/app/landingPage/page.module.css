@@ -1,0 +1,48 @@
+/* STYLES LANDING PAGE */
+#banner {
+    text-align: center;
+}
+
+#banner h1 {
+    margin-top: 220px;
+    font-size: 180%;
+    margin-bottom: 3%;
+    color: white;
+}
+
+#banner p {
+    font-size: 100%;
+    margin: 2%;
+    font-weight: bold;
+    color:#707070;
+    background: #00000000;
+}
+
+#features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 20px;
+    color:#35103D
+}
+
+.ctaButton {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.ctaButton:hover {
+    background-color: white;
+    color: #ff7344;
+}

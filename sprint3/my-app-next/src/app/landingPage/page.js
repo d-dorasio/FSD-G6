@@ -1,15 +1,15 @@
 import Link from "next/link";
 import Head from "next/head";
-import '../../app/globals.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserShield } from '@fortawesome/free-solid-svg-icons'
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
-import { faIdCard } from '@fortawesome/free-solid-svg-icons'
-
+import "../../app/globals.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserShield } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faIdCard } from "@fortawesome/free-solid-svg-icons";
+import styles from "./page.module.css"
 
 function Feature({ icon, title, description }) {
   return (
-    <div className="feature">
+    <div className={styles.feature}>
       <i className={icon}></i>
       <h2>{title}</h2>
       <p>{description}</p>
@@ -38,7 +38,7 @@ function Features() {
   ];
 
   return (
-    <section id="features">
+    <section id={styles.features}>
       {featuresData.map((feature, index) => (
         <Feature key={index} {...feature} />
       ))}
@@ -48,30 +48,44 @@ function Features() {
 
 export default function LandingPage() {
   return (
-    <><Head>
-    <meta name="keywords" content="pagina principal" />
-    <meta name="description" content="bienvenidos a la pagina principal del Itbank"/>
-  </Head>
-    <div>
-      <section id="banner">
-        <div
-          className="banner-image" alt="banner" style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)', backgroundSize: 'cover' , backgroundPosition: 'bottom',}}
-        >
-          <h1 className="h1-banner-image">
-            Bienvenidos al Home Banking de ITBANK
-            <br />
-            Gestiona tus finanzas con facilidad
-          </h1>
-          <p>
-            Accede a tu dinero las 24 horas del día, los 7 días de la semana,
-            desde cualquier lugar.
-          </p>
-          <Link href="/landingPage/signUp" className="cta-button">
-            Iniciar sesión
-          </Link>
-        </div>
-        <Features />
-      </section>
-    </div></>
+    <>
+      <Head>
+        <meta name="keywords" content="pagina principal" />
+        <meta
+          name="description"
+          content="bienvenidos a la pagina principal del Itbank"
+        />
+      </Head>
+      <div>
+        <section id={styles.banner}>
+          <div
+            className="banner-image"
+            style={{
+              height: "550px",
+              width:"auto",
+              paddingTop: "80px",
+              paddingBottom: "80px",
+              backgroundImage: "url(/Banco.webp)",
+              backgroundSize: "cover",
+              backgroundPosition: "bottom",
+            }}
+          >
+            <h1 className="h1-banner-image">
+              Bienvenidos al Home Banking de ITBANK
+              <br />
+              Gestiona tus finanzas con facilidad
+            </h1>
+            <p>
+              Accede a tu dinero las 24 horas del día, los 7 días de la semana,
+              desde cualquier lugar.
+            </p>
+            <Link href="/landingPage/signUp" className={styles.ctaButton}>
+              Iniciar sesión
+            </Link>
+          </div>
+          <Features />
+        </section>
+      </div>
+    </>
   );
 }

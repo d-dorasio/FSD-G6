@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import styles from "./page.module.css"
 
 export default function Home() {
   return (
@@ -11,10 +12,10 @@ export default function Home() {
       key="canonical"
       />
   </Head>
-    <div className='container'>
+    <div className={styles.container}>
       <div>
-        <button>
-          <Link href="/landingPage"> Ingresar</Link>
+        <button className={styles.button}>
+          <Link href="/landingPage" > Ingresar</Link>
         </button>
       </div>
     </div></>

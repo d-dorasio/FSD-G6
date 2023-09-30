@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Image from "next/image";
+
 
 export default function homeBanking() {
   return (
@@ -7,7 +9,7 @@ export default function homeBanking() {
     </Head>
     <main>
       <section>
-        <img src="/banner.png" alt="Baner Ilustrativo" width="100%" />
+        <img src="/banner.webp" alt="Baner Ilustrativo" width="100%" height="auto"/>
         <h1>
           <strong>Bienvenido a ITBANK</strong>
         </h1>
