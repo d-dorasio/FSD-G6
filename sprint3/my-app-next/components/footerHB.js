@@ -17,14 +17,14 @@ function Footer() {
         </div>
         <div id="redes">
           <p>Encontranos en:</p>
-          <a href="https://www.instagram.com/" target="_blank" alt="instagram">
-            <FontAwesomeIcon icon={faSquareInstagram} style={{ color: "#35103d", height: "30px" }} />
+          <a href="https://www.instagram.com/" target="_blank" alt="instagram" title="Instagram">
+            <FontAwesomeIcon icon={faSquareInstagram} style={{ color: "#35103d", height: "30px" , width: "26px" }} />
           </a>
-          <a href="https://www.twitter.com/" target="_blank" alt="twitter">
-            <FontAwesomeIcon icon={faSquareTwitter} style={{ color: "#35103d", height: "30px" }} />
+          <a href="https://www.twitter.com/" target="_blank" alt="twitter" title="Twitter">
+            <FontAwesomeIcon icon={faSquareTwitter} style={{ color: "#35103d", height: "30px" , width: "26px" }} />
           </a>
-          <a href="https://www.facebook.com/" target="_blank" alt="facebook">
-            <FontAwesomeIcon icon={faSquareFacebook} style={{ color: "#35103d", height: "30px" }} />
+          <a href="https://www.facebook.com/" target="_blank" alt="facebook" title="Facebook">
+            <FontAwesomeIcon icon={faSquareFacebook} style={{ color: "#35103d", height: "30px" , width: "26px" }} />
           </a>
         </div>
       </div>

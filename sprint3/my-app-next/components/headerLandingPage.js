@@ -14,7 +14,7 @@ function HeaderLanding() {
       <div className="container-header">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link href="/landingPage"><img src="/logo.png" height="80px" className="logo-landingpage" alt="Logo"></img></Link>
+            <Link href="/landingPage"><img src="/logo.png" height="80px" className="logo-landingpage" alt="Logo" title="ITBANK"></img></Link>
           </Typography> 
           <div>
             <ul className="ul-LandingPage">

@@ -39,7 +39,7 @@ export default function NavBar() {
             <Box sx={{ overflow: "auto" }}>
               <div className="nav-logo">
                 <Link href="/homeBanking">
-                  <img src="/logo.png" height="100px"></img>
+                  <img src="/logo.png" height="100px" alt="Logo ITBANK" title="ITBANK"></img>
                 </Link>
               </div>
               <ul style={{ listStyleType: "none" }} className="ul-nav">
