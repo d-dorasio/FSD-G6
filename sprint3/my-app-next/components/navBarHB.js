@@ -26,6 +26,7 @@ export default function NavBar() {
               backgroundColor: "#000000",
               width: "250px",
               paddingTop: "25px",
+              zIndex:"1",
               "@media (max-width: 780px)": {
                 maxWidth: "45px",
                 height: "56px",
@@ -39,7 +40,7 @@ export default function NavBar() {
           <div className={`nav-items ${isOpen && "open"}`}>
             <Box sx={{ overflow: "auto" }}>
               <div className="nav-logo">
-                <Link href="/homeBanking">
+                <Link href="/">
                   <img src="/logo.png" height="100px"></img>
                 </Link>
               </div>

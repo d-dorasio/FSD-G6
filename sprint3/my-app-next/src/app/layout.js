@@ -1,7 +1,6 @@
 // import ThemeRegistry from "../../themes/ThemeRegistry";
 // import { Inter } from "next/font/google";
 
-
 // const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -27,6 +26,7 @@ import { Inter } from "next/font/google";
 
 import HeaderLanding from "../../components/headerLandingPage";
 import FooterLanding from "../../components/footerLandingPage";
+import ThemeRegistry from "../../themes/ThemeRegistry";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,9 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={inter.className}>
-      <HeaderLanding></HeaderLanding>
-        {children}
-        <FooterLanding></FooterLanding>
+        <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>
   );

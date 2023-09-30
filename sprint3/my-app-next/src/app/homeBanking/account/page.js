@@ -106,7 +106,7 @@ function Profile() {
           variant="outined"
           sx={{ border: 2, borderColor: "secondary.main" }}
         >
-          <Link href="/landingPage">CERRAR SESIÓN</Link>
+          <Link href="/">CERRAR SESIÓN</Link>
         </Button>
       </ul>
     </section></>

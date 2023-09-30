@@ -86,9 +86,7 @@ const themeOptions = {
       typography: {
           fontFamily: 'Montserrat Variable',
       },
-      zIndex: (theme) => ({
-          appBar: theme.zIndex.drawer + 1,
-        }),
+    
 };
 
 const theme = createTheme(themeOptions);

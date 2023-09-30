@@ -4,12 +4,12 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Link from "next/link";
-import { zIndex } from "../themes/ThemeRegistry"
+
 
 function Header() {
   return (
     <header>
-      <AppBar position="fixed" sx={{ zIndex: zIndex }}>
+      <AppBar position="fixed">
         <Toolbar>
           <Typography
             variant="h6"

@@ -30,6 +30,9 @@ import { faUserShield } from '@fortawesome/free-solid-svg-icons'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { faIdCard } from '@fortawesome/free-solid-svg-icons'
 
+import HeaderLanding from "../../components/headerLandingPage";
+import FooterLanding from "../../components/footerLandingPage";
+
 
 function Feature({ icon, title, description }) {
   return (
@@ -77,6 +80,7 @@ export default function LandingPage() {
     <meta name="description" content="bienvenidos a la pagina principal del Itbank"/>
   </Head>
     <div>
+    <HeaderLanding></HeaderLanding>
       <section id="banner">
         <div
           className="banner-image" alt="banner" style={{height:'550px', paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'url(/Banco.jpg)', backgroundSize: 'cover' , backgroundPosition: 'bottom',}}
@@ -96,6 +100,7 @@ export default function LandingPage() {
         </div>
         <Features />
       </section>
+      <FooterLanding></FooterLanding>
     </div></>
   );
 }
