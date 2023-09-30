@@ -89,6 +89,7 @@ function Loans() {
                       label="Seleccione"
                       variant="standard"
                       onChange={(e) => setTipoSeleccionado(e.target.value)}
+                      style={{fontFamily: "Montserrat Variable", padding: "5px 0px"}}
                     >
                       <MenuItem value="publica">
                         Administración Pública
@@ -98,7 +99,6 @@ function Loans() {
                       <MenuItem value="ANSES">ANSES</MenuItem>
                     </Select>
 
-                    <label htmlFor="amount">Monto:</label>
                     <TextField
                       required
                       type="text"
@@ -108,9 +108,9 @@ function Loans() {
                       variant="standard"
                       value={monto}
                       onChange={(e) => setMonto(e.target.value)}
+                      style={{fontFamily: "Montserrat Variable", padding: "10px 0px"}}
                     />
 
-                    <label htmlFor="months">Plazo en meses:</label>
                     <TextField
                       required
                       type="number"
@@ -120,6 +120,7 @@ function Loans() {
                       variant="standard"
                       value={plazoEjecucion}
                       onChange={(e) => setPlazoEjecucion(e.target.value)}
+                      style={{fontFamily: "Montserrat Variable", padding: "10px 0px"}}
                     />
                     <br />
                     <Button
@@ -148,7 +149,8 @@ function Loans() {
                     <TableRow>
                       <TableCell
                         style={{
-                          fontWeight: 900,
+                          fontFamily: "Montserrat Variable",
+                          fontWeight: 800,
                           color: "#000000",
                           backgroundColor: "#C2B2B4",
                         }}
@@ -158,7 +160,8 @@ function Loans() {
                       </TableCell>
                       <TableCell
                         style={{
-                          fontWeight: 900,
+                          fontFamily: "Montserrat Variable",
+                          fontWeight: 800,
                           color: "#000000",
                           backgroundColor: "#C2B2B4",
                         }}
@@ -168,7 +171,8 @@ function Loans() {
                       </TableCell>
                       <TableCell
                         style={{
-                          fontWeight: 900,
+                          fontFamily: "Montserrat Variable",
+                          fontWeight: 800,
                           color: "#000000",
                           backgroundColor: "#C2B2B4",
                         }}
@@ -178,7 +182,8 @@ function Loans() {
                       </TableCell>
                       <TableCell
                         style={{
-                          fontWeight: 900,
+                          fontFamily: "Montserrat Variable",
+                          fontWeight: 800,
                           color: "#000000",
                           backgroundColor: "#C2B2B4",
                         }}
@@ -188,7 +193,8 @@ function Loans() {
                       </TableCell>
                       <TableCell
                         style={{
-                          fontWeight: 900,
+                          fontFamily: "Montserrat Variable",
+                          fontWeight: 800,
                           color: "#000000",
                           backgroundColor: "#C2B2B4",
                         }}
@@ -202,7 +208,7 @@ function Loans() {
                     {cuotas.map((cuota, index) => (
                       <TableRow key={index}>
                         {cuota.map((valorCelda, indexCelda) => (
-                          <TableCell key={indexCelda}>
+                          <TableCell key={indexCelda} style={{ fontFamily: "Montserrat Variable" }}>
                             {valorCelda.toFixed(2)}
                           </TableCell>
                         ))}

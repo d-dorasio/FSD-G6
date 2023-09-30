@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import '@fontsource-variable/montserrat';
 
 function createData(date, description, movements) {
     return { date, description, movements };
@@ -24,7 +25,7 @@ export default function BasicTable() {
     return (
         <TableContainer component={Paper}>
             <Table
-                sx={{ minWidth: 650 }}
+                sx={{ minWidth: 650, fontFamily: "Montserrat Variable"}}
                 aria-label="simple table"
                 className="tab-movimientos"
                 cellSpacing="1"
@@ -33,9 +34,9 @@ export default function BasicTable() {
                 id="transactionTable">
                 <TableHead>
                     <TableRow>
-                        <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Fecha de realización</TableCell>
-                        <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Descripción</TableCell>
-                        <TableCell style={{ fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Movimiento</TableCell>
+                        <TableCell style={{ fontFamily: "Montserrat Variable", fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Fecha de realización</TableCell>
+                        <TableCell style={{ fontFamily: "Montserrat Variable", fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Descripción</TableCell>
+                        <TableCell style={{ fontFamily: "Montserrat Variable", fontWeight: 900, color: "#000000",backgroundColor: "#C2B2B4" }} align="center">Movimiento</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -44,11 +45,11 @@ export default function BasicTable() {
                             key={row.date}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                            <TableCell component="th" scope="row" align="center">
+                            <TableCell component="th" scope="row" align="center" style={{fontFamily: "Montserrat Variable"}}>
                                 {row.date}
                             </TableCell>
-                            <TableCell align="left">{row.description}</TableCell>
-                            <TableCell align="center">{row.movements}</TableCell>
+                            <TableCell align="left" style={{fontFamily: "Montserrat Variable"}}>{row.description} </TableCell>
+                            <TableCell align="center" style={{fontFamily: "Montserrat Variable"}}>{row.movements} </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import BasicTable from "../basicTable/page";
 import { Button, Card, CardContent, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import '@fontsource-variable/montserrat';
 
 
 export default function transfer() {
@@ -37,7 +38,7 @@ export default function transfer() {
 
       <div id="container-form">
         {formularioVisible && (
-          <Card sx={{ boxShadow: 5 }}>
+          <Card sx={{ boxShadow: 5, fontFamily: "Montserrat Variable"}}>
             <CardContent>
               <form className="form-container">
                 <h2>Formulario de Transferencia</h2>

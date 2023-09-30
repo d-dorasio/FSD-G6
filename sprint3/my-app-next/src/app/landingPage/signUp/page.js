@@ -6,6 +6,7 @@ import Head from "next/head";
 import '@fontsource-variable/montserrat/wght-italic.css';
 import { Button, Card, CardContent, MenuItem, Select } from "@mui/material";
 import { TextField, InputLabel } from "@mui/material";
+import '../../../app/globals.css';
 
 export default function signUp() {
   return (
@@ -65,8 +66,8 @@ export default function signUp() {
               />
               <br/>
               <Button variant="outlined" color="secondary" sx={{border: 2}}>
-          <Link href="/homeBanking">Iniciar sesión </Link>
-          </Button>
+                <Link href="/homeBanking">Iniciar sesión </Link>
+              </Button>
         </form>
         </CardContent>
       </Card>

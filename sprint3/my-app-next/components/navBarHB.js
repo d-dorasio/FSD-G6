@@ -17,6 +17,7 @@ export default function NavBar() {
         <Drawer
           variant="permanent"
           sx={{
+            fontFamily: "Montserrat Variable",
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: { boxSizing: "border-box" },
           }}

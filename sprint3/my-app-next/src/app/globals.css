@@ -112,6 +112,7 @@ nav li:hover {
 }
 
 li a {
+    font-family: "Montserrat Variable";
     text-decoration: none;
     color: white;
 }
@@ -214,7 +215,7 @@ footer a {
 
 /* ALL STYLES FORMS */
 label {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat Variable";
     text-align: center;
     color: black;
     font-size: medium;
@@ -225,7 +226,7 @@ label {
 .h1-center {
     text-align: center;
     color: #81007f;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat Variable', sans-serif;
     margin: 0;
 }
 

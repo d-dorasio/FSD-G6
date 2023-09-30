@@ -13,15 +13,15 @@ function HeaderLanding() {
     >
       <div className="container-header">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, paddingLeft: "5px", paddingTop: "5px" }}>
             <Link href="/landingPage"><img src="/logo.png" height="80px" className="logo-landingpage" alt="Logo"></img></Link>
           </Typography> 
           <div>
             <ul className="ul-LandingPage">
-              <li>
+              <li style={{paddingRight: "15px"}}>
                 <Link href="/landingPage/aboutUs" >Nosotros</Link>
               </li>
-              <li>
+              <li style={{paddingRight: "15px"}}>
                 <Link href="/landingPage/services" >Servicios</Link>
               </li>
             </ul>

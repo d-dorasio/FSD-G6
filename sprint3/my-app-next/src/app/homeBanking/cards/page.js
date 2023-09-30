@@ -56,7 +56,7 @@ function Cards() {
     <section>
       <h1>Mis Tarjetas</h1>
       {cards.map((card, index) => (
-        <div key={index} className="card">
+        <div key={index} className="card" style={{fontFamily: "Montserrat Variable"}}>
           <h3>{card.nombre}</h3>
           <p>Número: {card.numero}</p>
           <p>Vencimiento: {card.vencimiento}</p>
@@ -75,6 +75,7 @@ function Cards() {
 
             <TextField
               required
+              variant="standard"
               label="Nombre del Titular"
               type="text"
               id="nombre"
@@ -83,6 +84,7 @@ function Cards() {
             <br />
             <TextField
               required
+              variant="standard"
               label="Número de la tarjeta"
               type="text"
               id="numero"
@@ -92,6 +94,7 @@ function Cards() {
             <br />
             <TextField
               required
+              variant="standard"
               label="Fecha de Vencimiento"
               type="text"
               id="vencimiento"
@@ -100,6 +103,7 @@ function Cards() {
             <br />
             <TextField
               required
+              variant="standard"
               label="Código de Seguridad"
               type="password"
               id="codigo"
