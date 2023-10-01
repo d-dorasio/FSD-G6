@@ -1,116 +1,133 @@
-"use client"
+// "use client"
 
-import { useState } from "react";
-import Link from "next/link";
-import Head from "next/head";
-import { Button, TextField } from "@mui/material";
+// import { useState } from "react";
+// import Link from "next/link";
+// import Head from "next/head";
+// import { Button, TextField } from "@mui/material";
 
-function Profile() {
-  const [profileImage, setProfileImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
 
-  const handleImageChange = (event) => {
-    const selectedImage = event.target.files[0];
+// function Profile() {
+//   const [profileImage, setProfileImage] = useState(null);
+//   const [imagePreview, setImagePreview] = useState(null);
 
-    if (selectedImage) {
-      const reader = new FileReader();
+//   const handleImageChange = (event) => {
+//     const selectedImage = event.target.files[0];
 
-      reader.onload = (e) => {
-        setProfileImage(selectedImage);
-        setImagePreview(e.target.result);
-      };
+//     if (selectedImage) {
+//       const reader = new FileReader();
 
-      reader.readAsDataURL(selectedImage);
-    }
-  };
+//       reader.onload = (e) => {
+//         setProfileImage(selectedImage);
+//         setImagePreview(e.target.result);
+//       };
 
+//       reader.readAsDataURL(selectedImage);
+//     }
+//   };
+
+//   return (
+//     <><Head>
+//       <meta name="keywords" content="perfil, datos usuario" />
+//       <meta name="description" content="datos del usuario del banco"/>
+//     </Head>
+//     <section>
+//       <h1>Perfil:</h1>
+//       <form id="profileForm">
+//         <label>Subir foto</label>
+//         <br />
+//         <TextField
+//           type="file"
+//           id="profileImage"
+//           variant="outlined"
+//           accept="image/*"
+//           onChange={handleImageChange}
+//         />
+//         <br />
+//         {imagePreview && (
+//           <img
+//             id="preview"
+//             src={imagePreview}
+//             alt="Vista previa de la imagen"
+//             style={{ maxWidth: "50%" }}
+//           />
+//         )}
+//         <h2>Apellido, Nombre</h2>
+//       </form>
+
+//       <h3>Datos:</h3>
+//       <ul>
+//         <li>
+//           Nombre Completo: <span>Apellido, Nombre</span>
+//         </li>
+//         <li>
+//           Email: <span>nombre@mail.com</span>
+//         </li>
+//         <li>
+//           DNI: <span>12.345.678</span>
+//         </li>
+//         <li>
+//           Sexo: <span>Indefinido</span>
+//         </li>
+//         <li>
+//           Edad:{" "}
+//           <span>
+//             <Button variant="contained" size="small">
+//               Agregar edad
+//             </Button>
+//           </span>
+//         </li>
+//         <li>
+//           Fecha de nacimiento:{" "}
+//           <span>
+//             <Button variant="contained" size="small">
+//               Agregar fecha
+//             </Button>
+//           </span>
+//         </li>
+//         <li>
+//           Estado civil:{" "}
+//           <span>
+//             <Button variant="contained" size="small">
+//               Agregar Estado
+//             </Button>
+//           </span>
+//         </li>
+//         <li>
+//           Profesión:{" "}
+//           <span>
+//             <Button variant="contained" size="small">
+//               Agregar profesión
+//             </Button>
+//           </span>
+//         </li>
+//         <br />
+//         <Button
+//           size="large"
+//           color="secondary"
+//           variant="outined"
+//           sx={{ border: 2, borderColor: "secondary.main" }}
+//         >
+//           <Link href="/">CERRAR SESIÓN</Link>
+//         </Button>
+//       </ul>
+//     </section></>
+//   );
+// }
+
+// export default Profile;
+
+import Cuentas from "./Cuentas";
+
+
+export default async function Cuenta() {
   return (
-    <><Head>
-      <meta name="keywords" content="perfil, datos usuario" />
-      <meta name="description" content="datos del usuario del banco"/>
-    </Head>
-    <section>
-      <h1>Perfil:</h1>
-      <form id="profileForm">
-        <label>Subir foto</label>
-        <br />
-        <TextField
-          type="file"
-          id="profileImage"
-          variant="outlined"
-          accept="image/*"
-          onChange={handleImageChange}
-        />
-        <br />
-        {imagePreview && (
-          <img
-            id="preview"
-            src={imagePreview}
-            alt="Vista previa de la imagen"
-            style={{ maxWidth: "50%" }}
-          />
-        )}
-        <h2>Apellido, Nombre</h2>
-      </form>
+    <>
 
-      <h3>Datos:</h3>
-      <ul>
-        <li>
-          Nombre Completo: <span>Apellido, Nombre</span>
-        </li>
-        <li>
-          Email: <span>nombre@mail.com</span>
-        </li>
-        <li>
-          DNI: <span>12.345.678</span>
-        </li>
-        <li>
-          Sexo: <span>Indefinido</span>
-        </li>
-        <li>
-          Edad:{" "}
-          <span>
-            <Button variant="contained" size="small">
-              Agregar edad
-            </Button>
-          </span>
-        </li>
-        <li>
-          Fecha de nacimiento:{" "}
-          <span>
-            <Button variant="contained" size="small">
-              Agregar fecha
-            </Button>
-          </span>
-        </li>
-        <li>
-          Estado civil:{" "}
-          <span>
-            <Button variant="contained" size="small">
-              Agregar Estado
-            </Button>
-          </span>
-        </li>
-        <li>
-          Profesión:{" "}
-          <span>
-            <Button variant="contained" size="small">
-              Agregar profesión
-            </Button>
-          </span>
-        </li>
-        <br />
-        <Button
-          size="large"
-          color="secondary"
-          variant="outined"
-          sx={{ border: 2, borderColor: "secondary.main" }}
-        >
-          <Link href="/">CERRAR SESIÓN</Link>
-        </Button>
-      </ul>
-    </section></>
+      <div className="min-h-[calc(100vh-208px)] flex flex-col items-center gap-10 mx-auto w-full">
+        <h1 className="flex justify-center mt-6 text-4xl">Tus cuentas</h1>
+        <Cuentas />
+       </div>
+    
+    </>
   );
 }
-
-export default Profile;
