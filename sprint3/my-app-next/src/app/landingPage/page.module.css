@@ -31,18 +31,3 @@
     margin: 0 20px;
     color:#35103D
 }
-
-.ctaButton {
-    display: inline-block;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.ctaButton:hover {
-    background-color: white;
-    color: #ff7344;
-}
