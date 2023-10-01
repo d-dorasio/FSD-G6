@@ -1,0 +1,17 @@
+/* DIVS --> CONFIRMATION TRANSFER*/
+/* code for transfer */
+#containerForm {
+    text-align: center;
+    margin: 10%;
+}
+
+#containerForm p {
+    font-size: 150%;
+    color: green;
+    padding: 30px;
+}
+
+#containerForm .icon {
+    font-size: 24px;
+    color: green;
+}

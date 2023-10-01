@@ -6,6 +6,15 @@
 // import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 // import { faIdCard } from '@fortawesome/free-solid-svg-icons'
 
+// function Feature({ icon, title, description }) {
+//   return (
+//     <div className={styles.feature}>
+//       <i className={icon}></i>
+//       <h2>{title}</h2>
+//       <p>{description}</p>
+//     </div>
+//   );
+// }
 
 // function Feature({ icon, title, description }) {
 //   return (

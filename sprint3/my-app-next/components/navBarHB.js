@@ -5,20 +5,21 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
-import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
+
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="navBar">
-      <Box textAlign="center" sx={{ display: "flex" }}>
+      <Box textAlign="center" sx={{ display: "flex" ,}}>
         <CssBaseline />
         <Drawer
           variant="permanent"
           sx={{
             fontFamily: "Montserrat Variable",
             flexShrink: 0,
+            
             [`& .MuiDrawer-paper`]: { boxSizing: "border-box" },
           }}
           PaperProps={{
@@ -40,7 +41,7 @@ export default function NavBar() {
           <div className={`nav-items ${isOpen && "open"}`}>
             <Box sx={{ overflow: "auto" }}>
               <div className="nav-logo">
-                <Link href="/">
+                <Link href="/homeBanking">
                   <img src="/logo.png" height="100px"></img>
                 </Link>
               </div>

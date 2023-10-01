@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Head from "next/head";
 import { Button, Card, CardContent, TextField } from "@mui/material";
-
+import styles from "../page.module.css"
 
 function Cards() {
   const [cards, setCards] = useState([
@@ -56,7 +56,7 @@ function Cards() {
     <section>
       <h1>Mis Tarjetas</h1>
       {cards.map((card, index) => (
-        <div key={index} className="card" style={{fontFamily: "Montserrat Variable"}}>
+        <div key={index} className={styles.card}>
           <h3>{card.nombre}</h3>
           <p>Número: {card.numero}</p>
           <p>Vencimiento: {card.vencimiento}</p>
