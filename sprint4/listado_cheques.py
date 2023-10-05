@@ -4,13 +4,12 @@ import os
 from datetime import datetime
 
 runtime = True
-
-# file = 'cheques.csv'
+file = 'cheques.csv'
 
 #Funcion que lee los datos les archivo .csv
 def read_file(file):
     checks = []
-    file = open(file, "r", newline="")
+    file = open(file, "r")
     csvfile = csv.reader(file)
     for row in csvfile:
         if row != []:
@@ -59,11 +58,12 @@ def search_dni(dni, tipo):
 
 # Función para exportar los resultados a un archivo CSV
 def export_result(search_dni, dni):
-    timestampactual = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-    file = f"{dni}_{timestampactual}.csv"
-
-    csvfile = csv.writer(file)
-    for row in search:
+    timestampactual = datetime.now().strftime("%Y%m%d%H%M%S")
+    outputfile = f"{dni}_{timestampactual}.csv"
+    with open(outputfile, mode='w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(["nrocheque", "codigobanco", "codigosucursal", "nrocuentaorigen", "nrocuentadestino", "valor", "fechaorigen", "fechapago", "dni", "tipo", "estado"])
+    for row in search_dni:
         csvfile.writerow(
             [
                 row["nrocheque"],
@@ -75,11 +75,11 @@ def export_result(search_dni, dni):
                 row["fechaorigen"],
                 row["fechapago"],
                 row["dni"],
+                row["tipo"],
                 row["estado"]
             ]
         )
 
-    file.close()
     print("Se grabo el archivo CSV")
 
 
@@ -101,35 +101,33 @@ if __name__ == "__main__":
         os.system("cls")
 
         if option == 1:
-            file = input("Ingrese el nombre del archivo. Agregue el .csv \n").lower()
+            #file = input("Ingrese el nombre del archivo. Agregue el .csv \n").lower()
             dni = input("Ingrese el dni del usuario: ").lower()
-            tipo = input(
-                "Ingrese el tipo de cheque a buscar EMITIDO o DEPOSITADO: "
-            ).lower()
-            salida = input(
-                "Ingrese si desea recibir la salida por PANTALLA o CSV: "
-            ).lower()
+            tipo = input("Ingrese el tipo de cheque a buscar si emitido o depositado: ").lower()
+            estado = input("Selecciones el estado del cheque pendiente/aprobado/rechazado (Opcional): ")
+            rango = input("Ingrese el rango de fechas en el formato xx-xx-xxxx:yy-yy-yyyy (Opcional): ")
+            salida = input("Ingrese si desea recibir la salida por pantalla o csv: ").lower()
+            filtro = lambda cheque: cheque["dni"] == dni, lambda cheque: estado.lower() in cheque["estado"].lower(), lambda cheque: cheque['tipo']== tipo
+            print(dni, tipo, salida)
             search = search_dni(dni, tipo)
             try:
                 if search:
                     if salida == "pantalla":
                         print("------RESULTADOS------")
-                        print(
-                            f"\nSe encontraron {search[-1]} cheques {tipo}s con dni {dni}\n"
-                        )
+                        print(f"\nSe encontraron {search[-1]} cheques {tipo}s con dni {dni}\n")
                         search.pop()
                         for result in search:
                             print(f"{result} \n")
                     elif salida == "csv":
                         search.pop()
-                        export_result(search, dni)
+                        export_result(result)
                     else:
                         print("Opcion invalida")
                 else:
-                    print("error")
+                    print("no se encontraron los resultados")
 
-            except:
-                print("Ingreso un dni erroneo")
+            except Exception as e:
+                print("Error:", str(e))
 
         elif option == "2":
             print("Selecciono la opcion de SALIR")
