@@ -108,8 +108,7 @@ if __name__ == "__main__":
             rango = input("Ingrese el rango de fechas en el formato xx-xx-xxxx:yy-yy-yyyy (Opcional): ")
             salida = input("Ingrese si desea recibir la salida por pantalla o csv: ").lower()
             filtro = lambda cheque: cheque["dni"] == dni, lambda cheque: estado.lower() in cheque["estado"].lower(), lambda cheque: cheque['tipo']== tipo
-            print(dni, tipo, salida)
-            search = search_dni(dni, tipo)
+            search = search_dni(filtro)
             try:
                 if search:
                     if salida == "pantalla":
@@ -120,7 +119,7 @@ if __name__ == "__main__":
                             print(f"{result} \n")
                     elif salida == "csv":
                         search.pop()
-                        export_result(result)
+                        export_result(search, dni)
                     else:
                         print("Opcion invalida")
                 else:
