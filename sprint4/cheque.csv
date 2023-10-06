@@ -1,4 +1,4 @@
-nrocheque, codigobanco, codigosucursal, nrocuentaorigen, nrocuentadestino,valor,fechaorigen, fechapago, dni, tipo,estado
+NroCheque,CodigoBanco,CodigoSucursal,NumeroCuentaOrigen,NumeroCuentaDestino,Valor,FechaOrigen,FechaPago,DNI,Tipo,Estado
 1,15,102,27041529,98765432,1500.50,1631066400,1696277267,35241269,depositado,aprobado
 2,22,203,87654321,56789012,750.25,1695827550,1631941200,28730740,depositado,aprobado
 3,8,155,11111111,22222222,3000.75,1631066400,1696277267,40887990,emitido,rechazado
