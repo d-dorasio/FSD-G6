@@ -1,86 +1,78 @@
-# Defino librerias a utilizar
 import csv
 import os
 from datetime import datetime
 
-runtime = True
-file = 'cheques.csv'
+# filecsv='cheque.csv'
+filecsv = input("Ingrese el nombre del archivo CSV: \n").lower()
 
-#Funcion que lee los datos les archivo .csv
-def read_file(file):
+# Función para cargar los cheques desde el archivo CSV
+def readFile(filecsv):
     checks = []
-    file = open(file, "r")
-    csvfile = csv.reader(file)
-    for row in csvfile:
-        if row != []:
-            data = {
-                "nrocheque": row[0],
-                "codigobanco": row[1],
-                "codigosucursal": row[2],
-                "nrocuentaorigen": row[3],
-                "nrocuentadestino": row[4],
-                "valor": row[5],
-                "fechaorigen": row[6],
-                "fechapago": row[7],
-                "dni": row[8],
-                "tipo": row[9],
-                "estado": row[10],
-            }
-            checks.append(data)
-
-    file.close()
+    if os.path.exists(filecsv):
+        with open(filecsv, mode='r', newline='') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                checks.append(row)
     return checks
 
 
-# Función que busca por dni a los cheques dentro del archivo
-def search_dni(dni, tipo):
-    search = []
-    cantchecks = 0
-    checks = read_file(file)
 
-    for cheque in checks:
-        if cheque["dni"] == dni:
-            if cheque["tipo"].lower() == tipo or tipo == "":
-                cantchecks += 1
-                search.append(cheque)
+# Función para filtrar cheques por DNI
+def filterDni(checks, dni_checks):
+    return [check for check in checks if check['DNI'] == dni_checks]
 
-    numcheck = []
-    for cheque in search:
-        numcheck.append(cheque["nrocheque"])
+# Función para filtrar cheques por tipo
+def filterTipo(checks, tipo_checks):
+    return [check for check in checks if check['Tipo'] == tipo_checks]
 
-    for number in numcheck:
-        if numcheck.count(number) > 1:
-            return False
+# Función para filtrar cheques por estado 
+def filterEstado(checks, estado_checks):
+    return [check for check in checks if estado_checks is None or check['Estado'] == estado_checks]
 
-    search.append(cantchecks)
-    return search
+# Función para filtrar cheques por rango de fechas
+def filterFechas(checks, rangofechas_checks):
+    if rangofechas_checks is None:  
+        return checks
+    fecha_inicio = datetime.strptime(fecha_inicio, "%Y-%m-%d")
+    fecha_fin = datetime.strptime(fecha_fin, "%Y-%m-%d")
+    return [cheque for cheque in checks if fecha_inicio <= datetime.fromtimestamp(float(cheque["FechaPago"])) <= fecha_fin]
 
+def filterAll(filecsv, filtro=None, fecha_inicio=None, fecha_fin=None):
+    cheques = readFile(filecsv)
 
-# Función para exportar los resultados a un archivo CSV
-def export_result(search_dni, dni):
-    timestampactual = datetime.now().strftime("%Y%m%d%H%M%S")
-    outputfile = f"{dni}_{timestampactual}.csv"
-    with open(outputfile, mode='w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(["nrocheque", "codigobanco", "codigosucursal", "nrocuentaorigen", "nrocuentadestino", "valor", "fechaorigen", "fechapago", "dni", "tipo", "estado"])
-    for row in search_dni:
-        csvfile.writerow(
-            [
-                row["nrocheque"],
-                row["codigobanco"],
-                row["codigosucursal"],
-                row["nrocuentaorigen"],
-                row["nrocuentadestino"],
-                row["valor"],
-                row["fechaorigen"],
-                row["fechapago"],
-                row["dni"],
-                row["tipo"],
-                row["estado"]
-            ]
-        )
+    if filtro:
+        cheques = filterDni(cheques, filtro)
 
-    print("Se grabo el archivo CSV")
+    if fecha_inicio and fecha_fin:
+        cheques = filterFechas(cheques, fecha_inicio, fecha_fin)
+
+    return cheques
+
+# Función para imprimir los cheques en pantalla
+def printCheck(filter_checks):
+    if not filter_checks:
+        print("No se encontraron cheques que cumplan con los criterios de búsqueda.")
+    else:
+        for check in filter_checks:           
+            print(f"Nrocheck: {check['NroCheque']}")
+            print(f"CodigoBanco: {check['CodigoBanco']}")
+            print(f"CodigoSucursal: {check['CodigoSucursal']}")
+            print(f"NumeroCuentaOrigen: {check['NumeroCuentaOrigen']}")
+            print(f"NumeroCuentaDestino: {check['NumeroCuentaDestino']}")
+            print(f"Valor: {check['Valor']}")
+            print(f"FechaOrigen: {datetime.fromtimestamp(float(check['FechaOrigen'])).strftime('%Y-%m-%d')}")
+            print(f"FechaPago: {datetime.fromtimestamp(float(check['FechaPago'])).strftime('%Y-%m-%d')}")
+            print(f"DNI: {check['DNI']}")
+            print(f"Estado: {check['Estado']}")
+
+# Funcion para exportar checks si se elije la opcion de csv en salida
+def exportCsv(check, outputfile):
+    with open(outputfile, mode='w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=filter_checks[0].keys())
+        writer.writeheader()
+        for check in filter_checks:
+            writer.writerow(check)
+
 
 
 # Menú
@@ -98,36 +90,22 @@ if __name__ == "__main__":
                 print("Por favor, ingrese un número.")
                 option = -1
 
-        os.system("cls")
-
         if option == 1:
-            #file = input("Ingrese el nombre del archivo. Agregue el .csv \n").lower()
-            dni = input("Ingrese el dni del usuario: ").lower()
-            tipo = input("Ingrese el tipo de cheque a buscar si emitido o depositado: ").lower()
-            estado = input("Selecciones el estado del cheque pendiente/aprobado/rechazado (Opcional): ")
-            rango = input("Ingrese el rango de fechas en el formato xx-xx-xxxx:yy-yy-yyyy (Opcional): ")
+            dni_checks = input("Ingrese el DNI del cliente para la consulta: \n")
+            tipo_checks = input("Ingrese el tipo de cheque a consultar (emitido, depositado): \n").lower()
+            print("Estado, Fecha inicio y Fecha final son opcionales. Dejar en blanco si no se desea completar\n")
+            estado_checks = input("Ingrese el estado del cheque a filtrar (pendiente, aprobado, rechazado): \n").lower()
+            fecha_inicio= input("Ingrese la fecha de incio a filtrar (aaaa-mm-dd): \n")
+            fecha_fin= input("Ingrese la fecha final a filtrar (aaaa-mm-dd): \n")
+            filter_checks = filterAll(filecsv, filtro=dni_checks, fecha_inicio=fecha_inicio, fecha_fin=fecha_fin)
             salida = input("Ingrese si desea recibir la salida por pantalla o csv: ").lower()
-            filtro = lambda cheque: cheque["dni"] == dni, lambda cheque: estado.lower() in cheque["estado"].lower(), lambda cheque: cheque['tipo']== tipo
-            search = search_dni(filtro)
-            try:
-                if search:
-                    if salida == "pantalla":
-                        print("------RESULTADOS------")
-                        print(f"\nSe encontraron {search[-1]} cheques {tipo}s con dni {dni}\n")
-                        search.pop()
-                        for result in search:
-                            print(f"{result} \n")
-                    elif salida == "csv":
-                        search.pop()
-                        export_result(search, dni)
-                    else:
-                        print("Opcion invalida")
-                else:
-                    print("no se encontraron los resultados")
+            if salida == "pantalla":
+                printCheck(filter_checks)
+            elif salida == "csv":
+                outputfile = f"checks_{dni_checks}.csv"
+                exportCsv(filter_checks, outputfile)
+                print(f"resultados exportados a {outputfile}.")
 
-            except Exception as e:
-                print("Error:", str(e))
+        elif option == 4:
+            break
 
-        elif option == "2":
-            print("Selecciono la opcion de SALIR")
-            runtime = False
