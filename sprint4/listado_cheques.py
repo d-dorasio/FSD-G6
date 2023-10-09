@@ -46,7 +46,7 @@ def is_valid_dni(dni, checks):
 def is_valid_date(date_str):
     try:
         if len(date_str) == 10:  # Verifica que la cadena tenga la longitud correcta (aaaa-mm-dd)
-            datetime.datetime.strptime(date_str, "%Y-%m-%d")
+            datetime.strptime(date_str, "%Y-%m-%d")
             return True
     except ValueError:
         pass
