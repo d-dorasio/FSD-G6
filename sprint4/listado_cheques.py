@@ -130,5 +130,4 @@ def main():
         elif option == 4:
             break
 
-if __name__ == "__main__":
-    main()
+main()
