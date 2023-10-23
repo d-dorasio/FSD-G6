@@ -1,4 +1,7 @@
 from cliente import *
+from _classic import *
+from _gold import *
+from _black import *
 
 # Crear un cliente de tipo Classic
 cliente_classic = Classic("Juan", "Perez", "001", "12345678")
