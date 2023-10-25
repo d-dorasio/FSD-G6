@@ -1,14 +1,4 @@
-import json
-from datetime import datetime
-
-# Ruta completa al archivo JSON
-#json_file_path = "c:/Users/lunaa/Desktop/FSD-G6/sprint5/datos_cliente.json"
-
-# Cargar el JSON en una variable Python
-#with open('black.json', 'r') as archivo_json:
-#    clientePrueba = json.load(archivo_json)
-
-clientePrueba = {
+{
 	"numero": 100001,
 	"nombre": "Nicolas",
 	"apellido": "Gaston",
@@ -142,43 +132,7 @@ clientePrueba = {
 			"totalTarjetasDeCreditoActualmente" : 5,
 			"totalChequerasActualmente" : 2
 		}
+
+
 	]
 }
-
-# Función para obtener la razón de la aceptación o rechazo
-def generar_informe_html(transaccion):
-    if transaccion["estado"] == "ACEPTADA":
-        return "Aprobada"
-    elif transaccion["estado"] == "RECHAZADA":
-        return "Rechazada"
-    else:
-        return "Desconocido"
-
-# Generar informe HTML
-html_report = "<html><head><title>Informe de Transacciones</title></head><body>"
-html_report += f"<h1>Informe de Transacciones para {clientePrueba['nombre']} {clientePrueba['apellido']}</h1>"
-html_report += f"<p>Numero de Cliente: {clientePrueba['numero']}</p>"
-html_report += f"<p>DNI: {clientePrueba['dni']}</p>"
-html_report += f"<p>Tipo de Cliente: {clientePrueba['tipo']}</p>"
-
-html_report += "<h2>Transacciones:</h2>"
-html_report += "<table border='1'><tr><th>Estado</th><th>Tipo</th><th>Cuenta Número</th><th>Permitido Actual</th><th>Monto</th><th>Fecha</th><th>Número</th><th>Razón</th></tr>"
-
-for transaccion in clientePrueba['transacciones']:
-    html_report += f"<tr><td>{transaccion['estado']}</td><td>{transaccion['tipo']}</td>"
-    if 'cuentaNumero' in transaccion:
-        html_report += f"<td>{transaccion['cuentaNumero']}</td>"
-    else:
-        html_report += "<td>N/A</td>"
-    html_report += f"<td>{transaccion['cupoDiarioRestante']}</td><td>{transaccion['monto']}</td>"
-    html_report += f"<td>{transaccion['fecha']}</td><td>{transaccion['numero']}</td>"
-    razon = generar_informe_html(transaccion)
-    html_report += f"<td>{razon}</td></tr>"
-
-html_report += "</table></body></html>"
-
-# Guardar el informe en un archivo HTML
-with open("informe_transacciones.html", "w") as archivo:
-    archivo.write(html_report)
-
-print("Informe de transacciones generado y guardado en informe_transacciones.html")
