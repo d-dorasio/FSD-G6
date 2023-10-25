@@ -5,7 +5,7 @@ class Cuenta:
         self.saldo = saldo
     
     def __str__(self):
-        return f"Tipo de cuenta: {self.tipo}"
+        return f"Tipo de cuenta: {self.tipo}. Saldo disponible: {self.saldo}"
 
 class CajaAhorroPesos(Cuenta):
     def __init__(self):

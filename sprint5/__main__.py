@@ -3,7 +3,13 @@ from _classic import *
 from _gold import *
 from _black import *
 
+# Importa el módulo "otroreporte"
+from otroreporte import *
+
+
 def main():
+    print("")
+
     # Crear un cliente de tipo Classic
     cliente_classic = Classic("Juan", "Perez", "001", "12345678")
     print(cliente_classic)
@@ -30,7 +36,9 @@ def main():
     cliente_classic.realizarTransferenciaSaliente(10000)  
     cliente_classic.realizarTransferenciaEntrante(2000)  
 
+    print("")
     print("//////////////////////////////////////////////////////////////////////////////////////")
+    print("")
 
     # Crear un cliente de tipo Gold
     cliente_gold = Gold("Ana", "Gómez", "002", "87654321")
@@ -56,7 +64,9 @@ def main():
     cliente_gold.realizarTransferenciaSaliente(5000)  # Transferencia de $5,000
     cliente_gold.realizarTransferenciaEntrante(1000)  # Transferencia de $1,000
 
+    print("")
     print("//////////////////////////////////////////////////////////////////////////////////////")
+    print("")
 
     # Crear un cliente de tipo Black
     cliente_black = Black("Carlos", "López", "003", "654321")
@@ -87,6 +97,11 @@ def main():
     # Realizar transferencias
     cliente_black.realizarTransferenciaSaliente(20000)  # Transferencia de $20,000
     cliente_black.realizarTransferenciaEntrante(5000)  # Transferencia de $5,000
+    print("")
+
+    # Genera el informe en HTML utilizando la función del otro archivo
+    generar_informe_html(clientePrueba)
+
 
 if __name__ == '__main__':
     main()
