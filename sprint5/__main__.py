@@ -50,12 +50,23 @@ import json
 from cuenta import *
 from tarjeta import *
 from _black import *
+from _classic import *
+from _gold import *
 
 def generar_informe_html(cliente_data):
     html_report = "<html><head><title>Informe de Transacciones</title></head><body>"
     html_report += "<h1>Informe de Transacciones</h1>"
+    
+    # Agregar sección de información del cliente
+    html_report += "<h2>Informacion del Cliente:</h2>"
+    html_report += f"<p>Nombre: {cliente_data['nombre']}</p>"
+    html_report += f"<p>Apellido: {cliente_data['apellido']}</p>"
+    html_report += f"<p>Numero de Cliente: {cliente_data['numero']}</p>"
+    html_report += f"<p>DNI: {cliente_data['dni']}</p>"
     html_report += "<h2>Transacciones:</h2>"
-    html_report += "<table border='1'><tr><th>Estado</th><th>Tipo</th><th>Cuenta Número</th><th>Permitido Actual</th><th>Monto</th><th>Fecha</th><th>Número</th><th>Razón</th></tr>"
+    
+    # Continuar con la generación de la tabla de transacciones
+    html_report += "<table border='1'><tr><th>Estado</th><th>Tipo</th><th>Cuenta Numero</th><th>Permitido Actual</th><th>Monto</th><th>Fecha</th><th>Numero</th><th>Razon</th></tr>"
 
     for transaccion in cliente_data['transacciones']:
         html_report += f"<tr><td>{transaccion['estado']}</td><td>{transaccion['tipo']}</td>"
@@ -65,7 +76,7 @@ def generar_informe_html(cliente_data):
             html_report += "<td>N/A</td>"
         html_report += f"<td>{transaccion['cupoDiarioRestante']}</td><td>{transaccion['monto']}</td>"
         html_report += f"<td>{transaccion['fecha']}</td><td>{transaccion['numero']}</td>"
-        razon = "Razón de la transacción"  # Aquí deberías agregar la lógica para obtener la razón correcta
+        razon = "Razon de la transaccion" 
         html_report += f"<td>{razon}</td></tr>"
 
     html_report += "</table></body></html>"
@@ -78,12 +89,12 @@ def generar_informe_html(cliente_data):
 
 
 def main():
-    # Cargar el JSON
+    # Cargar el JSON ---> Cliente BLACK
     json_data = {
-        "numero": 100001,
+        "numero": 100051,
         "nombre": "Nicolas",
         "apellido": "Gaston",
-        "dni": "29494777",
+        "dni": "12345678",
         "tipo": "BLACK",
         "transacciones": [{
                 "estado": "ACEPTADA",
@@ -138,9 +149,17 @@ def main():
         else:
             print(f"Transacción rechazada: {transaccion['tipo']}")
 
-    # Crear una instancia de Black
-    cliente_black = Black("Nicolas", "Gaston", 100001, "29494777")
-    print(cliente_black)  # Imprimir la información del cliente Black
+    tipo_cliente = json_data["tipo"]
+
+    # Crear la instancia de cliente basada en el tipo
+    if tipo_cliente == "BLACK":
+        cliente = Black(json_data["nombre"], json_data["apellido"], json_data["numero"], json_data["dni"])
+    elif tipo_cliente == "GOLD":
+        cliente = Gold(json_data["nombre"], json_data["apellido"], json_data["numero"], json_data["dni"])
+    elif tipo_cliente == "CLASSIC":
+        cliente = Classic(json_data["nombre"], json_data["apellido"], json_data["numero"], json_data["dni"])
+    else:
+        print("Tipo de cliente desconocido en el JSON")
 
     # Generar informe HTML
     generar_informe_html(json_data)
