@@ -11,7 +11,7 @@ class Classic(Cliente):
         self.tarjetaDebito = None
         self.comision_transferencia_saliente = 0.01  # 1% por transferencias salientes
         self.comision_transferencia_entrante = 0.005  # 0.5% por transferencias entrantes
-        self.limite_retiro_diario = 10000  # Límite de retiro diario
+        self.limite_retiro_diario = 10000 
         self.retiro_efectivo_sin_comision = 5  # Hasta 5 retiros sin comisiones
 
     def __str__(self):

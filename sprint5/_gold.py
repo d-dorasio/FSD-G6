@@ -6,13 +6,13 @@ class Gold(Cliente):
     
     def __init__(self, nombre, apellido, numero, dni):
         super().__init__(nombre, apellido, numero, dni)
-        self.cajasAhorro = []  # Lista de cajas de ahorro
+        self.cajasAhorro = []  
         self.cuentaCorriente = None  # Cuenta corriente
-        self.tarjetas = []  # Lista de tarjetas (Visa/Mastercard)
-        self.extensiones_tarjeta = []  # Lista de extensiones de tarjetas
+        self.tarjetas = []  
+        self.extensiones_tarjeta = [] 
         self.cargo_caja_dolares_adicional = 5  # Cargo mensual por caja de ahorro en dólares adicional
-        self.limite_retiro_diario = 20000  # Límite de retiro diario
-        self.retiro_efectivo_sin_comision = 0  # Retiros ilimitados sin costo mensual
+        self.limite_retiro_diario = 20000  
+        self.retiro_efectivo_sin_comision = 0  
         self.acceso_cuentas_inversion = True
         self.chequera = True
         self.comision_transferencia_saliente = 0.005  # 0.5% por transferencias salientes

@@ -33,7 +33,7 @@ def generar_informe_html(cliente_data):
 
     html_report += "</table></body></html>"
 
-    # Guardar el informe en un archivo HTML
+    # Informe en un archivo HTML
     with open("informe_transacciones.html", "w") as archivo:
         archivo.write(html_report)
 
@@ -41,7 +41,19 @@ def generar_informe_html(cliente_data):
 
 
 def main():
-    # Cargar el JSON ---> Cliente BLACK
+
+    # No sabemos como importar el "black.json"
+    """
+    Ayuda que nos dio ChatGPT --> nos parece poco factible.
+    
+    json_file_path = "c:/Users/lunaa/Desktop/FSD-G6/sprint5/black.json"
+    
+    with open('json_file_path', 'r') as archivo_json:
+        json_data = json.load(archivo_json)
+
+    """
+    
+    # Cargar el JSON ---> Cliente BLACK en este caso.    
     json_data = {
         "numero": 100051,
         "nombre": "Nicolas",
@@ -97,7 +109,6 @@ def main():
             if transaccion["tipo"] == "RETIRO_EFECTIVO_CAJERO_AUTOMATICO":
                 monto_retiro = transaccion["monto"]
                 print(f"Retiro exitoso de ${monto_retiro}.")
-            # Agregar condiciones para otros tipos de transacciones si es necesario
         else:
             print(f"Transacción rechazada: {transaccion['tipo']}")
 

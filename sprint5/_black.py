@@ -6,24 +6,24 @@ class Black(Cliente):
     
     def __init__(self, nombre, apellido, numero, dni):
         super().__init__(nombre, apellido, numero, dni)
-        self.tarjetasDebito = []  # Lista de tarjetas de débito
-        self.cajasAhorro = []  # Lista de cajas de ahorro
-        self.cuentasCorrientes = []  # Lista de cuentas corrientes
-        self.tarjetas = []  # Lista de tarjetas (Visa/Mastercard/American Express)
+        self.tarjetasDebito = []  
+        self.cajasAhorro = [] 
+        self.cuentasCorrientes = []  
+        self.tarjetas = [] 
         self.extensiones_tarjeta = []  # Lista de extensiones de tarjetas
         self.cargo_caja_dolares_adicional = 5  # Cargo mensual por caja de ahorro en dólares adicional
         self.limite_retiro_diario = 100000  # Límite de retiro diario
         self.retiro_efectivo_sin_comision_mensual = True  # Retiros ilimitados sin costo mensual
         self.acceso_cuentas_inversion = True
         self.chequeras = 2  # Hasta dos chequeras
-        self.comision_transferencia_saliente = 0.0  # No se aplican comisiones a las transferencias
+        self.comision_transferencia_saliente = 0.0  
         self.comision_transferencia_entrante = 0.0
-        self.extensiones_tarjeta_max = 10  # Máximo de 10 extensiones por tarjeta
+        self.extensiones_tarjeta_max = 10
 
     def crearTarjetaDebito(self,marca):
         if marca == "VISA" or marca == "AMEX" or marca == "MASTER":
             if len(self.tarjetasDebito) < 5:
-                tarjeta_debito = Tarjeta("Débito", marca, 500000, 0)  # Tipo y límite de tarjeta pueden ser personalizados
+                tarjeta_debito = Tarjeta("Débito", marca, 500000, 0) 
                 print(" * Tarjeta de débito creada")
                 self.tarjetasDebito.append(tarjeta_debito)
             else:
@@ -53,7 +53,7 @@ class Black(Cliente):
     def crearTarjetaCredito(self, tipo):
         if tipo == "VISA" or tipo == "MASTER" or tipo == "AMEX":
             if len(self.tarjetas) < 5:
-                tarjeta = Tarjeta("Crédito", tipo, 500000, 600000)  # Tipo y límites de tarjeta pueden ser personalizados
+                tarjeta = Tarjeta("Crédito", tipo, 500000, 600000) 
                 print(f" * Tarjeta credito {tipo} creada")
                 self.tarjetas.append(tarjeta)
             else:
