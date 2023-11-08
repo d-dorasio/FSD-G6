@@ -1,7 +1,7 @@
 # FSD-G6
 
 ## Descripción
-Curso de Full Stack Developer - ITBA - Quinto Sprint
+Curso de Full Stack Developer - ITBA - Sexto Sprint
 
 ## Créditos
 
