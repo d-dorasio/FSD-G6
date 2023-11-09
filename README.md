@@ -3,6 +3,9 @@
 ## Descripción
 Curso de Full Stack Developer - ITBA - Sexto Sprint
 
+## Aclaración
+En la base de datos adjunta, se encuentran realizados los cambios solicitados en la Primera Problemática.
+
 ## Créditos
 
 Grupo 6: Los ángeles de Nico y Yani
