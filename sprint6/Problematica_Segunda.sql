@@ -60,7 +60,7 @@ WHERE customer_DNI IN (47730534, 52055464, 43625213, 21207908, 57063950);
 -- realizando la selección por el nombre y apellido
 ---- NOEL DAVID NO EXISTE EN LA BASE IGUAL ----
 
-DELETE FROM clientes
+DELETE FROM cliente
 WHERE customer_name = "Noel" AND customer_surname = "David";
 
 -- Consultar sobre cuál es el tipo de
