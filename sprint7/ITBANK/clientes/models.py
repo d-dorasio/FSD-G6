@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Cliente(models.Model):
@@ -8,7 +9,7 @@ class Cliente(models.Model):
     customer_dni = models.IntegerField(db_column='customer_DNI')
     dob = models.TextField(blank=True, null=True)
     branch_id = models.IntegerField()
-    user = User()
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,)
 
     class Meta:
         managed = False
