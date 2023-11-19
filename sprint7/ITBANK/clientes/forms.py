@@ -4,11 +4,13 @@ from django import forms
 from .models import Cliente
 
 class createUserForm(UserCreationForm):
-    class meta:
+    class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
 
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ['customer_name', 'customer_surname', 'customer_DNI', "dob", "branch_id"]
+        fields = ['customer_name', 'customer_surname', 'customer_dni', 'dob', 'branch_id', 'user']
+        exclude = ['user', 'branch_id', 'dob']
+

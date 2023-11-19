@@ -54,12 +54,13 @@ class Sucursal(models.Model):
         db_table = 'sucursal'
 
 class TipoCliente(models.Model):
-    id = models.IntegerField()  
+    tipo_cliente_id = models.IntegerField(primary_key=True)  # Cambiado el nombre del campo a tipo_cliente_id
     type_customer = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'tipo_cliente'
+
 
 class TipoPropietario(models.Model):
     id_owner = models.IntegerField()
