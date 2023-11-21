@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SUCURSAL</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic beatae harum dicta odio similique totam, recusandae dolorum deserunt nihil, facere consequuntur. Beatae, esse! Modi rem quis iste vero totam eligendi!</p>
+    <ul>
+        {% for sucursal in sucursales %}
+            <li>{{ sucursal.branch_name }}.  Id:{{ sucursal.branch_id }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

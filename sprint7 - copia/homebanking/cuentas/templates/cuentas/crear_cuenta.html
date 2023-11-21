@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Cuenta Bancaria</title>
+</head>
+<body>
+    <h1>Crear Cuenta Bancaria</h1>
+    <form method="post" action="{% url 'crear_cuenta' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear Cuenta</button>
+    </form>
+</body>
+</html>
