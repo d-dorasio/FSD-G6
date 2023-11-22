@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'prestamos',
     'sucursales',
     'tipo',
-    'login',
+    'registration',
+    'landing',
 ]
 
 MIDDLEWARE = [

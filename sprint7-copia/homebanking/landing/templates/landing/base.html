@@ -7,11 +7,14 @@
 </head>
 <body>
     <header style="border: solid purple;">
+        <a href="{% url 'landing' %}">
+            <img src="" alt="logo">
+        </a>
         <nav>
             <ul>
                 <li><a href="">Servicios</a></li>
                 <li><a href="">Nosotros</a></li>
-                <li><a href="{% url 'landing' %}">Inicio Sesión</a></li>
+                <li><a href="{% url 'login' %}">Inicio Sesión</a></li>
             </ul>
         </nav>
     </header>
@@ -27,9 +30,9 @@
             </div>
             <div>
                 <p>Encontranos en:</p>
-                <a href="https://www.instagram.com/" width="20" target="_blank"><i>ig</i></a>
-                <a href="https://www.twitter.com/" width="20" target="_blank"><i>x</i></a>
-                <a href="https://www.facebook.com/" width="20" target="_blank"><i>fb</i></a>
+                <a href="https://www.instagram.com/" width="20" target="_blank">ig</a>
+                <a href="https://www.twitter.com/" width="20" target="_blank">x</a>
+                <a href="https://www.facebook.com/" width="20" target="_blank">fb</a>
             </div>
         </div>
         <p id="copy">&copy; 2023 ITBANK. Todos los derechos reservados.</p>
