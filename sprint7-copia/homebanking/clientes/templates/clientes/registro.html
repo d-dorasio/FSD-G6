@@ -1,0 +1,60 @@
+
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'landing/base.html' %}
+
+<!-- Agregamos el contenido estatico-->
+
+{% load static %}
+
+<!-- Agregamos el titulo de la home -->
+{% block title %} Prestamo {% endblock %}
+
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+<section>
+    <h3>Registro</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-field" >
+            {{  form.username.errors }}
+            <label for="username"> Nombre de usuario </label>
+            {{  form.username }}
+        </div>
+        <div class="form-field" >
+            <label for="name"> Nombre </label>
+            {{ cliente_form.customer_name }}
+        </div>
+        <div class="form-field" >
+            <label for="surname"> Apellido </label>
+            {{ cliente_form.customer_surname }}
+        </div>
+        <div>
+            <label for="dni"> DNI </label>
+            {{ cliente_form.customer_dni }}
+        </div>
+        <div class="form-field" >
+            <label for="dob"> Fecha de nacimiento </label>
+            {{ cliente_form.dob }}
+        </div>
+        <div class="form-field" >
+            <label for="branch"> Sucursal </label>
+            {{ cliente_form.branch_id }}
+        </div>
+        <div class="form-field" >
+            {{  form.password1.errors }}
+            <label for="password1"> Contraseña </label>
+            {{  form.password1 }}
+        </div>
+        <div class="form-field" >
+            {{  form.password2.errors }}
+            <label for="password1"> Confirmar contraseña </label>
+            {{  form.password2 }}
+        </div>
+        <input class="btn btn-success btn-block" type="submit" value="Alta de usuario">
+        <br>
+        {{ form.non_field_errors }}
+        <p>¿Ya tiene un usuario activo? <a href="{% url 'login' %}">Iniciar sesión</a></p>
+    </form>
+</section>
+{% endblock %}
