@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'tipo',
     'registration',
     'landing',
+    'itbank',
 ]
 
 MIDDLEWARE = [
@@ -131,5 +132,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/itbank"
 LOGOUT_REDIRECT_URL = "/"

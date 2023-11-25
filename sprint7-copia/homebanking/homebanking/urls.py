@@ -20,10 +20,10 @@ from landing.views import landing
 
 urlpatterns = [
     path('', landing, name='landing'),
-    # path('login/', views.login, name='login'),
     path('accounts/',include('django.contrib.auth.urls')),
    
     path('admin/', admin.site.urls),
+    path('itbank/', include('itbank.urls')),
     path('clientes/', include('clientes.urls')),
     path('cuentas/', include('cuentas.urls')),
     path('tarjetas/', include('tarjetas.urls')),

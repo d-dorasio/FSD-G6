@@ -6,6 +6,7 @@ from .forms import LoanForm
 from datetime import date, datetime
 from clientes.models import Cliente
 from cuentas.models import Cuenta
+from django.contrib import messages
 
 #from .forms import SolicitudPrestamoForm
 
@@ -103,18 +104,18 @@ def lista_prestamos(request, cliente_id):
             else:
                  messages.error(request, "Error: el cliente debe poseer una caja de ahorro en pesos para solicitar un préstamo")
 
-        return render(request, "Prestamos/prestamo.html", {"form":form_prestamo,
+        return render(request, "prestamos/prestamo.html", {"form":form_prestamo,
                                                        "cliente":cliente,
                                                        "cuenta":cuenta})
     else:
-        return render(request, "Clientes/error.html", {"forms":""})
+        return render(request, "clientes/error.html", {"forms":""})
 
 @login_required    
 def por_cliente(request, cliente_id):
         cliente = Cliente.objects.get(pk=cliente_id)
         prestamos = Prestamo.objects.filter(cliente_id__exact = cliente_id)
         if cliente.usuario_id == request.user.id:
-             return render(request, "Prestamos/prestamos_cliente.html", {"prestamos":prestamos,
+             return render(request, "prestamos/prestamos_cliente.html", {"prestamos":prestamos,
                                                        "cliente":cliente})
         else:
-                return render(request, "Clientes/error.html", {"prestamos":""})
+                return render(request, "clientes/error.html", {"prestamos":""})

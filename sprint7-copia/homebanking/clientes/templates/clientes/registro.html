@@ -1,9 +1,6 @@
 {% extends 'landing/base.html' %}
 
-{% load static %}
-
 {% block content %}
-<section>
     <h3>Registro</h3>
     <form action="" method="POST">
         {% csrf_token %}
@@ -29,8 +26,9 @@
             {{ cliente_form.dob }}
         </div>
         <div class="form-field" >
-            <label for="branch"> Sucursal </label>
-            {{ cliente_form.branch_id }}
+            <label for="branch"> Sucursal </label> 
+            {{ cliente_form.branch_id }}<span>
+                <a href="{% url 'sucursales' %}">No sabes las sucursales? Hace click!</a></span>
         </div>
         <div class="form-field" >
             {{  form.password1.errors }}
@@ -47,5 +45,4 @@
         {{ form.non_field_errors }}
         <p>¿Ya tiene un usuario activo? <a href="{% url 'login' %}">Iniciar sesión</a></p>
     </form>
-</section>
 {% endblock %}

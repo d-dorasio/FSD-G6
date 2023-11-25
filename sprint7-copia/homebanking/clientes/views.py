@@ -13,7 +13,6 @@ def cliente(request):
 def detalles_cliente(request, cliente_id):
     cliente = Cliente.objects.get(pk=cliente_id)
     context = {'cliente': cliente}
-    
     return render(request, 'clientes/detalles_cliente.html', context)
 
 def pagina_registro(request):
