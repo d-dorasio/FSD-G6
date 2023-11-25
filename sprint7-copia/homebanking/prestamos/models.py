@@ -6,6 +6,7 @@ class Prestamo(models.Model):
     loan_type = models.TextField()
     loan_date = models.DateField() 
     loan_total = models.IntegerField()
+    loan_state = models.TextField()
     customer = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
     class Meta:
