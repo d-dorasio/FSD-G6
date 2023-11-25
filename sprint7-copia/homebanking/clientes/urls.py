@@ -5,6 +5,7 @@ from .views import detalles_cliente
 urlpatterns = [
     path ('', views.cliente, name="clientes"),
     path ('detalles/<int:cliente_id>/', views.detalles_cliente, name='detalles_cliente'),
-    path ('registro', views.pagina_registro)
+     path('registro/', views.pagina_registro, name='registro'),
+
 ]
 

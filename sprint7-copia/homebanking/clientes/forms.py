@@ -9,6 +9,8 @@ class CreateUserForm(UserCreationForm):
         fields = ['username', 'password1', 'password2']
 
 class CreateClienteForm(forms.ModelForm):
+    dob = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+
     class Meta:
         model = Cliente
         fields = ['customer_name', 'customer_surname', "customer_dni", "dob", "branch_id"]
