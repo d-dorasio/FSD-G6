@@ -8,9 +8,7 @@ class CreateUserForm(UserCreationForm):
         model=User
         fields = ['username', 'password1', 'password2']
 
-'''
 class CreateClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = ['customer_name', 'customer_surname', "customer_dni", "dob", "branch_id"]
-'''
