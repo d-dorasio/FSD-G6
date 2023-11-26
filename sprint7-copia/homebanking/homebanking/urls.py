@@ -18,17 +18,38 @@ from django.contrib import admin
 from django.urls import path, include
 from landing.views import landing
 
+from clientes import views as viewsclientes
+from cuentas import views as viewscuentas
+from itbank import views as viewsitbank
+from landing import views as viewslanding
+from prestamos import views as viewsprestamos
+from sucursales import views as viewssucursales
+from tarjetas import views as viewstarjetas
+
 urlpatterns = [
-    path('', landing, name='landing'),
+    path('', viewslanding.landing, name='landing'),
     path('accounts/',include('django.contrib.auth.urls')),
    
-    path('admin/', admin.site.urls),
-    path('itbank/', include('itbank.urls')),
-    path('clientes/', include('clientes.urls')),
-    path('cuentas/', include('cuentas.urls')),
-    path('tarjetas/', include('tarjetas.urls')),
-    path('sucursales/', include('sucursales.urls')),
-    path('prestamos/', include('prestamos.urls')), 
+    path('admin/', admin.site.urls, name='admin'),
+
+    path('itbank/', viewsitbank.inicio, name='inicio'),
+    path('itbank/detalle_cliente/<int:cliente_id>/', viewsitbank.detalles_cliente, name='detalle_cliente'),
+
+    path('clientes/', viewsclientes.cliente, name='cliente'),
+    path('clientes/registro/', viewsclientes.pagina_registro, name='registro'),
+    
+    path('cuentas/', viewscuentas.cuenta, name='cuentas'),
+    path('cuentas/crear/', viewscuentas.crear_cuenta, name='crear_cuenta'),
+    path('cuentas/listar/<int:cliente_id>/', viewscuentas.listar_cuentas_cliente, name='listar_cuentas_cliente'),
+    path('cuentas/realizar_transferencia/', viewscuentas.realizar_transferencia, name='realizar_transferencia'),
+    
+    path('tarjetas/', viewstarjetas.tarjeta, name='tarjetas'),
+    path('tarjetas/listar/<int:cliente_id>/', viewstarjetas.listar_tarjetas_cliente, name='listar_tarjetas_cliente'),
+
+    path('sucursales/', viewssucursales.sucursal, name='sucursales'),
+    
+    path('prestamos/lista_prestamos/<int:cliente_id>/', viewsprestamos.lista_prestamos, name='lista_prestamos_cliente'),
+
 ]
 
 
