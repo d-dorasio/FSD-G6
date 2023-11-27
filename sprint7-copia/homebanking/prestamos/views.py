@@ -1,121 +1,46 @@
-from django.shortcuts import render
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from .models import Prestamo
-from .forms import LoanForm
-from datetime import date, datetime
-from clientes.models import Cliente
-from cuentas.models import Cuenta
-from django.contrib import messages
+from django.shortcuts import render, redirect
+from .models import Prestamo 
+from django.http import HttpResponse
+from .forms import SolicitudPrestamoForm
 
-#from .forms import SolicitudPrestamoForm
+def solicitud_prestamo(request):
+    if request.method == 'POST':
+        form = SolicitudPrestamoForm(request.POST)
+        if form.is_valid():
+            # Obtener los datos del formulario
+            loan_type = form.cleaned_data['loan_type']
+            loan_date = form.cleaned_data['loan_date']
+            loan_amount = form.cleaned_data['loan_amount']
 
+            # Verificar si el usuario está autenticado
+            if request.user.is_authenticated:
+                # Obtener el tipo de cliente
+                client = request.user.cliente
+                client_type = client.client_type
 
-# Create your views here.
-
-#@login_required
-# def solicitud_prestamo(request):
-#     if request.method == 'POST':
-#         form = SolicitudPrestamoForm(request.POST)
-#         if form.is_valid():
-#             # Procesar el formulario y guardar la solicitud de préstamo en la base de datos
-#             nueva_solicitud = form.save(commit=False)
-#             nueva_solicitud.cliente = request.user.cliente  # Asignar el cliente actual
-#             nueva_solicitud.save()
-#             return render(request, 'prestamos/solicitud_exitosa.html')  # Puedes crear esta plantilla
-#     else:
-#         form = SolicitudPrestamoForm()
-
-#     return render(request, 'prestamos/solicitud_prestamo.html', {'form': form})
-
-#def lista_prestamos(request, cliente_id):
-    # Obtener el cliente con el cliente_id
-#    cliente = Cliente.objects.get(pk=cliente_id)
-
-    # Obtener todos los préstamos asociados al cliente
-#    prestamos_cliente = Prestamo.objects.filter(customer_id=cliente_id)
-
-    # Puedes agregar más lógica aquí según tus necesidades
-
-    # Pasar los préstamos y el cliente al contexto y renderizar el template
-#    context = {'prestamos_cliente': prestamos_cliente, 'cliente': cliente}
-#    return render(request, 'prestamos/lista_prestamos.html', context)
-
-@login_required
-def lista_prestamos(request, cliente_id):
-    cliente = Cliente.objects.get(pk=cliente_id)
-    cuenta = Cuenta.objects.filter(cliente_id__exact = cliente_id, tipo_id__exact = 1).first()
-    if cliente.customer_id == request.user.id:
-        
-        initial_dict = {
-            "nombre": cliente.customer_name,
-            "apellido": cliente.customer_surname,
-            "dni": cliente.customer_dni
-        }
-
-        form_prestamo = LoanForm(initial = initial_dict)
-        
-
-        if request.method == "POST":
-            form_prestamo = LoanForm(data=request.POST)
-
-            if form_prestamo.is_valid() and cuenta:
-
-                tipoRecibido = request.POST.get('tipo','')
-                fechaRecibida =  request.POST.get('fecha','')
-                montoRecibido =  request.POST.get('monto','')
-
-                if datetime.strptime(fechaRecibida,'%Y-%m-%d') > datetime.today():
-                    if cliente.tipo_id == 1:
-                        if int(montoRecibido) <= 100000:
-                            prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, estado = "Aprobado" , cliente_id = cliente.id)
-                            prestamo.save()
-                            cuenta.balance = cuenta.balance + int(montoRecibido)
-                            cuenta.save()
-                            messages.success(request, 'Préstamo otorgado, verificar en "Mis préstamos", el saldo en su cuenta '+ cuenta.iban +' ha sido actualizado')
-                        elif int(montoRecibido) > 100000:
-                            prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, estado = "Pendiente" ,cliente_id = cliente.id)
-                            prestamo.save()
-                            messages.warning(request, 'Préstamo solicitado correctamente pero pendiente de aprobación, solo en caso de ser aprobado el saldo será depositado')
-                    elif cliente.tipo_id == 2:
-                        if int(montoRecibido) <= 300000:
-                            prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, estado = "Aprobado" , cliente_id = cliente.id)
-                            prestamo.save()
-                            cuenta.balance = cuenta.balance + int(montoRecibido)
-                            cuenta.save()
-                            messages.success(request, 'Préstamo otorgado, verificar en "Mis préstamos", el saldo en su cuenta '+ cuenta.iban +' ha sido actualizado')
-                        elif int(montoRecibido) > 300000:
-                            prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, estado = "Pendiente" ,cliente_id = cliente.id)
-                            prestamo.save()
-                            messages.warning(request, 'Préstamo solicitado correctamente pero pendiente de aprobación, solo en caso de ser aprobado el saldo será depositado')
-                    elif cliente.tipo_id == 3:
-                        if int(montoRecibido) <= 500000:
-                            prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, estado = "Aprobado" , cliente_id = cliente.id)
-                            prestamo.save()
-                            cuenta.balance = cuenta.balance + int(montoRecibido)
-                            cuenta.save()
-                            messages.success(request, 'Préstamo otorgado, verificar en "Mis préstamos", el saldo en su cuenta '+ cuenta.iban +' ha sido actualizado')
-                        elif int(montoRecibido) > 500000:
-                            prestamo = Prestamo( tipo = tipoRecibido, fecha = fechaRecibida, monto = montoRecibido, estado = "Pendiente" ,cliente_id = cliente.id)
-                            prestamo.save()
-                            messages.warning(request, 'Préstamo solicitado correctamente pero pendiente de aprobación, solo en caso de ser aprobado el saldo será depositado') 
-                else:
-                    messages.error(request,"Error: la fecha de inicio del préstamo debe ser posterior a "+ str(datetime.strftime(date.today(),'%d/%m/%Y')))
+                # Aplicar restricciones de monto según el tipo de cliente
+                if client_type == 'BLACK' and int(loan_amount) > 500000:
+                    return HttpResponse("Monto de préstamo excede el límite para clientes BLACK.")
+                elif client_type == 'GOLD' and int(loan_amount) > 300000:
+                    return HttpResponse("Monto de préstamo excede el límite para clientes GOLD.")
+                elif client_type == 'CLASSIC' and int(loan_amount) > 100000:
+                    return HttpResponse("Monto de préstamo excede el límite para clientes CLASSIC.")
             else:
-                 messages.error(request, "Error: el cliente debe poseer una caja de ahorro en pesos para solicitar un préstamo")
+                # Lógica para usuarios anónimos (puedes adaptarla según tus necesidades)
+                return HttpResponse("Solicitud de préstamo en proceso. Le pedimos que esté atento para la confirmación. ")
 
-        return render(request, "prestamos/prestamo.html", {"form":form_prestamo,
-                                                       "cliente":cliente,
-                                                       "cuenta":cuenta})
+            # Procesar la solicitud de préstamo y actualizar la base de datos
+            prestamo = Prestamo(
+                loan_type=loan_type,
+                loan_date=loan_date,
+                loan_total=loan_amount,
+                loan_state='PENDIENTE',  # Puedes establecer el estado inicial
+                customer=client
+            )
+            prestamo.save()
+
+            return HttpResponse("Solicitud de préstamo enviada correctamente.")
     else:
-        return render(request, "clientes/error.html", {"forms":""})
-
-@login_required    
-def por_cliente(request, cliente_id):
-        cliente = Cliente.objects.get(pk=cliente_id)
-        prestamos = Prestamo.objects.filter(cliente_id__exact = cliente_id)
-        if cliente.usuario_id == request.user.id:
-             return render(request, "prestamos/prestamos_cliente.html", {"prestamos":prestamos,
-                                                       "cliente":cliente})
-        else:
-                return render(request, "clientes/error.html", {"prestamos":""})
+        form = SolicitudPrestamoForm()
+    # Renderizar el formulario para solicitar el préstamo
+    return render(request, 'prestamos/solicitud_prestamo.html', {'form': form})

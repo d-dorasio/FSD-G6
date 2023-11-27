@@ -24,7 +24,7 @@
         </div>
     </nav>
     <header>
-        <a href="detalle_cliente"><img src="" alt="Mi cuenta"></a>
+        <a href="{% url 'detalles_cliente' cliente.id %}"><img src="" alt="Mi cuenta"></a>
     </header>
     <section>
         {% block content %}{% endblock %}

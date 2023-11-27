@@ -1,0 +1,7 @@
+<!-- solicitud_prestamo.html -->
+<form method="post" action="{% url 'solicitud_prestamo' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Enviar Solicitud">
+  </form>
+  

@@ -48,8 +48,9 @@ urlpatterns = [
 
     path('sucursales/', viewssucursales.sucursal, name='sucursales'),
     
-    path('prestamos/lista_prestamos/<int:cliente_id>/', viewsprestamos.lista_prestamos, name='lista_prestamos_cliente'),
+    #path('prestamos/<int:cliente_id>/solicitar_prestamo/', viewsprestamos.lista_prestamos, name='solicitar_prestamo'),
 
+    path('prestamos/solicitud_prestamo/', viewsprestamos.solicitud_prestamo, name='solicitud_prestamo'),
 ]
 
 
