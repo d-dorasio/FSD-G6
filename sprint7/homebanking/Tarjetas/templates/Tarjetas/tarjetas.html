@@ -1,18 +1,17 @@
-
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 
 {% block content %}
-    <h3> Listado de Tarjetas </h3>
+<h3> Listado de Tarjetas </h3>
+<div>
+    {% for tarjeta in tarjetas %}
     <div>
-        {% for tarjeta in tarjetas %}
-            <div >
-                <p> {{ tarjeta.numero}}</p>
-                <p> {{ tarjeta.tipo}} </p>
-                <p> {{ tarjeta.marca }} </p>
-                <p> {{ tarjeta.fecha_expiracion }} </p>
-                <p> {{ tarjeta.cliente }} </p>
-            </div>
-        {% endfor %}
+        <p> {{ tarjeta.numero}}</p>
+        <p> {{ tarjeta.tipo}} </p>
+        <p> {{ tarjeta.marca }} </p>
+        <p> {{ tarjeta.fecha_expiracion }} </p>
+        <p> {{ tarjeta.cliente }} </p>
     </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

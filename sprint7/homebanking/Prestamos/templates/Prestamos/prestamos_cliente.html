@@ -1,27 +1,22 @@
-
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 
 {% block content %}
-    <nav >
-        <ul>
-            <li><a href="{% url 'cliente_detail' cliente.id %}"> Mi Perfil </a></li>
-            <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
-            <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
-            <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
-            <li><a href="{% url 'prestamos_cliente' cliente.id %}"> Mis préstamos </a></li>
-        </ul>
-    </nav>
-    <h3 > Préstamos del cliente {{ cliente }}</h3>
-    {% if prestamos|length > 0 %}
-        <div >
-        {% for prestamo in prestamos %}
-            <div >
-                <strong><p>{{ prestamo }}</p></strong>
-                <strong><p>{{ prestamo.estado }}</p></strong>
-            </div>
-        {% endfor %}
-        </div>
-    {% else %}
-        <h4 >El cliente no ha solicitado ningún préstamo </h4>
-    {% endif %}
+<h1> Préstamos de {{ cliente }}</h1>
+{% if prestamos|length > 0 %}
+<div>
+    {% for prestamo in prestamos %}
+    <div>
+        <strong>
+            <p>{{ prestamo }}</p>
+        </strong>
+        <strong>
+            <p>{{ prestamo.estado }}</p>
+        </strong>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h2>No ha solicitado ningún préstamo. </h2>
+<p><a href="{% url 'prestamo' cliente.id %}">Haz click aquí para solicitar</a></p>
+{% endif %}
 {% endblock %}

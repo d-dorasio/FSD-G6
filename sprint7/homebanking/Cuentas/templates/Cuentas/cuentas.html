@@ -1,18 +1,14 @@
-
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 
 {% block content %}
 
-    <h3 class="texto"> Listado de cuentas </h1>
-    <div class="container">
-        {% for cuenta in cuentas %}
-            <div class="divisor">
-                <p> {{ cuenta }} </p>
-                <p> {{ cuenta.iban }} </p>
-                <p> {{ cuenta.cliente }} </p>
-            </div>
-        {% endfor %}
-    </div>
-
+<h1> Total de Cuentas </h1>
+{% for cuenta in cuentas %}
+<div>
+    <p> {{ cuenta }} </p>
+    <p> {{ cuenta.iban }} </p>
+    <p> {{ cuenta.cliente }} </p>
+</div>
+{% endfor %}
 
 {% endblock %}

@@ -1,13 +1,12 @@
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 {% block content %}
 
-<h3> Listado de clientes </h1>
-    <div>
-        {% for cliente in clientes %}
-        <div>
-            <p><strong> {{ cliente }} </strong></p>
-            <p> {{cliente.tipo}} </p>
-        </div>
-        {% endfor %}
-    </div>
+<h1> Todos los clientes </h1>
+
+{% for cliente in clientes %}
+<div>
+    <li>{{ cliente }}.TIPO: {{cliente.tipo}}</li> 
+</div>
+{% endfor %}
+
 {% endblock %}

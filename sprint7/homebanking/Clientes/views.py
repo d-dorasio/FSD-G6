@@ -7,6 +7,10 @@ from .models import Cliente
 
 # Create your views here.
 @login_required
+def inicio(request):
+        return render(request, "Clientes/inicio.html")
+
+@login_required
 def listado(request):
         clientes = Cliente.objects.all()
         if request.user.is_superuser == 1:

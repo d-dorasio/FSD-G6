@@ -1,32 +1,22 @@
-
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 
 {% block content %}
 
-    <nav class="menu-navbar">
-        <ul>
-            <li><a href="{% url 'cliente_detail' cliente.id %}"> Mi Perfil </a></li>
-            <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
-            <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
-            <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
-            <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
-        </ul>
-    </nav>
-    <h3 class="texto"> Cuentas del cliente {{ cliente }}</h3>
-    {% if cuentas|length > 0 %}
-    <div class="container-lg m-3" id="contenedor-cuentas">
-        {% for cuenta in cuentas %}
-        <div class="container p-2 bg-secondary text-white" id="cada-cuenta">
-            <h4>{{ cuenta }}</h4>
-            <p>Saldo: ${{ cuenta.balance }}</p>
-            <p>IBAN: {{ cuenta.iban }}</p>
-            <a href="#" class="btn btn-primary">Ver detalle</a>
-        </div>
-        {% endfor %}
+<h1> Cuentas del cliente {{ cliente }}</h1>
+{% if cuentas|length > 0 %}
+<div>
+    {% for cuenta in cuentas %}
+    <div>
+        <h2>{{ cuenta }}</h2>
+        <p>Saldo: ${{ cuenta.balance }}</p>
+        <p>IBAN: {{ cuenta.iban }}</p>
     </div>
-    {% else %}
-        <h4 class="texto">El cliente no posee ninguna cuenta</h4>
-    {% endif %}
+    {% endfor %}
+</div>
+{% else %}
+<h2>No posee ninguna cuenta.</h2>
+<p> <a href="#">Click aquí para agregar</a></p>
+{% endif %}
 
 
 {% endblock %}

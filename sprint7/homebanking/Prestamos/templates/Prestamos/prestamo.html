@@ -1,41 +1,31 @@
-
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 
 {% block content %}
 
 <section>
-    <nav class="menu-navbar">
-        <ul>
-            <li><a href="{% url 'cliente_detail' cliente.id %}"> Mi Perfil </a></li>
-            <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
-            <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
-            <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
-            <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
-        </ul>
-    </nav>
-    <h3 >Préstamo preaprobado</h3>
-    <div >
+    <h3>Préstamo preaprobado</h3>
+    <div>
         <div>
             <form action="" method="POST">
                 {% csrf_token %}
                 {% if messages %}
-                <div >
+                <div>
                     {% for message in messages %}
-                        {% if message.level_tag == "error" %}
-                            <div ><strong>{{ message }}</strong></div>
-                        {% else %}
-                            <div ><strong>{{ message }}</strong></div>
-                        {% endif %}
+                    {% if message.level_tag == "error" %}
+                    <div><strong>{{ message }}</strong></div>
+                    {% else %}
+                    <div><strong>{{ message }}</strong></div>
+                    {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}
                 {{ form.as_p }}
                 {% if cliente.tipo_id == 1 %}
-                    <p>Monto máximo de pre-aprobación para clientes Classic: $100000</p>
+                <p>Monto máximo de pre-aprobación para clientes Classic: $100000</p>
                 {% elif cliente.tipo_id == 2 %}
-                    <p>Monto máximo de pre-aprobación para clientes Gold: $300000</p>
+                <p>Monto máximo de pre-aprobación para clientes Gold: $300000</p>
                 {% else %}
-                    <p>Monto máximo de pre-aprobación para clientes Black: $500000</p>
+                <p>Monto máximo de pre-aprobación para clientes Black: $500000</p>
                 {% endif %}
                 <input type="submit" value="Solicitar Prestamo">
             </form>

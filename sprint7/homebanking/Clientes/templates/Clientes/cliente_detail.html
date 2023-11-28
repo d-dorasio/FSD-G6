@@ -1,25 +1,16 @@
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 {% block content %}
 
-<nav>
-    <ul>
-        <li><a href="{% url 'cliente_detail' cliente.id %}"> Perfil </a></li>
-        <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
-        <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
-        <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
-        <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
-    </ul>
-</nav>
-<h3 > Detalle de cliente {{cliente.id}} </h1>
+<h1> Detalle de cliente </h1>
+<div>
     <div>
-        <div>
-            <p><strong>Nombre y apellido:</strong> {{ cliente }} </p>
-            <p><strong>DNI:</strong> {{ cliente.dni }} </p>
-            <p><strong>Fecha de nacimiento:</strong> {{ cliente.dob }} </p>
-            <p><strong>Tipo de cliente:</strong> {{cliente.tipo}} </p>
-            <p><strong>Sucursal:</strong> {{ cliente.branch }}</p>
-        </div>
+        <p><strong>Nombre y apellido:</strong> {{ cliente }} </p>
+        <p><strong>DNI:</strong> {{ cliente.dni }} </p>
+        <p><strong>Fecha de nacimiento:</strong> {{ cliente.dob }} </p>
+        <p><strong>Tipo de cliente:</strong> {{cliente.tipo}} </p>
+        <p><strong>Sucursal:</strong> {{ cliente.branch }}</p>
     </div>
-    <button href="{% url 'logout'%}"> Salir</button>
+</div>
+<button href="{% url 'logout' %}">Salir</button>
 
-    {% endblock %}
+{% endblock %}

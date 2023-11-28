@@ -1,32 +1,22 @@
-
-{% extends 'Inicio/base.html' %}
+{% extends 'Clientes/base.html' %}
 
 {% block content %}
 
-    <nav >
-        <ul>
-            <li><a href="{% url 'cliente_detail' cliente.id %}"> Mi Perfil </a></li>
-            <li><a href="{% url 'cuentas_cliente' cliente.id %}"> Cuentas </a></li>
-            <li><a href="{% url 'tarjetas_cliente' cliente.id %}"> Tarjetas </a></li>
-            <li><a href="{% url 'prestamo' cliente.id %}"> Préstamo </a></li>
-            <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
-        </ul>
-    </nav>
-    <h3 > Tarjetas del cliente {{ cliente }}</h3>
-    {% if tarjetas|length > 0 %}
-    <div >
-        {% for tarjeta in tarjetas %}
-        <div >
-            <h4>{{ tarjeta }}</h4>
-            <p>{{ tarjeta.numero }}</p>
-            <p>Tipo: {{ tarjeta.tipo }}</p>
-            <p>Vencimiento: {{ tarjeta.fecha_expiracion }}</p>
-            <a href="#">Ver detalle</a>
-        </div>
-        {% endfor %}
+<h1> Tarjetas de {{ cliente }}</h1>
+{% if tarjetas|length > 0 %}
+<div>
+    {% for tarjeta in tarjetas %}
+    <div>
+        <h2>{{ tarjeta }}</h2>
+        <p>{{ tarjeta.numero }}</p>
+        <p>Tipo: {{ tarjeta.tipo }}</p>
+        <p>Vencimiento: {{ tarjeta.fecha_expiracion }}</p>
     </div>
-    {% else %}
-        <h4 >El cliente no posee ninguna tarjeta</h4>
-    {% endif %}
+    {% endfor %}
+</div>
+{% else %}
+<h2>No posee ninguna tarjeta.</h2>
+<p><a href="#"> Haz click aquí para solicitar tarjeta.</a></p>
+{% endif %}
 
 {% endblock %}

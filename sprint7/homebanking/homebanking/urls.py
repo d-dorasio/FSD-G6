@@ -28,6 +28,7 @@ urlpatterns = [
     path('clientes/', views.listado, name="clientes"),
     path('clientes/<int:cliente_id>/', views.detalle, name="cliente_detail"),
     path('clientes/register/', views.register, name="register"),
+    path('clientes/inicio/', views.inicio, name="inicio"),
     path('cuentas/', vista.listado, name="cuentas"),
     path('cuentas/<int:id_cliente>/', vista.por_cliente, name="cuentas_cliente"),
     path('tarjetas/', vista2.listado, name="tarjetas"),
