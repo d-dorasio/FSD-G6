@@ -1,17 +1,11 @@
 
-<!-- agregamos el bloque extends que tomara el html base-->
 {% extends 'Inicio/base.html' %}
 
-<!-- Agregamos el titulo de la home -->
-{% block title %} Tarjetas {% endblock %}
-
-<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
-<section>
-    <h3 class="texto"> Listado de Tarjetas </h3>
-    <div class=" container">
+    <h3> Listado de Tarjetas </h3>
+    <div>
         {% for tarjeta in tarjetas %}
-            <div class="divisor">
+            <div >
                 <p> {{ tarjeta.numero}}</p>
                 <p> {{ tarjeta.tipo}} </p>
                 <p> {{ tarjeta.marca }} </p>
@@ -20,6 +14,5 @@
             </div>
         {% endfor %}
     </div>
-</section>
 
 {% endblock %}

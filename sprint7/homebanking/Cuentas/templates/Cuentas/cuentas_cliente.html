@@ -1,14 +1,8 @@
-<!-- agregamos el bloque extends que tomara el html base-->
+
 {% extends 'Inicio/base.html' %}
 
-<!-- Agregamos el titulo de la home -->
-{% block title %} Cuentas {% endblock %}
-
-
-<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
 
-<section>
     <nav class="menu-navbar">
         <ul>
             <li><a href="{% url 'cliente_detail' cliente.id %}"> Mi Perfil </a></li>
@@ -33,6 +27,6 @@
     {% else %}
         <h4 class="texto">El cliente no posee ninguna cuenta</h4>
     {% endif %}
-</section>
+
 
 {% endblock %}

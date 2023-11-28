@@ -1,24 +1,13 @@
-
-<!-- agregamos el bloque extends que tomara el html base-->
 {% extends 'Inicio/base.html' %}
-
-<!-- Agregamos el titulo de la home -->
-{% block title %} Clientes {% endblock %}
-
-
-<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
 
-<section>
-    <h3 class="texto"> Listado de clientes </h1>
-    <div class="container">
+<h3> Listado de clientes </h1>
+    <div>
         {% for cliente in clientes %}
-            <div>
-                <p><strong> {{ cliente }} </strong></p>
-                <p> {{cliente.tipo}} </p>
-            </div>
+        <div>
+            <p><strong> {{ cliente }} </strong></p>
+            <p> {{cliente.tipo}} </p>
+        </div>
         {% endfor %}
     </div>
-</section>
-
 {% endblock %}

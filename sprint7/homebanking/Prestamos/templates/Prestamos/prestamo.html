@@ -1,11 +1,6 @@
-<!-- agregamos el bloque extends que tomara el html base-->
+
 {% extends 'Inicio/base.html' %}
 
-<!-- Agregamos el titulo de la home -->
-{% block title %} Prestamo {% endblock %}
-
-
-<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
 {% block content %}
 
 <section>
@@ -18,18 +13,18 @@
             <li><a href="{% url 'prestamos_cliente' cliente.id %}">Mis préstamos </a></li>
         </ul>
     </nav>
-    <h3 class="texto">Préstamo preaprobado</h3>
-    <div class="container" id="prestamos">
+    <h3 >Préstamo preaprobado</h3>
+    <div >
         <div>
             <form action="" method="POST">
                 {% csrf_token %}
                 {% if messages %}
-                <div class="messages">
+                <div >
                     {% for message in messages %}
                         {% if message.level_tag == "error" %}
-                            <div class=" container p-2 text-white bg-danger"><strong>{{ message }}</strong></div>
+                            <div ><strong>{{ message }}</strong></div>
                         {% else %}
-                            <div class=" container p-2 text-white bg-{{message.level_tag}}"><strong>{{ message }}</strong></div>
+                            <div ><strong>{{ message }}</strong></div>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -42,7 +37,7 @@
                 {% else %}
                     <p>Monto máximo de pre-aprobación para clientes Black: $500000</p>
                 {% endif %}
-                <input class="btn btn-success btn-block" type="submit" value="Solicitar Prestamo">
+                <input type="submit" value="Solicitar Prestamo">
             </form>
         </div>
     </div>
