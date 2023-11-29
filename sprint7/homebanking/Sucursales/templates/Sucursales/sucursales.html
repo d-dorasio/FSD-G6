@@ -1,10 +1,12 @@
 {% extends 'Inicio/base.html' %}
 
 {% block content %}
-<h1> Nuestras Sucursales </h1>
+<section>
+    <h1> Nuestras Sucursales </h1>
     {% for sucursal in sucursales %}
     <div>
         <p> {{ sucursal }} </p>
     </div>
     {% endfor %}
+</section>
 {% endblock %}

@@ -127,12 +127,11 @@ footer a {
 
 /* ESTILOS PARA EL INDEX */
 #banner {
-    background-image: url("/sprint 1/imagenes/banco.jpg");
+    background-image: url("/static/Inicio/img/Banco.webp");
     background-size: cover;
     background-position: center;
     text-align: center;
     padding: 150px 0;
-
 }
 
 #banner h1 {

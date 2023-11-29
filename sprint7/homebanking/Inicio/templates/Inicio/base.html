@@ -6,8 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>ITBANK </title>
-  <link rel="stylesheet" href="{% static 'css/landingPage.css' %}">
-  <link rel="stylesheet" href="{% static 'css/formularios.css' %}">
+  <link rel="stylesheet" href="{% static 'Inicio/css/landingPage.css' %}">
+  <link rel="stylesheet" href="{% static 'Inicio/css/formularios.css' %}">
+
+  <link rel="shortcut icon" href="{% static 'Inicio/img/favicon.ico' %}" type="image/x-icon">
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +20,7 @@
 <body>
   <header>
     <a href="{% url 'home' %}">
-      <img src="" alt="logo">
+      <img src="{% static 'Inicio/img/logo.webp' %}" alt="logo" id="logo-banco">
     </a>
     <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button>
     <nav id="nav">
@@ -58,7 +60,7 @@
   <!--  SCRIPT DEFONT AWESOME (ICONOS) -->
   <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
 
-  <script src="{% static 'js/menu-hamburguesa.js' %}"></script>
+  <script src="{% static 'Clientes/js/menu-hamburguesa.js' %}"></script>
 </body>
 
 </html>
