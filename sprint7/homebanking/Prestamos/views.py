@@ -10,7 +10,7 @@ from Cuentas.models import Cuenta
 # Create your views here.
 
 @login_required
-def prestamo(request, cliente_id):
+def solicitud_prestamo(request, cliente_id):
     cliente = Cliente.objects.get(pk=cliente_id)
     cuenta = Cuenta.objects.filter(cliente_id__exact = cliente_id, tipo_id__exact = 1).first()
     if cliente.usuario_id == request.user.id:
@@ -79,7 +79,7 @@ def prestamo(request, cliente_id):
         return render(request, "Clientes/error.html", {"forms":""})
 
 @login_required    
-def por_cliente(request, cliente_id):
+def prestamos_cliente(request, cliente_id):
         cliente = Cliente.objects.get(pk=cliente_id)
         prestamos = Prestamo.objects.filter(cliente_id__exact = cliente_id)
         if cliente.usuario_id == request.user.id:

@@ -11,15 +11,15 @@ def inicio(request):
         return render(request, "Clientes/inicio.html")
 
 @login_required
-def listado(request):
-        clientes = Cliente.objects.all()
+def lista_cliente(request):
+        customer = Cliente.objects.all()
         if request.user.is_superuser == 1:
-                return render(request, "Clientes/clientes.html", {"clientes":clientes})
+                return render(request, "Clientes/clientes.html", {"clientes":customer})
         else:
               return render(request, "Clientes/error.html", {"clientes":""})
 
 @login_required
-def detalle(request, cliente_id):
+def detalle_cliente(request, cliente_id):
         cliente = Cliente.objects.get(pk=cliente_id)
         if cliente.usuario_id == request.user.id:
                 return render(request, "Clientes/cliente_detail.html", {"cliente":cliente})
@@ -27,7 +27,7 @@ def detalle(request, cliente_id):
               return render(request, "Clientes/error.html", {"cliente":""})
         
         
-def register(request):
+def registro(request):
     form = createUserForm
     cliente_form = ClienteForm
 
