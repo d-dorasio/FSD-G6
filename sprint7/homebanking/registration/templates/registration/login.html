@@ -1,31 +1,22 @@
 {% extends 'Inicio/base.html' %}
-{% block title %}Iniciar sesión{% endblock %}
 {% block content %}
-<style>
-  .errorlist {
-    color: red;
-  }
-</style>
-<main role="main">
+<section>
   <div>
-    <div>
-      <div>
-        <form action="" method="post">{% csrf_token %}
-          <h3>Iniciar sesión</h3>
-          {% if form.non_field_errors %}
-          <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
-          {% endif %}
-          <p>
-            <input type="text" name="username" autofocus maxlength="254" required placeholder="Nombre de usuario" />
-          </p>
-          <p>
-            <input type="password" name="password" required placeholder="Contraseña" />
-          </p>
-          <p><input type="submit" value="Acceder"></p>
-        </form>
-      </div>
-      <p><a href="#">Olvidó su contraseña?</a></p>
-    </div>
+    <form action="" method="post">{% csrf_token %}
+      <h1 class="h1-contacto">Iniciar sesión</h1>
+      {% if form.non_field_errors %}
+      <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+      {% endif %}
+      <p>
+        <input class="campo-form" type="text" name="username" autofocus maxlength="254" required
+          placeholder="Nombre de usuario" />
+      </p>
+      <p>
+        <input class="campo-form" type="password" name="password" required placeholder="Contraseña" />
+      </p>
+      <p><input class="boton-form" type="submit" value="Acceder"></p>
+    </form>
   </div>
-</main>
+  <p><a href="#">Olvidó su contraseña?</a></p>
+</section>
 {% endblock %}

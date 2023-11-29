@@ -1,7 +1,7 @@
 {% extends 'Clientes/base.html' %}
 
 {% block headers %}
-<h1>Contacto</h1>
+
 <span>Envianos tus dudas</span>
 {% endblock %}
 
@@ -11,6 +11,8 @@
     {% if 'ok' in request.GET %}
     <p><b>Su mensaje se ha enviado correctamente, en breve nos pondremos en contacto</b></p>
     {% endif %}
+    
+    <h1>Contacto</h1>
     <form action="" method="POST">
       {% csrf_token %}
 
