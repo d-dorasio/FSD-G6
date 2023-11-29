@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "Sucursales",
     "Prestamos",
     "registration",
+    "Contacto",
 ]
 
 MIDDLEWARE = [

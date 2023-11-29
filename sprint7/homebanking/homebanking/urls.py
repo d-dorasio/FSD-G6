@@ -22,6 +22,7 @@ from Tarjetas import views as vista2
 from Inicio import views as vista3
 from Sucursales import views as vista4
 from Prestamos import views as vista5
+from Contacto import views as vista6
 
 urlpatterns = [
     path('', vista3.home, name="home"),
@@ -36,6 +37,7 @@ urlpatterns = [
     path('sucursales/', vista4.listado, name="sucursales"),
     path('prestamos/<int:cliente_id>/', vista5.prestamo, name="prestamo"),
     path('misprestamos/<int:cliente_id>/', vista5.por_cliente, name="prestamos_cliente"),
+    path('contacto/', vista6.contacto, name="contacto"),
     path('accounts/',include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
