@@ -1,4 +1,4 @@
-# banking_app/urls.py
+
 from django.urls import path
 from .views import (
     TipoClienteViewSet, ClienteViewSet, TipoCuentaViewSet, CuentaViewSet,

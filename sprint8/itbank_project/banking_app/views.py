@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
+# Definición de conjuntos de vistas para los modelos
 class TipoClienteViewSet(viewsets.ModelViewSet):
     queryset = Tipo_Cliente.objects.all()
     serializer_class = TipoClienteSerializer
@@ -39,6 +40,8 @@ class TarjetaViewSet(viewsets.ModelViewSet):
     queryset = Tarjeta.objects.all()
     serializer_class = TarjetaSerializer
 
+
+# Vista para obtener datos de cliente autenticado
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def obtener_datos_cliente(request):
@@ -46,6 +49,7 @@ def obtener_datos_cliente(request):
     serializer = ClienteSerializer(cliente)
     return Response(serializer.data)
 
+# Vista para obtener saldo de cuenta del cliente autenticado
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def obtener_saldo_cuenta(request):

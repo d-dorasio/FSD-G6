@@ -1,4 +1,4 @@
-# banking_app/serializers.py
+
 from rest_framework import serializers
 from .models import Tipo_Cliente, Cliente, Tipo_Cuenta, Cuenta, Prestamo, Sucursal, Marca_Tarjeta, Tarjeta
 from django.contrib.auth.models import User
