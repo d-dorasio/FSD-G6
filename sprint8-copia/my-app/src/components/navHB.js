@@ -36,7 +36,7 @@ export default function NavBar() {
         >
           <div className= {`nav-items ${isOpen && "open"}`}> <Box sx={{ overflow: "auto" }}><div className="nav-logo">
             <Link to="/inicio">
-            <img src="/logo.png" height="100px"></img>
+            <img src="/logo.webp" height="100px"></img>
           </Link></div>
             <ul style={{ listStyleType: "none" }} className="ul-nav">
               <li>

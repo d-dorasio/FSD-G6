@@ -1,32 +1,42 @@
-import React, { useState } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import { Link } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
+const baseUrl = 'http://127.0.0.1:8000/api/clients/1'
 
 function Profile() {
-  const [profileImage, setProfileImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  // const [profileImage, setProfileImage] = useState(null);
+  // const [imagePreview, setImagePreview] = useState(null);
 
-  const handleImageChange = (event) => {
-    const selectedImage = event.target.files[0];
+  // const handleImageChange = (event) => {
+  //   const selectedImage = event.target.files[0];
 
-    if (selectedImage) {
-      const reader = new FileReader();
+  //   if (selectedImage) {
+  //     const reader = new FileReader();
 
-      reader.onload = (e) => {
-        setProfileImage(selectedImage);
-        setImagePreview(e.target.result);
-      };
+  //     reader.onload = (e) => {
+  //       setProfileImage(selectedImage);
+  //       setImagePreview(e.target.result);
+  //     };
 
-      reader.readAsDataURL(selectedImage);
-    }
-  };
+  //     reader.readAsDataURL(selectedImage);
+  //   }
+  // };
+  const [cliente, setCliente]= useState(null)
+
+  useEffect(()=>{
+    axios.get(baseUrl).then((response)=>{
+      setCliente(response.data)
+    })
+  },[])
 
   return (
+    cliente ?
     <div className="container">
       <NavBar></NavBar>
       <div className="sub-container">
@@ -36,9 +46,9 @@ function Profile() {
             <section>
               <h1>Perfil:</h1>
               <form id="profileForm">
-                <label>Subir foto</label>
-                <br />
-                <TextField
+                {/* <label>Subir foto</label>
+                <br /> */}
+                {/* <TextField
                   type="file"
                   id="profileImage"
                   variant="outlined"
@@ -52,37 +62,37 @@ function Profile() {
                     alt="Vista previa de la imagen"
                     style={{ maxWidth: "50%" }}
                   />
-                )}
-                <h2>Apellido, Nombre</h2>
+                )} */}
+                <h2>{cliente.apellido}, {cliente.nombre}</h2>
               </form>
 
               <h3>Datos:</h3>
               <ul>
                 <li>
-                  Nombre Completo: <span>Apellido, Nombre</span>
+                  Nombre Completo: <span>{cliente.apellido}, {cliente.nombre}</span>
                 </li>
+                {/* <li>
+                  Email: <span>no hay</span>
+                </li> */}
                 <li>
-                  Email: <span>nombre@mail.com</span>
+                  DNI: <span>{cliente.dni}</span>
                 </li>
-                <li>
-                  DNI: <span>12.345.678</span>
-                </li>
-                <li>
+                {/*<li>
                   Sexo: <span>Indefinido</span>
                 </li>
-                <li>
+                 <li>
                   Edad:{" "}
                   <span>
                     <Button variant="contained" size="small">Agregar edad</Button>
                   </span>
-                </li>
+                </li> */}
                 <li>
                   Fecha de nacimiento:{" "}
                   <span>
-                    <Button variant="contained" size="small">Agregar fecha</Button>
+                  {cliente.fecha_nacimiento}
                   </span>
                 </li>
-                <li>
+                {/* <li>
                   Estado civil:{" "}
                   <span>
                     <Button variant="contained" size="small">Agregar Estado</Button>
@@ -93,7 +103,7 @@ function Profile() {
                   <span>
                     <Button variant="contained" size="small">Agregar profesión</Button>
                   </span>
-                </li>
+                </li> */}
                 <br />
                 <Button 
                   size="large" 
@@ -108,7 +118,7 @@ function Profile() {
         </div>
         <Footer></Footer>
       </div>
-    </div>
+    </div>: <>Nada que mostrar (tenes que runear el back)</>
   );
 }
 

@@ -3,7 +3,7 @@ import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import { Box } from "@mui/material";
-import banner from "../img/banner.png";
+import banner from "../img/banner.webp";
 
 function HomeBanking() {
   return (
