@@ -20,6 +20,9 @@ import ContactForm from "./components/contact";
 import Profile from "./components/account";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import BanksPage from "./components/sucursales"; 
+
+
 
 function App() {
   return (
@@ -46,6 +49,9 @@ function App() {
           <Route path="/terminos&condiciones" element={<TermsAndConditions></TermsAndConditions>}/>          
           <Route path="/contacto" element={<ContactForm></ContactForm>} />
           <Route path="/cuenta" element={<Profile></Profile>}></Route>
+
+          <Route path="/bancos" element={<BanksPage />} />
+
         </Routes>
       </Router>
     </div>

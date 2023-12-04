@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'clientes.apps.ClientesConfig',
     'cuentas.apps.CuentasConfig',
     'itbankAuth.apps.ItbankAuthConfig',
-    'movimientos.apps.MovimientosConfig',
     'prestamos.apps.PrestamosConfig',
     'tarjetas.apps.TarjetasConfig',
     'rest_framework',

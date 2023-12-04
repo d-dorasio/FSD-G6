@@ -19,6 +19,8 @@ function Footer() {
           <Link to='/terminos&condiciones'>Términos y Condiciones</Link>
           <br />
           <Link to='/contacto'>Contacto</Link>
+          <br/>
+          <Link to='/bancos'>Sucursales</Link>
         </div>
         <div id="redes">
           <p>Encontranos en:</p>

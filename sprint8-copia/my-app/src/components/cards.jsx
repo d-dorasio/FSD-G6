@@ -1,46 +1,37 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import axios from "axios";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
 import { Button, Card, CardContent, TextField } from "@mui/material";
 
 function Cards() {
-  const [cards, setCards] = useState([
-    {
-      nombre: "NOMBRE APELLIDO",
-      numero: "**** **** **** 1234",
-      vencimiento: "12/23",
-      codigo: "***",
-    },
-    {
-      nombre: "APELLIDO NOMBRE",
-      numero: "**** **** **** 5678",
-      vencimiento: "06/24",
-      codigo: "***",
-    },
-  ]);
-
+  const [apiCards, setApiCards] = useState([]);
   const nombreRef = useRef(null);
   const numeroRef = useRef(null);
   const vencimientoRef = useRef(null);
   const codigoRef = useRef(null);
 
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/cards/");
+        // Filtrar tarjetas solo para el cliente 1
+        const cardsCliente1 = response.data.filter(card => card.cliente === 1);
+        setApiCards(cardsCliente1);
+      } catch (error) {
+        console.error("Error fetching cards from the API:", error);
+      }
+    };
+
+    fetchCards();
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const nombre = nombreRef.current.value;
-    const numeroValor = numeroRef.current.value || "";
-    const vencimiento = vencimientoRef.current.value;
-    const codigo = codigoRef.current.value;
+    // ... (código existente para agregar tarjeta local)
 
-    const nuevaTarjeta = {
-      nombre,
-      numero: `**** **** **** ${numeroValor.substring(numeroValor.length - 4)}`,
-      vencimiento,
-      codigo: "***",
-    };
-
-    setCards([...cards, nuevaTarjeta]);
     nombreRef.current.value = "";
     numeroRef.current.value = "";
     vencimientoRef.current.value = "";
@@ -56,18 +47,17 @@ function Cards() {
           <main>
             <section>
               <h1>Mis Tarjetas</h1>
-              {cards.map((card, index) => (
-                <div key={index} className="card">
-                  <h3>{card.nombre}</h3>
-                  <p>Número: {card.numero}</p>
-                  <p>Vencimiento: {card.vencimiento}</p>
-                  <p>Código de Seguridad: {card.codigo}</p>
+              {apiCards.map((apiCard) => (
+                <div key={apiCard.id} className="card">
+                  <h3>{apiCard.numero_tarjeta}</h3>
+                  <p>CVV: {apiCard.cvv}</p>
+                  <p>Vencimiento: {apiCard.fecha_vencimiento}</p>
                 </div>
               ))}
-              <div id="tarjetas-container"></div>
+              {/*<div id="tarjetas-container"></div>
               <br />
-              {/* Add card */}
-              <Card variant="outlined" sx={{ boxShadow: 5 }}>
+              
+               <Card variant="outlined" sx={{ boxShadow: 5 }}>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="form-container">
                     <h1>Agregar nueva tarjeta:</h1>
@@ -111,7 +101,7 @@ function Cards() {
                     </Button>
                   </form>
                 </CardContent>
-              </Card>
+              </Card> */}
             </section>
           </main>
         </div>

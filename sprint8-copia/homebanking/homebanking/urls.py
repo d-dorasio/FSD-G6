@@ -24,7 +24,6 @@ urlpatterns = [
     path('api/', include('clientes.urls')),
     path('api/', include('cuentas.urls')),
     path('api/', include('itbankAuth.urls')),
-    path('api/', include('movimientos.urls')),
     path('api/', include('prestamos.urls')),
     path('api/', include('tarjetas.urls')),
 ]
