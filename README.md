@@ -1,7 +1,11 @@
 # FSD-G6
 
 ## Descripción
-Curso de Full Stack Developer - ITBA - Séptimo Sprint - Django
+Curso de Full Stack Developer - ITBA - Octavo Sprint - API
+
+## Pendientes
+- Autenticación del inicio de sesión
+- Segunda problemática
 
 ## Créditos
 
