@@ -12,26 +12,29 @@ const baseUrl2 = "http://127.0.0.1:8000/api/accounts/";
 
 function Profile() {
   const [cliente, setCliente] = useState(null);
+  const [cuenta, setCuenta] = useState(null);
+  const [cuentaCliente, setCuentaCliente] = useState([]);
 
   useEffect(() => {
     axios.get(baseUrl).then((response) => {
       setCliente(response.data);
     });
-  }, []);
 
-  const [cuenta, setCuenta] = useState(null);
-
-  useEffect(() => {
     axios.get(baseUrl2).then((response) => {
       setCuenta(response.data);
     });
   }, []);
 
-  const cuentasCliente = cuenta
-    ? cuenta.filter((cuenta) => cuenta.cliente === cliente.id)
-    : [];
+  useEffect(() => {
+    if (cliente) {
+      const cuentasCliente = cuenta
+        ? cuenta.filter((cuenta) => cuenta.cliente === cliente.id)
+        : [];
+      setCuentaCliente(cuentasCliente);
+    }
+  }, [cliente, cuenta]);
 
-  return cliente && cuentasCliente ? (
+  return cliente && cuenta ? (
     <div className="container">
       <NavBar></NavBar>
       <div className="sub-container">
@@ -43,7 +46,7 @@ function Profile() {
                 <h2>
                   {cliente.apellido}, {cliente.nombre}
                 </h2>
-                <ul>                  
+                <ul>
                   <li>DNI:{cliente.dni}</li>
                   <li>TIPO: {cliente.tipo_cliente}</li>
                   <li>Fecha de nacimiento: {cliente.fecha_nacimiento}</li>
@@ -53,7 +56,7 @@ function Profile() {
               <div>
                 <h3>Cuentas:</h3>
                 <ul>
-                  {cuentasCliente.map((cuenta) => (
+                  {cuentaCliente.map((cuenta) => (
                     <li key={cuenta.id}>
                       {cuenta.tipo} - Balance: {cuenta.balance}
                     </li>
@@ -64,7 +67,7 @@ function Profile() {
               <Button
                 size="large"
                 color="secondary"
-                variant="outined"
+                variant="outlined"
                 sx={{ border: 2, borderColor: "secondary.main" }}
               >
                 <Link to="/">CERRAR SESIÓN</Link>
