@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./navHB";
 import Header from "./headerHB";
 import Footer from "./footerHB";
@@ -18,22 +18,31 @@ import {
   Paper,
 } from "@mui/material";
 
+import axios from "axios";
+
+const baseUrl2 = "http://127.0.0.1:8000/api/loans/";
+const baseUrl = "http://127.0.0.1:8000/api/clients/1";
+
 function Loans() {
   const [tipoSeleccionado, setTipoSeleccionado] = useState("publica");
   const [monto, setMonto] = useState("");
   const [plazoEjecucion, setPlazoEjecucion] = useState("");
   const [cuotas, setCuotas] = useState([]);
+  const [prestamos, setPrestamos] = useState([]); // Nuevo estado para prestamos
+
+  useEffect(() => {
+    axios.get(baseUrl2).then((response) => {
+      setPrestamos(response.data);
+    });
+  }, []);
 
   const calcularPrestamo = () => {
+    // Resto del código para calcular el préstamo
     let tasaInteres = 0.012;
 
-    if (tipoSeleccionado === "publica") {
+    if (tipoSeleccionado === "publica" || tipoSeleccionado === "privado") {
       tasaInteres = 0.012;
-    } else if (tipoSeleccionado === "privado") {
-      tasaInteres = 0.012;
-    } else if (tipoSeleccionado === "IPS") {
-      tasaInteres = 0.0115;
-    } else if (tipoSeleccionado === "ANSES") {
+    } else if (tipoSeleccionado === "IPS" || tipoSeleccionado === "ANSES") {
       tasaInteres = 0.0115;
     }
 
@@ -43,7 +52,7 @@ function Loans() {
     let saldoRestante = parseFloat(monto);
 
     for (let mes = 1; mes <= mesesTotales; mes++) {
-      const pagoInteres = saldoRestante * tasaInteresMensual * 100;
+      const pagoInteres = saldoRestante * tasaInteresMensual;
       const pagoPrincipal =
         (monto * tasaInteresMensual) /
         (1 - Math.pow(1 + tasaInteresMensual, -mesesTotales));
@@ -54,9 +63,9 @@ function Loans() {
       datosTabla.push([
         mes,
         saldoRestante,
-        pagoPrincipal,
-        pagoInteres,
-        pagoMensual,
+        parseFloat(pagoPrincipal.toFixed(2)),
+        parseFloat(pagoInteres.toFixed(2)),
+        parseFloat(pagoMensual.toFixed(2)),
       ]);
 
       if (saldoRestante <= 0) {
@@ -64,7 +73,14 @@ function Loans() {
       }
     }
 
+    // Filtrar los préstamos del cliente actual
+    const prestamoCliente = prestamos
+      ? prestamos.filter((prestamo) => prestamo.cliente === 1) // Cambiar 1 por el ID del cliente actual
+      : [];
+
+    // Actualizar el estado de las cuotas y los préstamos
     setCuotas(datosTabla);
+    setPrestamos(prestamoCliente);
   };
 
   return (
@@ -74,6 +90,39 @@ function Loans() {
         <Header></Header>
         <div className="main-container">
           <main>
+            <section>
+              <h1>Prestamos:</h1>
+              <table style={{ borderCollapse: "collapse", width: "100%" }}>
+                <thead>
+                  <tr>
+                    <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+                      ID
+                    </th>
+                    <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+                      Monto Aprobado
+                    </th>
+                    <th style={{ border: "1px solid #ddd", padding: "8px" }}>
+                      Fecha de Inicio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {prestamos.map((prestamo) => (
+                    <tr key={prestamo.id}>
+                      <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                        {prestamo.id}
+                      </td>
+                      <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                        {prestamo.monto_aprobado}
+                      </td>
+                      <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                        {prestamo.fecha_inicio}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
             <section>
               <Card sx={{ boxShadow: 5 }}>
                 <CardContent>
@@ -260,5 +309,4 @@ function Loans() {
     </div>
   );
 }
-
 export default Loans;
